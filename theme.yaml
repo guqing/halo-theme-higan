@@ -1,23 +1,10 @@
-#id: 主题的唯一标识
-#name: 主题名称
-#author:
-#  name: 作者名称
-#  website: 作者网站
-#description: 主题描述
-#logo: 主题 Logo
-#website: 主题网址
-#website: 主题的 Github 仓库
-#version: 版本号
-
-# 详情请参考：https://halo.run/develop/theme.html#theme-yaml
-
-id: ruibaby_quickstarter
-name: QuickStarter
+id: guqing_higan
+name: 彼岸
 author:
-  name: Ryan Wang
-  website: https://ryanc.cc
-description: Quick starter theme for halo
+  name: guqing
+  website: https://www.guqing.xyz
+description: 雨打纱窗拂轻尘，电闪雷鸣似瑶琴。荷叶阳伞夜归人，静坐滴檐嗒嗒闻
 logo:
-website: https://github.com/halo-dev/halo-theme-quick-starter
-repo: https://github.com/halo-dev/halo-theme-quick-starter
+website:
+repo:
 version: 1.0
