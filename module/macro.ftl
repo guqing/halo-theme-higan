@@ -41,16 +41,88 @@
     </style>
 </head>
 <body class="max-width mx-auto px3 ltr">
+<div class="content index py4">
+  <header id="header">
+  <a href="/">
+      <div id="logo" style="background-image: url(${options.blog_logo!});"></div>
+        <div id="title">
+          <h1>${options.blog_title!}</h1>
+      </div>
+  </a>
+
+  <div id="nav" style="margin-top:5px;">
+    <ul>
+      <li class="icon">
+        <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+      </li>
+      <@menuTag method="list">
+          <#list menus as menu>
+            <li>
+                <a href="${menu.url!}">${menu.name!}</a>
+            </li>
+          </#list>
+      </@menuTag>
+    </ul>
+  </div>
+</header>
+
 
 <#nested >
+
+
+<footer id="footer">
+  <div class="footer-left">
+    Theme is ${theme.name} by ${theme.author.name}
+    Powered by Halo
+    © <span id="site_date"></span> ${options.blog_title!}
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+          <@menuTag method="list">
+              <#list menus as menu>
+                <li>
+                    <a href="${menu.url!}">${menu.name!}</a>
+                </li>
+              </#list>
+           </@menuTag>
+      </ul>
+    </nav>
+  </div>
+</footer>
+</div>
+<!-- styles -->
+<link rel="stylesheet" href="/guqing_higan/source/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+ <script src="/guqing_higan/source/js/jquery.min.js"></script>
+ <script src="/guqing_higan/source/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+ <script src="/guqing_higan/source/js/main.js"></script>
+
+
+<!-- Baidu Analytics -->
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?2e6da3c375c8a87f5b664cea6d4cb29c";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<script type="text/javascript">
+        var myDate = new Date();
+        document.getElementById("site_date").innerHTML= myDate.getFullYear();
+</script>
 
 
 <#--
     公共底部代码，详情请参考：https://halo.run/develop/theme.html#%E5%85%AC%E5%85%B1%E5%BA%95%E9%83%A8
     包含：统计代码，底部信息
-    <@common.globalFooter />
 -->
-
+<div style="color: #666;font-size: 11px;text-align: left;margin-top:-15px;">
+    <@common.globalFooter />
+</div>
 </body>
 </html>
 </#macro>

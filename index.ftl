@@ -1,31 +1,5 @@
 <#include "module/macro.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
-    <div class="content index py4">
-      <header id="header">
-      <a href="/">
-          <div id="logo" style="background-image: url(${options.blog_logo!});"></div>
-            <div id="title">
-              <h1>${options.blog_title!}</h1>
-          </div>
-      </a>
-
-      <div id="nav" style="margin-top:5px;">
-        <ul>
-          <li class="icon">
-            <a href="#"><i class="fas fa-bars fa-2x"></i></a>
-          </li>
-          <@menuTag method="list">
-              <#list menus as menu>
-                <li>
-                    <a href="${menu.url!}">${menu.name!}</a>
-                </li>
-              </#list>
-          </@menuTag>
-        </ul>
-      </div>
-    </header>
-
-
       <section id="about">
           <p>${user.description!}</p>
           <p>
@@ -35,19 +9,16 @@
                     <i class="fa fa-twitter"></i>
                 </a>
             </#if>
-
             <#if settings.facebook??>
                 <a class="icon" target="_blank" href="https://www.facebook.com/${settings.facebook}">
                     <i class="fa fa-facebook"></i>
                 </a>
             </#if>
-
             <#if settings.instagram??>
                 <a class="icon" target="_blank" href="https://www.instagram.com/${settings.instagram}">
                     <i class="fa fa-instagram"></i>
                 </a>
             </#if>
-
             <#if settings.dribbble??>
                 <a class="icon" target="_blank" href="https://dribbble.com/${settings.dribbble}">
                     <i class="fa fa-dribbble"></i>
@@ -59,7 +30,6 @@
                     <i class="fa fa-weibo"></i>
                 </a>
             </#if>
-
             <#if settings.qq??>
                 <a class="icon" target="_blank" href="tencent://message/?uin=${settings.qq}&Site=&Menu=yes">
                     <i class="fa fa-qq"></i>
@@ -71,13 +41,11 @@
                     <i class="fa fa-telegram"></i>
                 </a>
             </#if>
-
             <#if settings.email??>
                 <a class="icon" target="_blank" href="mailto:${settings.email}">
                     <i class="fa fa-envelope"></i>
                 </a>
             </#if>
-
             <#if settings.github??>
                 <a class="icon" target="_blank" href="https://github.com/${settings.github}">
                     <i class="fa fa-github"></i>
@@ -114,45 +82,4 @@
             </@postTag>
         </ul>
       </section>
-
-    <footer id="footer">
-      <div class="footer-left">
-        Theme is ${theme.name} by ${theme.author.name}
-        Powered by Halo
-        © <span id="site_date"></span> ${options.blog_title!}
-      </div>
-      <div class="footer-right">
-        <nav>
-          <ul>
-              <@menuTag method="list">
-                  <#list menus as menu>
-                    <li>
-                        <a href="${menu.url!}">${menu.name!}</a>
-                    </li>
-                  </#list>
-               </@menuTag>
-          </ul>
-        </nav>
-      </div>
-    </footer>
-</div>
-  <!-- styles -->
-  <link rel="stylesheet" href="/guqing_higan/source/justified-gallery/css/justifiedGallery.min.css">
-
-  <!-- jquery -->
- <script src="/guqing_higan/source/js/jquery.min.js"></script>
- <script src="/guqing_higan/source/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
- <script src="/guqing_higan/source/js/main.js"></script>
-
-
-   <!-- Baidu Analytics -->
-    <script type="text/javascript">
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?2e6da3c375c8a87f5b664cea6d4cb29c";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
 </@layout>
