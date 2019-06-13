@@ -4,7 +4,7 @@ author:
   name: guqing
   website: https://www.guqing.xyz
 description: 雨打纱窗拂轻尘，电闪雷鸣似瑶琴。荷叶阳伞夜归人，静坐滴檐嗒嗒闻
-logo:
-website:
-repo:
+logo: ./source/images/logo.png
+website: https://github.com/DarrenGu/halo-theme-higan.git
+repo: https://github.com/DarrenGu/halo-theme-higan.git
 version: 1.0
