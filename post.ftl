@@ -19,9 +19,22 @@
 
 
     <h1>${post.title!}</h1>
-    ${post.formatContent!}
+    <div class="post-wrapper">
+       ${post.formatContent!}
+    </div>
 
     <#include "module/comment.ftl">
     <br>
     <@comment post=post type="post" />
+
+    <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+    <script src="/guqing_higan/source/js/jquery.min.js"></script>
+    <script type="text/javascript">
+      <#--  hljs.initHighlightingOnLoad();  -->
+      $(document).ready(function() {
+        $('pre code').each(function(i, block) {
+          hljs.highlightBlock(block);
+        });
+      });
+    </script>
 </@layout>

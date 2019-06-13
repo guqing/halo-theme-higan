@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="926e98f4-41b4-41ac-af0a-5a2e513954e1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sheet_search.ftl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/source/js/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archives.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/archives.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/category.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/category.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/links.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/links.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/macro.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/module/macro.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search.ftl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sheet_search.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/sheet_search.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tag.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/tag.ftl" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,19 +18,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/module/macro.ftl">
+        <entry file="file://$PROJECT_DIR$/tags.ftl">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+              <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tag.ftl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/archives.ftl">
+        <entry file="file://$PROJECT_DIR$/sheet_search.ftl">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            <state relative-caret-position="312">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -74,16 +77,18 @@
         <option value="$PROJECT_DIR$/search.ftl" />
         <option value="$PROJECT_DIR$/categories.ftl" />
         <option value="$PROJECT_DIR$/source/js/search.js" />
-        <option value="$PROJECT_DIR$/sheet_search.ftl" />
         <option value="$PROJECT_DIR$/index.ftl" />
         <option value="$PROJECT_DIR$/module/macro.ftl" />
         <option value="$PROJECT_DIR$/links.ftl" />
         <option value="$PROJECT_DIR$/category.ftl" />
         <option value="$PROJECT_DIR$/archives.ftl" />
+        <option value="$PROJECT_DIR$/tags.ftl" />
+        <option value="$PROJECT_DIR$/tag.ftl" />
+        <option value="$PROJECT_DIR$/sheet_search.ftl" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="85" />
     <option name="y" value="25" />
     <option name="width" value="1750" />
@@ -103,11 +108,6 @@
             <path>
               <item name="guqing_higan" type="b2602c69:ProjectViewProjectNode" />
               <item name="guqing_higan" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="guqing_higan" type="b2602c69:ProjectViewProjectNode" />
-              <item name="guqing_higan" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -158,12 +158,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560149068165</updated>
       <workItem from="1560149071570" duration="15342000" />
-      <workItem from="1560168283112" duration="5249000" />
+      <workItem from="1560168283112" duration="6550000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20591000" />
+    <option name="totallyTimeSpent" value="21892000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
@@ -246,20 +246,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/categories.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tags.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/search.ftl" />
     <entry file="file://$PROJECT_DIR$/module/comment.ftl">
       <provider selected="true" editor-type-id="text-editor">
@@ -279,13 +265,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3100">
           <caret line="145" column="56" lean-forward="true" selection-start-line="145" selection-start-column="56" selection-end-line="145" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sheet_search.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -317,10 +296,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tag.ftl">
+    <entry file="file://$PROJECT_DIR$/archives.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
+        <state relative-caret-position="450">
+          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -331,10 +310,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archives.ftl">
+    <entry file="file://$PROJECT_DIR$/categories.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="75">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tags.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="8" column="24" lean-forward="true" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tag.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sheet_search.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
         </state>
       </provider>
     </entry>

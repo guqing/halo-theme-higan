@@ -19,7 +19,11 @@
     <link rel="stylesheet" href="${context!}/guqing_higan/source/font-awesome/css/font-awesome.css">
     <link rel="stylesheet" href="${context!}/guqing_higan/source/css/style.css">
     <link rel="stylesheet" href="${context!}/guqing_higan/source/css/rtl.css">
+    <link rel="stylesheet" href="${context!}/guqing_higan/source/css/post.css">
 
+    <link href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/atelier-lakeside-dark.min.css" rel="stylesheet"/>
+    <#--  <link href="${context!}/guqing_higan/source/css/codehls/dracula.css" rel="stylesheet"/>  -->
+    
     <title>${title}</title>
 
     <style>
@@ -45,8 +49,9 @@
   <header id="header">
   <a href="/">
       <div id="logo" style="background-image: url(${options.blog_logo!});"></div>
-        <div id="title">
-          <h1>${options.blog_title!}</h1>
+        <div id="title">            
+            <h1>${options.blog_title!}</h1>
+          <#--  <h1>${options.blog_title!}</h1>  -->
       </div>
   </a>
 
@@ -111,8 +116,23 @@
     })();
 </script>
 <script type="text/javascript">
-        var myDate = new Date();
-        document.getElementById("site_date").innerHTML= myDate.getFullYear();
+    var myDate = new Date();
+    document.getElementById("site_date").innerHTML= myDate.getFullYear();
+
+
+    <#--  设置代码渲染样式  -->
+    $(document).ready(function() {
+       var basePath = "${context!}/guqing_higan/source/css/codehls/";
+        <#if settings.code_style??>
+          var codeStyle = "${settings.code_style}"
+        
+          var element = document.createElement("link");  
+          element.setAttribute('rel','stylesheet');  
+          element.setAttribute('type','text/css');  
+          element.setAttribute('href',basePath + codeStyle + '.css');  
+          document.getElementsByTagName('head')[0].appendChild(element);  
+        </#if>
+    })
 </script>
 
 
