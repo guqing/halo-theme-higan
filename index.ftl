@@ -1,9 +1,13 @@
 <#include "${theme_base!}/module/macro.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
-      <section id="about">
-          <p>${user.description!}</p>
-          <p>
+    <section id="about">
+        <p>
             Find me on
+            <#if settings.rss>
+                <a class="icon" target="_blank" href="${blog_url!}/rss.xml">
+                    <i class="fa fa-rss"></i>
+                </a>
+            </#if>
             <#if settings.twitter??>
                 <a class="icon" target="_blank" href="https://twitter.com/${settings.twitter}">
                     <i class="fa fa-twitter"></i>
@@ -51,35 +55,35 @@
                     <i class="fa fa-github"></i>
                 </a>
             </#if>
-          </p>
-      </section>
+        </p>
+    </section>
 
-      <section id="writing">
-        <span class="h1"><a href="${context!}/archives">文章</a></span>
+    <section id="writing">
+        <span class="h1" style="margin-top: 15px;"><a href="${blog_url!}/archives">文章</a></span>
         <span class="h2">Topics</span>
         <span class="widget tagcloud">
             <@categoryTag method="list">
-              <#if categories?size==0>暂时没有分类</#if>
-              <#list categories as category>
-                <a href="${context!}/categories/${category.slug}" style="font-size: 10px;">${category.name!}</a>
-              </#list>
+                <#if categories?size==0>暂时没有分类</#if>
+                <#list categories as category>
+                    <a href="${blog_url!}/categories/${category.slug}" style="font-size: 10px;">${category.name!}</a>
+                </#list>
             </@categoryTag>
         </span>
         <span class="h2">Most recent</span>
 
         <ul class="post-list">
             <@postTag method="latest" top="10">
-                 <#list posts as post>
+                <#list posts as post>
                     <li class="post-item">
-                         <div class="meta">
+                        <div class="meta">
                             <time datetime="${post.createTime!}" itemprop="datePublished">${post.createTime!}</time>
-                         </div>
-                         <span>
-                            <a  href="${context}/archives/${post.url!}">${post.title!}</a>
+                        </div>
+                        <span>
+                            <a href="${post.fullPath!}">${post.title!}</a>
                          </span>
                     </li>
-                 </#list>
+                </#list>
             </@postTag>
         </ul>
-      </section>
+    </section>
 </@layout>
