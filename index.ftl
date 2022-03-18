@@ -1,4 +1,4 @@
-<#include "module/macro.ftl">
+<#include "${theme_base!}/module/macro.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
       <section id="about">
           <p>${user.description!}</p>
@@ -55,13 +55,13 @@
       </section>
 
       <section id="writing">
-        <span class="h1"><a href="/archives">文章</a></span>
+        <span class="h1"><a href="${context!}/archives">文章</a></span>
         <span class="h2">Topics</span>
         <span class="widget tagcloud">
             <@categoryTag method="list">
               <#if categories?size==0>暂时没有分类</#if>
               <#list categories as category>
-                <a href="${context!}/categories/${category.slugName}" style="font-size: 10px;">${category.name}</a>
+                <a href="${context!}/categories/${category.slug}" style="font-size: 10px;">${category.name!}</a>
               </#list>
             </@categoryTag>
         </span>

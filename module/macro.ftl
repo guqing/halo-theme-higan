@@ -1,4 +1,4 @@
-<#import "/common/macro/common_macro.ftl" as common>
+<#import "${context!}/common/macro/common_macro.ftl" as common>
 <#macro layout title,keywords,description>
 <!DOCTYPE html>
 <html lang="zh">
@@ -16,14 +16,14 @@
     <link rel="shortcut icon" href="${options.blog_favicon!}">
     <link rel="icon" type="image/png" href="${options.blog_favicon!}" sizes="192x192">
 
-    <link rel="stylesheet" href="${context!}/guqing_higan/source/font-awesome/css/font-awesome.css">
-    <link rel="stylesheet" href="${context!}/guqing_higan/source/css/style.css">
-    <link rel="stylesheet" href="${context!}/guqing_higan/source/css/rtl.css">
-    <link rel="stylesheet" href="${context!}/guqing_higan/source/css/post.css">
+    <link rel="stylesheet" href="${theme_base!}/source/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/style.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/rtl.css">
+    <link rel="stylesheet" href="${theme_base!}/source/css/post.css">
 
-    <link href="https://cdn.bootcss.com/highlight.js/9.6.0/styles/atelier-lakeside-dark.min.css" rel="stylesheet"/>
+    <link href="${theme_base!}/source/css/atelier-lakeside-dark.min.css" rel="stylesheet"/>
     <#--  <link href="${context!}/guqing_higan/source/css/codehls/dracula.css" rel="stylesheet"/>  -->
-    
+
     <title>${title}</title>
 
     <style>
@@ -49,9 +49,8 @@
   <header id="header">
   <a href="/">
       <div id="logo" style="background-image: url(${options.blog_logo!});"></div>
-        <div id="title">            
+        <div id="title">
             <h1>${options.blog_title!}</h1>
-          <#--  <h1>${options.blog_title!}</h1>  -->
       </div>
   </a>
 
@@ -97,12 +96,12 @@
 </footer>
 </div>
 <!-- styles -->
-<link rel="stylesheet" href="/guqing_higan/source/justified-gallery/css/justifiedGallery.min.css">
+<link rel="stylesheet" href="${theme_base!}/source/justified-gallery/css/justifiedGallery.min.css">
 
 <!-- jquery -->
- <script src="/guqing_higan/source/js/jquery.min.js"></script>
- <script src="/guqing_higan/source/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
- <script src="/guqing_higan/source/js/main.js"></script>
+ <script src="${theme_base!}/source/js/jquery.min.js"></script>
+ <script src="${theme_base!}/source/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+ <script src="${theme_base!}/source/js/main.js"></script>
 
 
 <!-- Baidu Analytics -->
@@ -122,19 +121,18 @@
 
     <#--  设置代码渲染样式  -->
     $(document).ready(function() {
-       var basePath = "${context!}/guqing_higan/source/css/codehls/";
+       var basePath = "${theme_base!}/source/css/codehls/";
         <#if settings.code_style??>
           var codeStyle = "${settings.code_style}"
-        
-          var element = document.createElement("link");  
-          element.setAttribute('rel','stylesheet');  
-          element.setAttribute('type','text/css');  
-          element.setAttribute('href',basePath + codeStyle + '.css');  
-          document.getElementsByTagName('head')[0].appendChild(element);  
+
+          var element = document.createElement("link");
+          element.setAttribute('rel','stylesheet');
+          element.setAttribute('type','text/css');
+          element.setAttribute('href',basePath + codeStyle + '.css');
+          document.getElementsByTagName('head')[0].appendChild(element);
         </#if>
     })
 </script>
-
 
 <#--
     公共底部代码，详情请参考：https://halo.run/develop/theme.html#%E5%85%AC%E5%85%B1%E5%BA%95%E9%83%A8

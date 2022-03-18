@@ -1,0 +1,22 @@
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+log/
+
+### Mac
+.DS_Store
+*/.DS_Store
+
+### Maven
+target/
+logs/
+!.mvn/wrapper/maven-wrapper.jar
+
+### Gradle
+.gradle
+/build/
+/out/
+!gradle/wrapper/gradle-wrapper.jar
+bin/
