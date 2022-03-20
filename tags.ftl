@@ -5,7 +5,7 @@
         <@tagTag method="list">
             <#if tags?? && tags?size gt 0>
                 <#list tags as tag>
-                    <li><a href="${context!}/tags/${tag.slugName}/">${tag.name}</a></li>
+                    <li><a href="${tag.fullPath!}">${tag.name}</a></li>
                 </#list>
             </#if>
         </@tagTag>
