@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${options.blog_title!} | 分类：${category.name}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
         <div id="archive">
              <@postTag method="listByCategoryId" categoryId="${category.id}">
                 <h2>分类：${category.name}</h2>

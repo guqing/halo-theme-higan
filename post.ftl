@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${options.blog_title!} | ${post.title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
   <div id="header-post">
     <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
     <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>

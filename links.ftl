@@ -1,5 +1,5 @@
 <#include "module/macro.ftl">
-<@layout title="${options.blog_title!} | 友情链接" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
   <article class="links post" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="content">
         <@linkTag method="list">
