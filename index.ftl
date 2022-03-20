@@ -1,6 +1,11 @@
 <#include "${theme_base!}/module/macro.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+
     <section id="about">
+        <#if meta_description??>
+            <p>${meta_description!}</p>
+        </#if>
+
         <p>
             Find me on
             <#if settings.rss>
@@ -59,30 +64,36 @@
     </section>
 
     <section id="writing">
-        <span class="h1" style="margin-top: 15px;"><a href="${blog_url!}/archives">文章</a></span>
-        <span class="h2">Topics</span>
-        <span class="widget tagcloud">
-            <@categoryTag method="list">
-                <#if categories?size==0>暂时没有分类</#if>
-                <#list categories as category>
-                    <a href="${blog_url!}/categories/${category.slug}" style="font-size: 10px;">${category.name!}</a>
-                </#list>
-            </@categoryTag>
-        </span>
-        <span class="h2">Most recent</span>
-        <ul class="post-list">
-            <@postTag method="latest" top="10">
+        <span class="h1"><a href="${blog_url!}'/archives'">Writing</a></span>
+
+        <@postTag method="latest" top="10">
+            <ul class="post-list">
                 <#list posts as post>
                     <li class="post-item">
                         <div class="meta">
-                            <time datetime="${post.createTime!}" itemprop="datePublished">${post.createTime!}</time>
+                            <time datetime="${post.editTime!}" itemprop="datePublished">
+                                ${post.editTime?string["MMMM dd yyyy"]}
+                            </time>
                         </div>
                         <span>
-                            <a href="${post.fullPath!}">${post.title!}</a>
-                         </span>
+                          <a href="${post.fullPath!}">${post.title!}</a>
+                        </span>
                     </li>
                 </#list>
-            </@postTag>
-        </ul>
+            </ul>
+        </@postTag>
     </section>
+
+    <!--<section id="projects">
+        <span class="h1">
+            <a href="http://github.com/guqing">Projects</a>
+        </span>
+        <ul class="project-list">
+            <li class="project-item">
+                <a href="url">Halo</a>:
+                 <p>content</p>
+            </li>
+        </ul>
+    </section>-->
+
 </@layout>
