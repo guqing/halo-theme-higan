@@ -70,7 +70,6 @@
             </@categoryTag>
         </span>
         <span class="h2">Most recent</span>
-
         <ul class="post-list">
             <@postTag method="latest" top="10">
                 <#list posts as post>
