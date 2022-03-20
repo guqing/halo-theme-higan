@@ -5,7 +5,7 @@
         <@categoryTag method="list">
             <#if categories?? && categories?size gt 0>
                 <#list categories as category>
-                    <li><a href="${context!}/categories/${category.slugName}/">${category.name}</a></li>
+                    <li><a href="${category.fullPath!}">${category.name}（${category.postCount!})</a></li>
                 </#list>
             </#if>
         </@categoryTag>

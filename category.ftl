@@ -7,10 +7,10 @@
                     <#list posts as post>
                         <li class="post-item">
                            <div class="meta">
-                                <time datetime="${post.createTime!}" itemprop="datePublished">${post.createTime!?string('yyyy-MM-dd')}</time>
+                                <time datetime="${post.createTime!}" itemprop="datePublished">${post.createTime!?string["MMMM dd yyyy"]}</time>
                            </div>
                            <span>
-                               <a class="post-title" href="${context!}/archives/${post.url!}">${post.title!}</a>
+                               <a class="post-title" href="${post.fullPath!}">${post.title!}</a>
                             </span>
                         </li>
                     </#list>
