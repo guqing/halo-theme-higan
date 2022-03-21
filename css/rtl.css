@@ -1,21 +1,21 @@
 @font-face {
     font-family: Vazir;
-    src: url("${theme_base!}/lib/vazir-font/Vazir.eot");
-    src: url("${theme_base!}/lib/vazir-font/Vazir.eot?#iefix") format('embedded-opentype'), url("${theme_base!}/lib/vazir-font/Vazir.woff2") format('woff2'), url("${theme_base!}/lib/vazir-font/Vazir.woff") format('woff'), url("${theme_base!}/lib/vazir-font/Vazir.ttf") format('truetype');
+    src: url("../lib/vazir-font/Vazir.eot");
+    src: url("../lib/vazir-font/Vazir.eot?#iefix") format('embedded-opentype'), url("../lib/vazir-font/Vazir.woff2") format('woff2'), url("../lib/vazir-font/Vazir.woff") format('woff'), url("../lib/vazir-font/Vazir.ttf") format('truetype');
     font-weight: normal;
 }
 
 @font-face {
     font-family: Vazir;
-    src: url("${theme_base!}/lib/vazir-font/Vazir-Bold.eot");
-    src: url("${theme_base!}/lib/vazir-font/Vazir-Bold.eot?#iefix") format('embedded-opentype'), url("${theme_base!}/lib/vazir-font/Vazir-Bold.woff2") format('woff2'), url("${theme_base!}/lib/vazir-font/Vazir-Bold.woff") format('woff'), url("${theme_base!}/lib/vazir-font/Vazir-Bold.ttf") format('truetype');
+    src: url("../lib/vazir-font/Vazir-Bold.eot");
+    src: url("../lib/vazir-font/Vazir-Bold.eot?#iefix") format('embedded-opentype'), url("../lib/vazir-font/Vazir-Bold.woff2") format('woff2'), url("../lib/vazir-font/Vazir-Bold.woff") format('woff'), url("../lib/vazir-font/Vazir-Bold.ttf") format('truetype');
     font-weight: bold;
 }
 
 @font-face {
     font-family: Vazir;
-    src: url("${theme_base!}/lib/vazir-font/Vazir-Light.eot");
-    src: url("${theme_base!}/lib/vazir-font/Vazir-Light.eot?#iefix") format('embedded-opentype'), url("${theme_base!}/lib/vazir-font/Vazir-Light.woff2") format('woff2'), url("${theme_base!}/lib/vazir-font/Vazir-Light.woff") format('woff'), url("${theme_base!}/lib/vazir-font/Vazir-Light.ttf") format('truetype');
+    src: url("../lib/vazir-font/Vazir-Light.eot");
+    src: url("../lib/vazir-font/Vazir-Light.eot?#iefix") format('embedded-opentype'), url("../lib/vazir-font/Vazir-Light.woff2") format('woff2'), url("../lib/vazir-font/Vazir-Light.woff") format('woff'), url("../lib/vazir-font/Vazir-Light.ttf") format('truetype');
     font-weight: 300;
 }
 

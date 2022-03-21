@@ -744,7 +744,6 @@ body {
 #header #nav {
     color: #2bbc8a;
     letter-spacing: 0.01em;
-    font-weight: 200;
     font-style: normal;
     font-size: 0.8rem;
 }
@@ -915,7 +914,6 @@ body {
 #header-post #nav {
     color: #2bbc8a;
     letter-spacing: 0.01em;
-    font-weight: 200;
     font-style: normal;
     font-size: 0.8rem;
 }

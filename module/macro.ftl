@@ -34,7 +34,9 @@
   </head>
   <body class="max-width mx-auto px3 ltr">
 
-
+  <#if is_post??>
+      <#include "${theme_base!}/module/post_nav.ftl"/>
+  </#if>
   <div class="content index py4">
       <#if !(is_post??)>
         <header id="header">
@@ -52,13 +54,11 @@
               </li>
 
                 <@menuTag method="list">
-                  <ul>
-                      <#list menus?sort_by('priority') as menu>
-                        <li>
-                          <a href="${menu.url!}" target="${menu.target!}">${menu.name!}</a>
-                        </li>
-                      </#list>
-                  </ul>
+                    <#list menus?sort_by('priority') as menu>
+                      <li>
+                        <a href="${menu.url!}" target="${menu.target!}">${menu.name!}</a>
+                      </li>
+                    </#list>
                 </@menuTag>
             </ul>
           </div>
