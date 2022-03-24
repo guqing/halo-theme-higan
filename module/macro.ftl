@@ -88,6 +88,7 @@
   </div>
   <!-- styles -->
   <link rel="stylesheet" href="${theme_base!}/lib/font-awesome/css/all.min.css"/>
+  <link rel="stylesheet" href="${theme_base!}/lib/font-awesome/css/brands.min.css"/>
   <link
           rel="stylesheet"
           href="${theme_base!}/lib/justified-gallery/css/justifiedGallery.min.css"
