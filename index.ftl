@@ -15,39 +15,39 @@
             </#if>
             <#if settings.twitter??>
                 <a class="icon" target="_blank" href="https://twitter.com/${settings.twitter}">
-                    <i class="fa fa-twitter"></i>
+                    <i class="fa-brands fa-twitter"></i>
                 </a>
             </#if>
             <#if settings.facebook??>
                 <a class="icon" target="_blank" href="https://www.facebook.com/${settings.facebook}">
-                    <i class="fa fa-facebook"></i>
+                    <i class="fa-brands fa-facebook"></i>
                 </a>
             </#if>
             <#if settings.instagram??>
                 <a class="icon" target="_blank" href="https://www.instagram.com/${settings.instagram}">
-                    <i class="fa fa-instagram"></i>
+                    <i class="fa-brands fa-instagram"></i>
                 </a>
             </#if>
             <#if settings.dribbble??>
                 <a class="icon" target="_blank" href="https://dribbble.com/${settings.dribbble}">
-                    <i class="fa fa-dribbble"></i>
+                    <i class="fa-brands fa-dribbble"></i>
                 </a>
             </#if>
 
             <#if settings.weibo??>
                 <a class="icon" target="_blank" href="https://weibo.com/${settings.weibo}">
-                    <i class="fa fa-weibo"></i>
+                    <i class="fa-brands fa-weibo"></i>
                 </a>
             </#if>
             <#if settings.qq??>
                 <a class="icon" target="_blank" href="tencent://message/?uin=${settings.qq}&Site=&Menu=yes">
-                    <i class="fa fa-qq"></i>
+                    <i class="fa-brands fa-qq"></i>
                 </a>
             </#if>
 
             <#if settings.telegram??>
                 <a class="icon" target="_blank" href="https://t.me/${settings.telegram}">
-                    <i class="fa fa-telegram"></i>
+                    <i class="fa-brands fa-telegram"></i>
                 </a>
             </#if>
             <#if settings.email??>
@@ -57,7 +57,7 @@
             </#if>
             <#if settings.github??>
                 <a class="icon" target="_blank" href="https://github.com/${settings.github}">
-                    <i class="fa fa-github"></i>
+                    <i class="fa-brands fa-github"></i>
                 </a>
             </#if>
         </p>
