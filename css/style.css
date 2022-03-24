@@ -404,7 +404,6 @@
 
 .py4 {
     padding-top: 4rem;
-    padding-bottom: 4rem;
 }
 
 .px4 {
@@ -1495,8 +1494,6 @@ article .content .caption {
 }
 
 #footer {
-    position: absolute;
-    bottom: 0;
     margin-bottom: 10px;
     width: 100%;
     color: #666;
@@ -1543,7 +1540,6 @@ article .content .caption {
 }
 
 #footer .footer-left {
-    height: 20px;
     vertical-align: middle;
     line-height: 20px;
 }
@@ -1559,7 +1555,6 @@ article .content .caption {
     }
     #footer .footer-left {
         align-self: flex-start;
-        margin-right: 20px;
     }
     #footer .footer-right {
         align-self: flex-end;

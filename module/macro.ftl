@@ -67,23 +67,25 @@
       <#nested >
 
     <footer id="footer">
-      <div class="footer-left">Theme is ${theme.name} by ${theme.author.name}
-        Powered by Halo
-        © <span id="site_date"></span> ${options.blog_title!}</div>
-      <div class="footer-right">
-        <nav>
-            <@menuTag method="list">
-              <ul>
-                  <#list menus?sort_by('priority') as menu>
-                    <li>
-                      <a href="${menu.url!}" target="${menu.target!}">${menu.name!}</a>
-                    </li>
-                  </#list>
-              </ul>
-            </@menuTag>
-        </nav>
+      <div style="flex: 1">
+        <div class="footer-left">Theme is ${theme.name} by ${theme.author.name}
+          Powered by Halo
+          © <span id="site_date"></span> ${options.blog_title!}</div>
+        <div class="footer-right">
+          <nav>
+              <@menuTag method="list">
+                <ul>
+                    <#list menus?sort_by('priority') as menu>
+                      <li>
+                        <a href="${menu.url!}" target="${menu.target!}">${menu.name!}</a>
+                      </li>
+                    </#list>
+                </ul>
+              </@menuTag>
+          </nav>
+        </div>
+        <@global.footer />
       </div>
-      <@global.footer />
     </footer>
   </div>
   <!-- styles -->
@@ -121,7 +123,7 @@
 
       // 圆形头像
       const enableCircleAvatar = ${settings.avatar_circle?c}
-      if(enableCircleAvatar) {
+      if (enableCircleAvatar) {
         $("#logo").addClass("circle-avatar")
       }
     })
