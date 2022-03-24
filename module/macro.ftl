@@ -34,7 +34,7 @@
   <body class="max-width mx-auto px3 ltr">
 
   <#if is_post??>
-      <#include "${theme_base!}/module/post_nav.ftl"/>
+      <#include "./post_nav.ftl"/>
   </#if>
   <div class="content index py4">
       <#if !(is_post??)>
@@ -83,8 +83,8 @@
             </@menuTag>
         </nav>
       </div>
+        <@global.footer />
     </footer>
-      <@global.footer />
   </div>
   <!-- styles -->
   <link rel="stylesheet" href="${theme_base!}/lib/font-awesome/css/all.min.css"/>
