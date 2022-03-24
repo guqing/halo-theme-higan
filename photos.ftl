@@ -20,7 +20,7 @@
               <#if photos.hasPrevious()>
                 <a href="${pagination.prevPageFullPath!}"><i class="fa fa-angle-left"></i></a>
               </#if>
-            <span class="page-number">Page ${photos.number} of ${photos.getTotalPages()}</span>
+            <span class="page-number">Page ${photos.number + 1} of ${photos.getTotalPages()}</span>
               <#if photos.hasNext()>
                 <a href="${pagination.nextPageFullPath!}"><i class="fa fa-angle-right"></i></a>
               </#if>
