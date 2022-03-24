@@ -67,6 +67,12 @@
         linkClass: 'toc-link',
         activeLinkClass: 'is-active-link toc-active-link'
       });
+
+      const postTitleUpperCase = ${settings.post_title_uppper?c}
+      if(postTitleUpperCase) {
+        $(".post .posttitle").addClass("title-upper-case")
+      }
+
     })
   </script>
 </@layout>

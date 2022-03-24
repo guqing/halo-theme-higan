@@ -93,7 +93,7 @@ style:
       label: 文章标题大写
       type: radio
       data-type: bool
-      default: true
+      default: false
       options:
         - value: true
           label: 开启
@@ -104,7 +104,7 @@ style:
       label: 圆形头像
       type: radio
       data-type: bool
-      default: true
+      default: false
       options:
         - value: true
           label: 开启

@@ -40,7 +40,7 @@
       <#if !(is_post??)>
         <header id="header">
           <a href="${blog_url!'/'}">
-            <div id="logo" style="background-image: url(${blog_logo!}?${theme_base!}/images/logo.png)"></div>
+            <div id="logo" style="background-image: url(${settings.icon!}?${theme_base!}/images/logo.png)"></div>
 
             <div id="title">
               <h1>${title}</h1>
@@ -83,7 +83,7 @@
             </@menuTag>
         </nav>
       </div>
-        <@global.footer />
+      <@global.footer />
     </footer>
   </div>
   <!-- styles -->
@@ -117,6 +117,12 @@
       element.setAttribute('href', basePath + codeStyle + '.css');
       document.getElementsByTagName('head')[0].appendChild(element);
       </#if>
+
+      // 圆形头像
+      const enableCircleAvatar = ${settings.avatar_circle?c}
+      if(enableCircleAvatar) {
+        $("#logo").addClass("circle-avatar")
+      }
     })
   </script>
   </body>

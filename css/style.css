@@ -740,6 +740,10 @@ body {
     background-repeat: no-repeat;
     -webkit-filter: grayscale(100%);
 }
+.circle-avatar {
+    border-radius: 50%!important;
+    border: 1px solid #c9cacc;
+}
 
 #header #nav {
     color: #2bbc8a;
@@ -1262,6 +1266,7 @@ body {
     min-width: 100px;
     color: #666;
     font-size: 14px;
+    white-space: nowrap;
 }
 
 @media (min-width: 480px) {
@@ -1286,7 +1291,9 @@ body {
 .project-list .project-item p {
     display: inline;
 }
-
+.title-upper-case {
+    text-transform: uppercase!important;
+}
 article header .posttitle {
     margin-top: 0;
     margin-bottom: 0;
