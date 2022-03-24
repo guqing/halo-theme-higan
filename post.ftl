@@ -31,9 +31,8 @@
         ${post.formatContent!}
     </div>
   </article>
-    <#include "module/comment.ftl">
-  <br>
     <@global.comment target=post type="post" />
+  <br/>
 
   <script src="${theme_base!}/lib/jquery/jquery.min.js"></script>
   <script src="${theme_base!}/js/highlight.min.js"></script>
