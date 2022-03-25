@@ -60,6 +60,17 @@ sns:
 style:
   label: 样式设置
   items:
+    theme_color:
+      name: theme_color
+      label: 颜色模式
+      type: select
+      default: 'dark'
+      data-type: string
+      options:
+        - value: dark
+          label: 暗黑
+        - value: light
+          label: 亮色
     code_style:
       name: code_style
       label: 前台代码样式

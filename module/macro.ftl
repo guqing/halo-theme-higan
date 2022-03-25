@@ -26,6 +26,7 @@
     <link rel="shortcut icon" href="${options.blog_favicon!'${theme_base}/images/favicon.ico'}"/>
 
     <!-- styles -->
+    <link rel="stylesheet" href="${theme_base!}/css/colors/${settings.theme_color!}.css"/>
     <link rel="stylesheet" href="${theme_base!}/css/style.css"/>
     <!-- persian styles -->
     <link rel="stylesheet" href="${theme_base!}/css/rtl.css"/>
