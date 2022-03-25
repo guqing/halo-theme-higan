@@ -2,7 +2,10 @@
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
 
     <section id="about">
-        <#if meta_description??>
+        <#if settings.hitokoto!>
+            <p id="hitokoto"></p>
+        </#if>
+        <#if !(settings.hitokoto!) && meta_description??>
             <p>${meta_description!}</p>
         </#if>
 
@@ -84,16 +87,8 @@
         </@postTag>
     </section>
 
-    <!--<section id="projects">
-        <span class="h1">
-            <a href="http://github.com/guqing">Projects</a>
-        </span>
-        <ul class="project-list">
-            <li class="project-item">
-                <a href="url">Halo</a>:
-                 <p>content</p>
-            </li>
-        </ul>
-    </section>-->
-
+    <#if settings.hitokoto!>
+        <!-- 新 API 方法， 十分简洁 -->
+        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+    </#if>
 </@layout>
