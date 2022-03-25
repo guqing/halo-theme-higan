@@ -71,6 +71,8 @@ style:
           label: 暗黑
         - value: light
           label: 亮色
+        - value: white
+          label: 白色
     code_style:
       name: code_style
       label: 前台代码样式
