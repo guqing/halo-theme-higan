@@ -30,7 +30,11 @@
     <div class="content" itemprop="articleBody">
         ${post.formatContent!}
     </div>
+    <#if settings.disqus??>
+      <div id="disqus_thread"></div>
+    <#else>
       <@global.comment target=post type="post" />
+    </#if>
   </article>
 
   <script src="${theme_base!}/lib/jquery/jquery.min.js"></script>
