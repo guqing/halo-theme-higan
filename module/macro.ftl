@@ -127,6 +127,11 @@
       if (enableCircleAvatar) {
         $("#logo").addClass("circle-avatar")
       }
+      // 灰度头像
+      const avatarGrayout = ${settings.avatar_grayout?c}
+      if (avatarGrayout) {
+        $("#logo").addClass("avatar-grayscale")
+      }
     })
   </script>
   </body>
