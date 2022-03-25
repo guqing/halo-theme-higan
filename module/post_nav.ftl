@@ -17,7 +17,7 @@
     <br>
     <span id="actions">
         <ul>
-         <#if prevPost??>
+        <#if prevPost??>
            <li>
              <a class="icon" href="${prevPost.fullPath!}">
               <i
@@ -61,37 +61,37 @@
     <div id="share" style="display: none">
       <ul>
         <li><a class="icon"
-               href="http://www.facebook.com/sharer.php?u=http://probberechts.github.io/2016/11/14/hello-world/"><i
+               href="http://www.facebook.com/sharer.php?u=${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-facebook " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="https://twitter.com/share?url=http://probberechts.github.io/2016/11/14/hello-world/&amp;text=Hello World"><i
+               href="https://twitter.com/share?url=${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-twitter " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="http://www.linkedin.com/shareArticle?url=http://probberechts.github.io/2016/11/14/hello-world/&amp;title=Hello World"><i
+               href="http://www.linkedin.com/shareArticle?url=${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-linkedin " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="https://pinterest.com/pin/create/bookmarklet/?url=http://probberechts.github.io/2016/11/14/hello-world/&amp;is_video=false&amp;description=Hello World"><i
+               href="https://pinterest.com/pin/create/bookmarklet/?url=${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-pinterest " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="mailto:?subject=Hello World&amp;body=Check out this article: http://probberechts.github.io/2016/11/14/hello-world/"><i
+               href="mailto:?subject=${post.title!}&amp;body=Check out this article: ${post.fullPath!}"><i
                     class="fas fa-envelope " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="https://getpocket.com/save?url=http://probberechts.github.io/2016/11/14/hello-world/&amp;title=Hello World"><i
+               href="${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="http://reddit.com/submit?url=http://probberechts.github.io/2016/11/14/hello-world/&amp;title=Hello World"><i
+               href="${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-reddit " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="http://www.stumbleupon.com/submit?url=http://probberechts.github.io/2016/11/14/hello-world/&amp;title=Hello World"><i
+               href="${post.fullPath!}&amp;title=${post.title!}><i
                     class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="http://digg.com/submit?url=http://probberechts.github.io/2016/11/14/hello-world/&amp;title=Hello World"><i
+               href="${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-digg " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="http://www.tumblr.com/share/link?url=http://probberechts.github.io/2016/11/14/hello-world/&amp;name=Hello World&amp;description="><i
+               href="${post.fullPath!}&amp;title=${post.title!}&amp;description=${post.summary!}"><i
                     class="fab fa-tumblr " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="https://news.ycombinator.com/submitlink?u=http://probberechts.github.io/2016/11/14/hello-world/&amp;t=Hello World"><i
+               href="${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
       </ul>
     </div>
