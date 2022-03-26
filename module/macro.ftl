@@ -41,8 +41,11 @@
       <#if !(is_post??)>
         <header id="header">
           <a href="${blog_url!'/'}">
-            <div id="logo" style="background-image: url(${settings.icon!}?${theme_base!}/images/logo.png)"></div>
-
+          <#if settings.icon??>
+            <div id="logo" style="background-image: url(${settings.icon!}"></div>
+          <#else>
+            <div id="logo" style="background-image: url(${theme_base!}/images/logo.png))"></div>
+          </#if>
             <div id="title">
               <h1>${title}</h1>
             </div>
