@@ -1,4 +1,5 @@
 <#include "./module/macro.ftl">
+<#include "./module/comment.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
@@ -33,7 +34,7 @@
     <#if settings.disqus??>
       <div id="disqus_thread"></div>
     <#else>
-      <@global.comment target=post type="post" />
+      <@comment target=post type="post" />
     </#if>
   </article>
 
