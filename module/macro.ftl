@@ -107,6 +107,7 @@
   <script src="${theme_base!}/js/main.js"></script>
   <!-- fontawesome -->
   <script src="${theme_base!}/lib/font-awesome/js/fontawesome.js"></script>
+  <script src="${theme_base!}/lib/font-awesome/js/solid.js"></script>
 
   <#if settings.disqus?? && (is_post?? || is_sheet?? || is_journals??)>
     <script id="dsq-count-scr" src="//${settings.disqus!}.disqus.com/count.js" async></script>

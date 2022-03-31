@@ -1,4 +1,3 @@
-<script src="${theme_base!}/lib/font-awesome/js/solid.js"></script>
 <script src="${theme_base!}/lib/font-awesome/js/brands.js"></script>
 <div id="header-post">
   <a id="menu-icon" href="#">
@@ -67,8 +66,8 @@
                href="http://www.facebook.com/sharer.php?u=${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-facebook " aria-hidden="true"></i></a></li>
         <li><a class="icon"
-               href="https://twitter.com/share?url=${post.fullPath!}&amp;title=${post.title!}"><i
-                    class="fab fa-twitter " aria-hidden="true"></i></a></li>
+               href="https://twitter.com/share?url=${post.fullPath!}&amp;title=${post.title!}">
+            <i class="fab fa-twitter"aria-hidden="true"></i></a></li>
         <li><a class="icon"
                href="http://www.linkedin.com/shareArticle?url=${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-linkedin " aria-hidden="true"></i></a></li>
