@@ -1,8 +1,11 @@
+<script src="${theme_base!}/lib/font-awesome/js/solid.js"></script>
+<script src="${theme_base!}/lib/font-awesome/js/brands.js"></script>
 <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon" href="#">
+    <i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
-     style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+     style="display:none;"><i class="fa-brands fa-chevron-up fa-lg"></i></a>
   <span id="menu" style="visibility: hidden">
       <span id="nav">
           <@menuTag method="list">
@@ -81,9 +84,9 @@
         <li><a class="icon"
                href="${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-reddit " aria-hidden="true"></i></a></li>
-        <li><a class="icon"
-               href="${post.fullPath!}&amp;title=${post.title!}><i
-                    class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+        <li>
+          <a class="icon" href="${post.fullPath!}&amp;title=${post.title!}">
+               <i class="fab fa-stumbleupon" aria-hidden="true"></i></a></li>
         <li><a class="icon"
                href="${post.fullPath!}&amp;title=${post.title!}"><i
                     class="fab fa-digg " aria-hidden="true"></i></a></li>

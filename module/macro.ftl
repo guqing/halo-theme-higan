@@ -93,8 +93,6 @@
     </footer>
   </div>
   <!-- styles -->
-  <link rel="stylesheet" href="${theme_base!}/lib/font-awesome/css/all.min.css"/>
-  <link rel="stylesheet" href="${theme_base!}/lib/font-awesome/css/brands.min.css"/>
   <link
           rel="stylesheet"
           href="${theme_base!}/lib/justified-gallery/css/justifiedGallery.min.css"
@@ -107,6 +105,9 @@
   <script src="${theme_base!}/lib/clipboard/clipboard.min.js"></script>
 
   <script src="${theme_base!}/js/main.js"></script>
+  <!-- fontawesome -->
+  <script src="${theme_base!}/lib/font-awesome/js/fontawesome.js"></script>
+
   <#if settings.disqus?? && (is_post?? || is_sheet?? || is_journals??)>
     <script id="dsq-count-scr" src="//${settings.disqus!}.disqus.com/count.js" async></script>
     <script>

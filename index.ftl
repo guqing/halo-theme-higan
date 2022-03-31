@@ -1,6 +1,6 @@
 <#include "./module/macro.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
-
+    <script src="${theme_base!}/lib/font-awesome/js/brands.js"></script>
     <section id="about">
         <#if settings.hitokoto!>
             <p id="hitokoto"></p>
