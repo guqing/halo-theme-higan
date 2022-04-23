@@ -7,9 +7,9 @@
           ${post.title!}
       </h1>
       <div class="meta">
-                <span class="author" itemprop="author" itemscope>
-                    <span itemprop="name">${user.nickname!}</span>
-                </span>
+        <span class="author" itemprop="author" itemscope>
+           <span itemprop="name">${user.nickname!}</span>
+        </span>
 
         <div class="postdate">
           <time datetime="${post.editTime!}" itemprop="datePublished">
