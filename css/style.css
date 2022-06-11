@@ -1865,6 +1865,60 @@ article .content .caption {
 }
 /*图库页面样式结束*/
 
+/*友链页面样式开始*/
+#links li {
+  list-style: none;
+}
+
+#links a {
+  text-decoration: none;
+  background-image: none;
+}
+
+#links a:hover {
+  text-decoration: none;
+  background-image: none;
+}
+
+#links .fir-clickcircle {
+  height: 80px;
+  width: 80px;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+#links .fir-image-figure {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  position: relative;
+  text-decoration: none;
+}
+
+#links .fir-image-figure .caption, .fir-image-figure figcaption {
+  padding-left: 15px;
+}
+
+#links html.wf-active .fir-image-figure .fig-author-figure-title {
+  font-family: var(--fir-font-header);
+  font-size: 16px;
+}
+
+#links.fir-image-figure .fig-author-figure-title {
+  color: var(--fir-color-grey);
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+#links .fir-imageover {
+  position: relative;
+  display: flex;
+}
+/*友链页面样式结束*/
+
 .highlight {
   background: #474949;
   color: #d1d9e1;
