@@ -11,6 +11,7 @@ if (!!$.prototype.justifiedGallery) {
 }
 
 $(document).ready(function () {
+  handlePreviewImage();
 
   /**
    * Shows the responsive navigation menu on mobile.
@@ -111,3 +112,23 @@ $(document).ready(function () {
     }
   }
 });
+
+function handlePreviewImage() {
+  const contentImgDom = $("article img");
+  contentImgDom.attr("title", "点击预览").css("cursor", "pointer")
+
+
+  contentImgDom.on("click", function (evt) {
+    const imgSrc = $(this).attr('src')
+    const imgAlt = $(this).attr("alt")
+
+    const imgPreviewDom = $("#img-preview-overlay")
+    imgPreviewDom.addClass("show-preview-img-overlay")
+    imgPreviewDom.html("<img src='" + imgSrc + "' alt='"+imgAlt+"' />");
+  })
+}
+
+function cancelImagePreview() {
+  $("#img-preview-overlay").addClass("hidden-preview-img-overlay")
+    .removeClass("show-preview-img-overlay")
+}
