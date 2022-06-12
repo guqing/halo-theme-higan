@@ -1917,6 +1917,23 @@ article .content .caption {
   display: flex;
 }
 /*友链页面样式结束*/
+
+/*日志样式开始*/
+.journal .journal-comment {
+  display: none;
+}
+.journal .journal-comment:target {
+  display: block;
+}
+.journal .post-list a{
+  text-decoration: none;
+  background: none;
+}
+.journal .post-list .operation {
+  color: var(--color-text);
+}
+/*日志样式结束*/
+
 /*图片预览样式开始*/
 #img-preview-overlay {
   position: fixed;
