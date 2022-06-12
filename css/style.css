@@ -1868,6 +1868,8 @@ article .content .caption {
 /*友链页面样式开始*/
 #links li {
   list-style: none;
+  font-family: "Menlo", "Meslo LG", monospace, sans-serif;
+  color: var(--color-text);
 }
 
 #links a {
@@ -1881,9 +1883,10 @@ article .content .caption {
 }
 
 #links .fir-clickcircle {
-  height: 80px;
-  width: 80px;
+  height: 60px;
+  width: 60px;
   border-radius: 100px;
+  border: 1px solid #F0F1F1;
   cursor: pointer;
 }
 
@@ -1900,17 +1903,13 @@ article .content .caption {
   padding-left: 15px;
 }
 
-#links html.wf-active .fir-image-figure .fig-author-figure-title {
-  font-family: "Menlo", "Meslo LG", monospace, serif;
-  font-size: 16px;
+#links .fir-image-figure .fig-author-figure-title {
+  font-weight: 400;
 }
 
-#links.fir-image-figure .fig-author-figure-title {
-  color: var(--fir-color-grey);
-  font-family: "HelveticaNeue-Light", "Menlo", "Meslo LG", monospace, sans-serif;
-  font-weight: 500;
-  font-size: 15px;
+#links .fir-image-figure .fig-author-figure-description {
   margin-top: 2px;
+  color: #666;
 }
 
 #links .fir-imageover {

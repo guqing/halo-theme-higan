@@ -8,11 +8,10 @@
                 <a class="fir-image-figure" rel="noopener" target="_blank" href="${link.url!}">
                   <figure class="fir-imageover ">
                     <img class="fir-author-image fir-clickcircle" src="${link.logo!}"
-                         alt="David East - Author">
+                         alt="${link.name!}">
                     <figcaption>
                       <div class="fig-author-figure-title">${link.name!}</div>
-                      <div class="fig-author-figure-title">${link.description!}.</div>
-                      <div class="fig-author-figure-title">Jan. 16th, 2017 &#8212; 5m read</div>
+                      <div class="fig-author-figure-description">${link.description!}.</div>
                     </figcaption>
                   </figure>
                 </a>
