@@ -1,3 +1,19 @@
+/*iconify样式开始*/
+.iconify {
+  font-size: 1rem;
+  text-align: center;
+  vertical-align: middle;
+  color: var(--color-text);
+}
+.iconify-middle {
+  font-size: 1.2rem;
+}
+.iconify-large {
+  font-size: 1.5rem;
+}
+/*iconify样式结束*/
+
+/*初始化样式*/
 .inline {
   display: inline;
 }
@@ -1932,6 +1948,7 @@ article .content .caption {
 .journal .post-list .operation {
   color: var(--color-text);
 }
+
 /*日志样式结束*/
 
 /*图片预览样式开始*/

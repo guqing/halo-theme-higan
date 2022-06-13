@@ -27,9 +27,9 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="${theme_base!}/css/colors/${settings.theme_color!}.css"/>
-    <link rel="stylesheet" href="${theme_base!}/css/style.css?version=${theme.version!}"/>
+    <link rel="stylesheet" href="${theme_base!}/dist/style.css?version=${theme.version!}"/>
     <!-- persian styles -->
-    <link rel="stylesheet" href="${theme_base!}/css/rtl.css?version=${theme.version!}"/>
+<#--    <link rel="stylesheet" href="${theme_base!}/css/rtl.css?version=${theme.version!}"/>-->
     <title>${title}</title>
   </head>
   <body>
@@ -106,7 +106,7 @@
     <!-- clipboard -->
     <script src="${theme_base!}/lib/clipboard/clipboard.min.js"></script>
 
-    <script src="${theme_base!}/js/main.js?version=${theme.version!}"></script>
+    <script src="${theme_base!}/dist/main.umd.js?version=${theme.version!}"></script>
     <!-- fontawesome -->
     <script src="${theme_base!}/lib/font-awesome/js/fontawesome.js"></script>
     <script src="${theme_base!}/lib/font-awesome/js/solid.js"></script>
