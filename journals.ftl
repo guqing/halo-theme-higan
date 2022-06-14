@@ -1,6 +1,9 @@
 <#include "module/macro.ftl">
 <#include "./module/comment.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+
+  <link rel="stylesheet" href="${theme_base!}/css/codehls/${settings.code_style!}.css">
+
   <article class="journal" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="content">
       <ul class="post-list">
@@ -18,11 +21,7 @@
                   <span>${journal.commentCount!}</span>
                 </a>
                 <div id="journal-comment-${journal.id}" class="journal-comment">
-                    <#if settings.disqus??>
-                      <div id="disqus_thread"></div>
-                    <#else>
-                        <@comment target=journal type="journal" />
-                    </#if>
+                    <@comment target=journal type="journal" />
                 </div>
               </div>
             </li>

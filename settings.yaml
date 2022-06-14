@@ -99,7 +99,7 @@ style:
     icon:
       name: icon
       label: 右上角图标
-      type: text
+      type: attachment
       default: "/avatar"
     post_title_uppper:
       name: post_title_uppper
@@ -145,8 +145,3 @@ style:
           label: 开启
         - value: false
           label: 关闭
-    disqus:
-      name: disqus
-      label: 开启 disqus 评论
-      type: text
-      placeholder: 填写 disqus 获取的 shortname 以启用它

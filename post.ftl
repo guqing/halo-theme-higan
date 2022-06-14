@@ -1,6 +1,9 @@
 <#include "./module/macro.ftl">
 <#include "./module/comment.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+
+  <link rel="stylesheet" href="${theme_base!}/css/codehls/${settings.code_style!}.css">
+
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
@@ -31,17 +34,15 @@
     <div class="content" itemprop="articleBody">
         ${post.formatContent!}
     </div>
-    <#if settings.disqus??>
-      <div id="disqus_thread"></div>
-    <#else>
-      <@comment target=post type="post" />
-    </#if>
+    <@comment target=post type="post" />
   </article>
 
   <script src="${theme_base!}/lib/jquery/jquery.min.js"></script>
   <script src="${theme_base!}/js/highlight.min.js"></script>
   <link rel="stylesheet" href="${theme_base!}/lib/tocbot/tocbot.css">
   <script src="${theme_base!}/lib/tocbot/tocbot.min.js"></script>
+  <!-- clipboard -->
+  <script src="${theme_base!}/lib/clipboard/clipboard.min.js"></script>
   <script type="text/javascript">
     $(function () {
 

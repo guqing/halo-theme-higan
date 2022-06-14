@@ -25,7 +25,7 @@
 
     });
     $inputArea.keydown(function(e) {
-      if (e.which == 13) {
+      if (e.which === 13) {
         var keyword = $inputArea.val();
         console.log("搜索关键字：" + keyword)
         e.preventDefault();
