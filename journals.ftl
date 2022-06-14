@@ -1,6 +1,5 @@
 <#include "module/macro.ftl">
 <#include "./module/comment.ftl">
-<script src="${theme_base!}/lib/font-awesome/js/brands.js"></script>
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
   <article class="journal" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="content">
@@ -11,11 +10,11 @@
                 ${journal.content!}
               <div class="operation">
                 <a href="javascript:handleLike(${journal.id?c})" data-journal-id="${journal.id?c}">
-                  <i class="fa-brands fa-gratipay"></i>
+                  <i class="iconify" data-icon="mdi:cards-heart-outline"></i>
                   <span data-journal-id="${journal.id?c}">${journal.likes!}</span>
                 </a>
                 <a href="#journal-comment-${journal.id}" style="margin-left: 5px">
-                  <i class="fa-solid fa-comment-dots"></i>
+                  <i class="iconify" data-icon="mdi:comment-outline"></i>
                   <span>${journal.commentCount!}</span>
                 </a>
                 <div id="journal-comment-${journal.id}" class="journal-comment">

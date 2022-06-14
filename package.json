@@ -1,0 +1,27 @@
+{
+  "name": "@guching/halo-theme-higan",
+  "version": "1.0.2",
+  "description": "Halo theme named higan",
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vite build"
+  },
+  "author": "@guqing",
+  "license": "ISC",
+  "repository": "git@github.com:guqing/halo-theme-higan.git",
+  "devDependencies": {
+    "@iconify/json": "^2.1.47",
+    "@types/node": "^16.11.36",
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "rollup": "^2.75.6",
+    "rollup-plugin-watch": "^1.0.1",
+    "sass": "^1.52.1",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.9",
+    "vite-plugin-purge-icons": "^0.8.1"
+  },
+  "dependencies": {
+    "@iconify/iconify": "^2.2.1"
+  }
+}

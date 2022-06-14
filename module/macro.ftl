@@ -27,14 +27,14 @@
 
     <!-- styles -->
     <link rel="stylesheet" href="${theme_base!}/css/colors/${settings.theme_color!}.css"/>
-    <link rel="stylesheet" href="${theme_base!}/css/style.css?version=${theme.version!}"/>
+    <link rel="stylesheet" href="${theme_base!}/dist/style.css?version=${theme.version!}"/>
     <!-- persian styles -->
-    <link rel="stylesheet" href="${theme_base!}/css/rtl.css?version=${theme.version!}"/>
+<#--    <link rel="stylesheet" href="${theme_base!}/css/rtl.css?version=${theme.version!}"/>-->
     <title>${title}</title>
   </head>
   <body>
   <!-- 图片预览遮罩层占位 -->
-  <div id="img-preview-overlay" class="hidden-preview-img-overlay" onclick="cancelImagePreview()"></div>
+  <div id="img-preview-overlay" class="hidden-preview-img-overlay"></div>
   <div class="max-width mx-auto px3 ltr">
       <#if is_post??>
           <#include "./post_nav.ftl"/>
@@ -55,7 +55,7 @@
             <div id="nav">
               <ul>
                 <li class="icon">
-                  <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+                  <a href="#"><i class="iconify iconify-middle" data-icon="material-symbols:menu"></i></a>
                 </li>
 
                   <@menuTag method="list">
@@ -106,10 +106,7 @@
     <!-- clipboard -->
     <script src="${theme_base!}/lib/clipboard/clipboard.min.js"></script>
 
-    <script src="${theme_base!}/js/main.js?version=${theme.version!}"></script>
-    <!-- fontawesome -->
-    <script src="${theme_base!}/lib/font-awesome/js/fontawesome.js"></script>
-    <script src="${theme_base!}/lib/font-awesome/js/solid.js"></script>
+    <script src="${theme_base!}/dist/main.umd.js?version=${theme.version!}"></script>
 
       <#if settings.disqus?? && (is_post?? || is_sheet?? || is_journals??)>
         <script id="dsq-count-scr" src="//${settings.disqus!}.disqus.com/count.js" async></script>

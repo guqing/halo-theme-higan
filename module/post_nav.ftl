@@ -1,10 +1,10 @@
-<script src="${theme_base!}/lib/font-awesome/js/brands.js"></script>
 <div id="header-post">
   <a id="menu-icon" href="#">
-    <i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fa-solid fa-bars fa-lg"></i></a>
+    <i class="iconify iconify-middle" data-icon="material-symbols:menu"></i>
+  </a>
+  <a id="menu-icon-tablet" href="#"><i class="iconify iconify-middle" data-icon="material-symbols:menu"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
-     style="display:none;"><i class="fa-brands fa-chevron-up fa-lg"></i></a>
+     style="display:none;"><i class="iconify iconify-middle material-symbols:keyboard-arrow-up"></i></a>
   <span id="menu" style="visibility: hidden">
       <span id="nav">
           <@menuTag method="list">
@@ -22,33 +22,39 @@
         <#if prevPost??>
            <li>
              <a class="icon" href="${prevPost.fullPath!}">
-              <i
-                      class="fas fa-chevron-left"
-                      aria-hidden="true"
-                      onmouseover="$('#i-prev').toggle();"
-                      onmouseout="$('#i-prev').toggle();">
-              </i>
+               <i class="iconify iconify-large"
+                  data-icon="mdi:chevron-left"
+                  onmouseover="$('#i-prev').toggle();"
+                  onmouseout="$('#i-prev').toggle();"
+               ></i>
              </a>
            </li>
          </#if>
             <#if nextPost??>
               <li>
             <a class="icon" href="${nextPost.fullPath!}">
-              <i
-                      class="fas fa-chevron-right"
-                      aria-hidden="true"
-                      onmouseover="$('#i-next').toggle();"
-                      onmouseout="$('#i-next').toggle();">
-              </i>
+              <i class="iconify iconify-large"
+                 data-icon="ic:round-chevron-right"
+                 onmouseover="$('#i-next').toggle();"
+                 onmouseout="$('#i-next').toggle();"
+              ></i>
             </a>
             </li>
             </#if>
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i
-                    class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();"
-                    onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true"
-                                        onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
-                                        onclick="$('#share').toggle();return false;"></i></a></li>
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+            <i class="iconify iconify-large"
+               data-icon="material-symbols:keyboard-arrow-up"
+               onmouseover="$('#i-top').toggle();"
+               onmouseout="$('#i-top').toggle();"
+            ></i>
+          </a></li>
+        <li><a class="icon" href="#">
+            <i class="iconify iconify-middle"
+               data-icon="mdi:share-variant-outline"
+               onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+               onclick="$('#share').toggle();return false;"
+            ></i>
+          </a></li>
         </ul>
         <#if prevPost??>
           <span id="i-prev" class="info" style="display:none;">Previous post</span>
@@ -63,38 +69,37 @@
     <div id="share" style="display: none">
       <ul>
         <li><a class="icon"
-               href="http://www.facebook.com/sharer.php?u=${post.fullPath!}&amp;title=${post.title!}"><i
-                    class="fab fa-facebook " aria-hidden="true"></i></a></li>
+               href="http://www.facebook.com/sharer.php?u=${post.fullPath!}&amp;title=${post.title!}">
+            <i class="iconify" data-icon="ic:baseline-facebook"></i></a></li>
         <li><a class="icon"
                href="https://twitter.com/share?url=${post.fullPath!}&amp;title=${post.title!}">
-            <i class="fab fa-twitter"aria-hidden="true"></i></a></li>
+            <i class="iconify" data-icon="mdi:twitter-circle"></i></a></li>
         <li><a class="icon"
-               href="http://www.linkedin.com/shareArticle?url=${post.fullPath!}&amp;title=${post.title!}"><i
-                    class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+               href="http://www.linkedin.com/shareArticle?url=${post.fullPath!}&amp;title=${post.title!}">
+            <i class="iconify" data-icon="mdi:linkedin"></i></a></li>
         <li><a class="icon"
-               href="https://pinterest.com/pin/create/bookmarklet/?url=${post.fullPath!}&amp;title=${post.title!}"><i
-                    class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+               href="https://pinterest.com/pin/create/bookmarklet/?url=${post.fullPath!}&amp;title=${post.title!}">
+            <i class="iconify" data-icon="mdi:pinterest"></i></a></li>
         <li><a class="icon"
-               href="mailto:?subject=${post.title!}&amp;body=Check out this article: ${post.fullPath!}"><i
-                    class="fas fa-envelope " aria-hidden="true"></i></a></li>
+               href="mailto:?subject=${post.title!}&amp;body=Check out this article: ${post.fullPath!}">
+            <i class="iconify" data-icon="ph:envelope-simple-bold"></i></a></li>
         <li><a class="icon"
-               href="${post.fullPath!}&amp;title=${post.title!}"><i
-                    class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+               href="${post.fullPath!}&amp;title=${post.title!}">
+            <i class="iconify" data-icon="mdi:pocket"></i></a></li>
         <li><a class="icon"
-               href="${post.fullPath!}&amp;title=${post.title!}"><i
-                    class="fab fa-reddit " aria-hidden="true"></i></a></li>
+               href="${post.fullPath!}&amp;title=${post.title!}">
+            <i class="iconify" data-icon="ic:baseline-reddit"></i></a></li>
         <li>
           <a class="icon" href="${post.fullPath!}&amp;title=${post.title!}">
-               <i class="fab fa-stumbleupon" aria-hidden="true"></i></a></li>
+            <i class="iconify" data-icon="carbon:logo-stumbleupon"></i>
+          </a></li>
+        <li><a class="icon" href="${post.fullPath!}&amp;title=${post.title!}">
+            <i class="iconify" data-icon="fa-brands:digg"></i>
+          </a></li>
         <li><a class="icon"
-               href="${post.fullPath!}&amp;title=${post.title!}"><i
-                    class="fab fa-digg " aria-hidden="true"></i></a></li>
-        <li><a class="icon"
-               href="${post.fullPath!}&amp;title=${post.title!}&amp;description=${post.summary!}"><i
-                    class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-        <li><a class="icon"
-               href="${post.fullPath!}&amp;title=${post.title!}"><i
-                    class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+               href="${post.fullPath!}&amp;title=${post.title!}">
+            <i class="iconify" data-icon="fa-brands:hacker-news"></i>
+          </a></li>
       </ul>
     </div>
     <div id="toc"></div>

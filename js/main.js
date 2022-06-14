@@ -13,6 +13,11 @@ if (!!$.prototype.justifiedGallery) {
 $(document).ready(function () {
   handlePreviewImage();
 
+  $("#img-preview-overlay").on("click", function (event) {
+    $(this).addClass("hidden-preview-img-overlay")
+      .removeClass("show-preview-img-overlay")
+  });
+
   /**
    * Shows the responsive navigation menu on mobile.
    */
@@ -126,9 +131,4 @@ function handlePreviewImage() {
     imgPreviewDom.addClass("show-preview-img-overlay")
     imgPreviewDom.html("<img src='" + imgSrc + "' alt='"+imgAlt+"' />");
   })
-}
-
-function cancelImagePreview() {
-  $("#img-preview-overlay").addClass("hidden-preview-img-overlay")
-    .removeClass("show-preview-img-overlay")
 }
