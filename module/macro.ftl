@@ -34,7 +34,7 @@
   </head>
   <body>
   <!-- 图片预览遮罩层占位 -->
-  <div id="img-preview-overlay" class="hidden-preview-img-overlay" onclick="cancelImagePreview()"></div>
+  <div id="img-preview-overlay" class="hidden-preview-img-overlay"></div>
   <div class="max-width mx-auto px3 ltr">
       <#if is_post??>
           <#include "./post_nav.ftl"/>

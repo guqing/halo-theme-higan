@@ -14,7 +14,6 @@
                   <span data-journal-id="${journal.id?c}">${journal.likes!}</span>
                 </a>
                 <a href="#journal-comment-${journal.id}" style="margin-left: 5px">
-<#--                  <i class="fa-solid fa-comment-dots"></i>-->
                   <i class="iconify" data-icon="mdi:comment-outline"></i>
                   <span>${journal.commentCount!}</span>
                 </a>
