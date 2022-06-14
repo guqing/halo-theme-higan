@@ -55,7 +55,7 @@
             <div id="nav">
               <ul>
                 <li class="icon">
-                  <a href="#"><i class="fas fa-bars fa-2x"></i></a>
+                  <a href="#"><i class="iconify iconify-middle" data-icon="material-symbols:menu"></i></a>
                 </li>
 
                   <@menuTag method="list">
@@ -107,9 +107,6 @@
     <script src="${theme_base!}/lib/clipboard/clipboard.min.js"></script>
 
     <script src="${theme_base!}/dist/main.umd.js?version=${theme.version!}"></script>
-    <!-- fontawesome -->
-    <script src="${theme_base!}/lib/font-awesome/js/fontawesome.js"></script>
-    <script src="${theme_base!}/lib/font-awesome/js/solid.js"></script>
 
       <#if settings.disqus?? && (is_post?? || is_sheet?? || is_journals??)>
         <script id="dsq-count-scr" src="//${settings.disqus!}.disqus.com/count.js" async></script>

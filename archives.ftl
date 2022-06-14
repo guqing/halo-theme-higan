@@ -21,11 +21,13 @@
       <div class="pagination">
           <@paginationTag method="archives" page="${posts.number}" total="${posts.totalPages}" display="${options.post_archives_page_size}">
               <#if posts.hasPrevious()>
-                <a href="${pagination.prevPageFullPath!}"><i class="fa fa-angle-left"></i></a>
+                <a href="${pagination.prevPageFullPath!}">
+                  <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i></a>
               </#if>
             <span class="page-number">Page ${posts.number + 1} of ${posts.getTotalPages()}</span>
               <#if posts.hasNext()>
-                <a href="${pagination.nextPageFullPath!}"><i class="fa fa-angle-right"></i></a>
+                <a href="${pagination.nextPageFullPath!}">
+                  <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i></a>
               </#if>
           </@paginationTag>
       </div>

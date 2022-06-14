@@ -18,11 +18,13 @@
       <div class="pagination">
           <@paginationTag method="photos" page="${photos.number}" total="${photos.totalPages}" display="${options.photos_page_size}">
               <#if photos.hasPrevious()>
-                <a href="${pagination.prevPageFullPath!}"><i class="fa fa-angle-left"></i></a>
+                <a href="${pagination.prevPageFullPath!}">
+                  <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i></a>
               </#if>
             <span class="page-number">Page ${photos.number + 1} of ${photos.getTotalPages()}</span>
               <#if photos.hasNext()>
-                <a href="${pagination.nextPageFullPath!}"><i class="fa fa-angle-right"></i></a>
+                <a href="${pagination.nextPageFullPath!}">
+                  <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i></a>
               </#if>
           </@paginationTag>
       </div>

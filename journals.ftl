@@ -1,6 +1,5 @@
 <#include "module/macro.ftl">
 <#include "./module/comment.ftl">
-<script src="${theme_base!}/lib/font-awesome/js/brands.js"></script>
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
   <article class="journal" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="content">

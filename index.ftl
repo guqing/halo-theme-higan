@@ -1,6 +1,5 @@
 <#include "./module/macro.ftl">
 <@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
-    <script src="${theme_base!}/lib/font-awesome/js/brands.js"></script>
     <section id="about">
         <#if settings.hitokoto!>
             <p id="hitokoto"></p>
@@ -13,54 +12,54 @@
             Find me on
             <#if settings.rss>
                 <a class="icon" target="_blank" href="${blog_url!}/rss.xml">
-                    <i class="fa fa-rss"></i>
+                    <i class="iconify iconify-middle" data-icon="heroicons-outline:rss"></i>
                 </a>
             </#if>
             <#if settings.twitter??>
                 <a class="icon" target="_blank" href="https://twitter.com/${settings.twitter}">
-                    <i class="fa fa-brands fa-twitter"></i>
+                    <i class="iconify iconify-middle" data-icon="mdi:twitter"></i>
                 </a>
             </#if>
             <#if settings.facebook??>
                 <a class="icon" target="_blank" href="https://www.facebook.com/${settings.facebook}">
-                    <i class="fa fa-brands fa-facebook"></i>
+                    <i class="iconify iconify-middle" data-icon="ic:baseline-facebook"></i>
                 </a>
             </#if>
             <#if settings.instagram??>
                 <a class="icon" target="_blank" href="https://www.instagram.com/${settings.instagram}">
-                    <i class="fa fa-brands fa-instagram"></i>
+                    <i class="iconify iconify-middle" data-icon="mdi:instagram"></i>
                 </a>
             </#if>
             <#if settings.dribbble??>
                 <a class="icon" target="_blank" href="https://dribbble.com/${settings.dribbble}">
-                    <i class="fa fa-brands fa-dribbble"></i>
+                    <i class="iconify iconify-middle" data-icon="mdi:dribbble"></i>
                 </a>
             </#if>
 
             <#if settings.weibo??>
                 <a class="icon" target="_blank" href="https://weibo.com/${settings.weibo}">
-                    <i class="fa-brands fa-weibo"></i>
+                    <i class="iconify iconify-middle" data-icon="mdi:sina-weibo"></i>
                 </a>
             </#if>
             <#if settings.qq??>
                 <a class="icon" target="_blank" href="tencent://message/?uin=${settings.qq}&Site=&Menu=yes">
-                    <i class="fa fa-brands fa-qq"></i>
+                    <i class="iconify iconify-middle" data-icon="ant-design:qq-circle-filled"></i>
                 </a>
             </#if>
 
             <#if settings.telegram??>
                 <a class="icon" target="_blank" href="https://t.me/${settings.telegram}">
-                    <i class="fa fa-brands fa-telegram"></i>
+                    <i class="iconify iconify-middle" data-icon="ic:baseline-telegram"></i>
                 </a>
             </#if>
             <#if settings.email??>
                 <a class="icon" target="_blank" href="mailto:${settings.email}">
-                    <i class="fa fa-envelope"></i>
+                    <i class="iconify iconify-middle" data-icon="ph:envelope-simple-bold"></i>
                 </a>
             </#if>
             <#if settings.github??>
                 <a class="icon" target="_blank" href="https://github.com/${settings.github}">
-                    <i class="fa fa-brands fa-github"></i>
+                    <i class="iconify iconify-middle" data-icon="mdi:github"></i>
                 </a>
             </#if>
         </p>
