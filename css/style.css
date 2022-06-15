@@ -568,14 +568,6 @@ body td {
     border-bottom: none;
 }
 
-@font-face {
-    font-style: normal;
-    font-family: "Meslo LG";
-    src: local("Meslo LG S"),
-    url("../lib/meslo-LG/MesloLGS-Regular.ttf") format("truetype");
-    font-display: swap;
-}
-
 *,
 *:before,
 *:after {
@@ -596,10 +588,9 @@ body {
     height: 100%;
     background-color: var(--color-background);
     color: var(--color-text);
-    font-display: swap;
     font-weight: 400;
     font-size: 14px;
-    font-family: "Menlo", "Meslo LG", monospace;
+    font-family: "Menlo", "Meslo LG", monospace, "arial", "Georgia", sans-serif;
     line-height: 1.725;
     text-rendering: geometricPrecision;
     flex: 1;
@@ -796,6 +787,7 @@ body {
     color: var(--color-accent-1);
     letter-spacing: 0.01em;
     font-style: normal;
+    font-weight: 400;
     font-size: 0.8rem;
 }
 
@@ -808,6 +800,7 @@ body {
 
 #header #nav ul a {
     margin-right: 15px;
+    font-size: 14px;
     color: var(--color-accent-1);
 }
 
@@ -1599,7 +1592,7 @@ article .content .caption {
     color: #666;
     vertical-align: top;
     text-align: center;
-    font-size: 11px;
+    font-size: 12px;
 }
 
 #footer ul {
@@ -1771,10 +1764,9 @@ article .content .caption {
     padding: 0.2em 0.5em;
     -webkit-font-smoothing: subpixel-antialiased;
     color: var(--color-background);
-    font-display: swap;
     font-weight: 400;
     font-size: 11.200000000000001px;
-    font-family: "Menlo", "Meslo LG", monospace;
+    font-family: monospace, "arial", "Georgia", "serif";
     line-height: 1.725;
     text-rendering: geometricPrecision;
     text-align: center;
@@ -1911,7 +1903,7 @@ article .content .caption {
 /*友链页面样式开始*/
 #links li {
     list-style: none;
-    font-family: "Menlo", "Meslo LG", monospace, sans-serif;
+    font-family: "Menlo", "Meslo LG", monospace, monospace, "arial", "Georgia", sans-serif;
     color: var(--color-text);
 }
 
@@ -2102,7 +2094,7 @@ pre {
     border: 1px dotted #666;
     border-radius: 4px;
     font-size: 13px;
-    font-family: "Menlo", "Meslo LG", monospace;
+    font-family: "Menlo", "Meslo LG", monospace, monospace, "arial", "Georgia", sans-serif;
     line-height: 22px;
     -webkit-border-radius: 4px;
 }
@@ -2125,7 +2117,7 @@ code {
     margin: 0;
     border-radius: 4px;
     background: #212326;
-    font-family: "Menlo", "Meslo LG", monospace;
+    font-family: "Menlo", "Meslo LG", monospace, monospace, "arial", "Georgia", sans-serif;
     -webkit-border-radius: 4px;
 }
 

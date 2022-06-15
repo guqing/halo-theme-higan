@@ -66,7 +66,7 @@
     </section>
 
     <section id="writing">
-        <span class="h1"><a href="${blog_url!}'/archives'">Writing</a></span>
+        <span class="h1"><a href="${blog_url!}/archives">Writing</a></span>
 
         <@postTag method="latest" top="10">
             <ul class="post-list">
