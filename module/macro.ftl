@@ -72,7 +72,9 @@
 
             <footer id="footer">
                 <div style="flex: 1">
-                    <div class="footer-left">Theme is ${theme.name} by ${theme.author.name}
+                    <div class="footer-left">Theme is
+                        <a href="https://github.com/guqing/halo-theme-higan">${theme.name}</a>
+                        by <a href="https://guqing.xyz">${theme.author.name}</a>
                         Powered by Halo
                         © <span id="site_date">${.now?string('yyyy')}</span> ${options.blog_title!}</div>
                     <div class="footer-right">
