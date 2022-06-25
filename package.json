@@ -1,6 +1,6 @@
 {
   "name": "@guching/halo-theme-higan",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Halo theme named higan",
   "scripts": {
     "dev": "vite build --watch",
