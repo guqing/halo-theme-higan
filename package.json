@@ -1,27 +1,54 @@
 {
-  "name": "@guching/halo-theme-higan",
-  "version": "1.0.0",
-  "description": "Halo theme named higan",
+  "name": "@halo-dev/theme-vite-starter",
+  "private": true,
+  "version": "0.0.0",
+  "description": "A development starter theme with Vite Ecosystem for Halo",
   "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint ./src --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
+    "prettier": "prettier --write './src/**/*.{js,ts,css,json,ml,yaml,html}' './templates/**/*.html'"
   },
-  "author": "@guqing",
-  "license": "ISC",
-  "repository": "git@github.com:guqing/halo-theme-higan.git",
+  "keywords": [
+    "halo",
+    "halo-theme"
+  ],
+  "homepage": "https://github.com/halo-sigs/theme-vite-starter#readme",
+  "bugs": {
+    "url": "https://github.com/halo-sigs/theme-vite-starter/issues"
+  },
+  "author": {
+    "name": "Halo OSS Organization",
+    "url": "https://github.com/halo-dev",
+    "email": "hi@halo.run"
+  },
+  "maintainers": [
+    {
+      "name": "Ryan Wang",
+      "url": "https://github.com/ruibaby",
+      "email": "i@ryanc.cc"
+    }
+  ],
+  "license": "GPL-3.0",
+  "repository": {
+    "url": "https://github.com/halo-sigs/theme-vite-starter",
+    "type": "git"
+  },
   "devDependencies": {
-    "@iconify/json": "^2.1.47",
-    "@types/node": "^16.11.36",
-    "autoprefixer": "^10.4.7",
-    "postcss": "^8.4.14",
-    "rollup": "^2.75.6",
-    "rollup-plugin-watch": "^1.0.1",
-    "sass": "^1.52.1",
+    "@iconify/json": "^2.1.127",
+    "@types/node": "16",
+    "@typescript-eslint/eslint-plugin": "^5.39.0",
+    "@typescript-eslint/parser": "^5.39.0",
+    "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "typescript": "^4.6.4",
-    "vite": "^2.9.9",
-    "vite-plugin-purge-icons": "^0.8.1"
+    "vite": "^3.1.8",
+    "vite-plugin-purge-icons": "^0.9.1"
   },
   "dependencies": {
-    "@iconify/iconify": "^2.2.1"
+    "@iconify/iconify": "^2.2.1",
+    "@purge-icons/generated": "^0.9.0"
   }
 }

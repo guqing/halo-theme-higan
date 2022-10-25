@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="fragments/layout :: html(content = ~{::content}, header = ~{}, navbar = ~{fragments/post-nav::navbar})"
+>
+  <th:block th:fragment="content">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline" th:text="${post.spec?.title}">post-title</h1>
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope th:each="contributor : ${post?.contributors}">
+            <span itemprop="name" th:text="${contributor?.displayName}">contributor displayName</span>
+          </span>
+
+          <div class="postdate">
+            <time
+              th:datetime="${post.spec?.publishTime}"
+              itemprop="datePublished"
+              th:text="${#temporals.format(post.spec?.publishTime, 'MMMM dd yyyy')}"
+            >
+              post publish time
+            </time>
+          </div>
+
+          <div class="article-tag" th:if="${!#lists.isEmpty(post.tags)}">
+            <i class="fas fa-tag"></i>
+            <th:block th:each="tag : ${post.tags}">
+              <a class="tag-link"
+                th:href="${tag.status?.permalink}"
+                th:text="${tag.spec?.displayName}">
+                post tag name
+              </a>
+            </th:block>
+          </div>
+        </div>
+      </header>
+
+      <div class="content" itemprop="articleBody" th:utext="${post.content?.content}">post formatted content</div>
+      <halo:comment group="content.halo.run" kind="Post" th:name="${post.metadata?.name}" />
+    </article>
+
+    <link rel="stylesheet" th:href="@{/assets/lib/tocbot/tocbot.css}" />
+    <script th:src="@{/assets/lib/tocbot/tocbot.min.js}"></script>
+    <!-- clipboard -->
+    <script th:src="@{/assets/lib/clipboard/clipboard.min.js}"></script>
+    <script type="text/javascript">
+      $(function () {
+
+        // mount it!
+        $(".content pre").wrap('<figure class="highlight"></figure>');
+        // copy-btn HTML
+        $(".content figure pre").before('<span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="far fa-clone"></i></span>');
+        // code highlight
+        document.querySelectorAll('pre code').forEach(el => {
+          hljs.highlightElement(el)
+        })
+
+        var clip = new ClipboardJS('.btn-copy', {
+          text: function (trigger) {
+            return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str, it) => str + it.innerText + '\n', '')
+          }
+        });
+        clip.on('success', function (e) {
+          e.trigger.setAttribute('aria-label', "Copied!");
+          e.clearSelection();
+        })
+
+        tocbot.init({
+          tocSelector: '#toc',
+          contentSelector: '.post .content',
+          // Main class to add to links.
+          linkClass: 'toc-link',
+          activeLinkClass: 'is-active-link toc-active-link'
+        });
+
+        const postTitleUpperCase = ${settings.post_title_uppper?c}
+        if(postTitleUpperCase) {
+          $(".post .posttitle").addClass("title-upper-case")
+        }
+
+      })
+    </script>
+  </th:block>
+</html>

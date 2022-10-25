@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})">
+  <th:block th:fragment="content">
+    <section id="about">
+      <th:block th:if="${theme.config?.styles?.hitokoto}"></th:block>
+      <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+      <p id="hitokoto"></p>
+    </section>
+
+    <p>
+      Find me on
+      <th:block th:with="sns=${theme?.config?.sns}">
+        <a class="icon" target="_blank" th:href="@{/rss.xml}" th:if="${theme?.config?.sns?.rss}">
+          <i class="iconify iconify-middle" data-icon="heroicons-outline:rss"></i>
+        </a>
+        <a
+          class="icon"
+          target="_blank"
+          th:href="@{'https://twitter.com/'+${sns?.twitter}}"
+          th:if="${not #strings.isEmpty(sns?.twitter)}"
+        >
+          <i class="iconify iconify-middle" data-icon="mdi:twitter"></i>
+        </a>
+        <a
+          class="icon"
+          target="_blank"
+          th:href="'https://www.facebook.com/'+${sns?.facebook}"
+          th:if="${not #strings.isEmpty(sns?.facebook)}"
+        >
+          <i class="iconify iconify-middle" data-icon="ic:baseline-facebook"></i>
+        </a>
+        <a
+          class="icon"
+          target="_blank"
+          th:href="'https://www.instagram.com/'+${sns?.instagram}"
+          th:if="${not #strings.isEmpty(sns?.instagram)}"
+        >
+          <i class="iconify iconify-middle" data-icon="mdi:instagram"></i>
+        </a>
+        <a
+          class="icon"
+          target="_blank"
+          th:href="'https://dribbble.com/'+${sns?.dribbble}"
+          th:if="${not #strings.isEmpty(sns?.dribbble)}"
+        >
+          <i class="iconify iconify-middle" data-icon="mdi:dribbble"></i>
+        </a>
+        <a
+          class="icon"
+          target="_blank"
+          th:href="'https://weibo.com/'+${sns?.weibo}"
+          th:if="${not #strings.isEmpty(sns?.weibo)}"
+        >
+          <i class="iconify iconify-middle" data-icon="mdi:weibo"></i>
+        </a>
+        <a
+          class="icon"
+          target="_blank"
+          th:href="'tencent://message/?uin='+${sns?.qq} + '&Site=&Menu=yes'"
+          th:if="${not #strings.isEmpty(sns?.qq)}"
+        >
+          <i class="iconify iconify-middle" data-icon="ant-design:qq-circle-filled"></i>
+        </a>
+        <a
+          class="icon"
+          target="_blank"
+          th:href="'https://t.me/'+${sns?.telegram}"
+          th:if="${not #strings.isEmpty(sns?.telegram)}"
+        >
+          <i class="iconify iconify-middle" data-icon="ic:baseline-telegram"></i>
+        </a>
+        <a class="icon" target="_blank" th:href="'mailto:'+${sns?.email}" th:if="${not #strings.isEmpty(sns?.email)}">
+          <i class="iconify iconify-middle" data-icon="ph:envelope-simple-bold"></i>
+        </a>
+        <a
+          class="icon"
+          target="_blank"
+          th:href="'https://github.com/'+${sns?.github}"
+          th:if="${not #strings.isEmpty(sns?.github)}"
+        >
+          <i class="iconify iconify-middle" data-icon="mdi:github"></i>
+        </a>
+      </th:block>
+    </p>
+
+    <section id="writing">
+      <span class="h1"><a th:href="@{/archives}">Writing</a></span>
+      <ul class="post-list">
+        <th:block th:with="posts=${postFinder.list(1, 10)}" th:each="item : ${posts.items}">
+          <li class="post-item">
+            <div class="meta">
+              <time
+                th:datetime="${item.spec?.publishTime}"
+                itemprop="datePublished"
+                th:text="${#temporals.format(item.metadata.creationTimestamp, 'MMMM dd yyyy')}"
+              >
+              </time>
+            </div>
+            <span>
+              <a th:href="${item.status?.permalink}" th:text="${item.spec.title}">文章标题</a>
+            </span>
+          </li>
+        </th:block>
+      </ul>
+    </section>
+  </th:block>
+</html>

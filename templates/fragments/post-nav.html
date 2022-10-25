@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:fragment="navbar">
+  <div id="header-post">
+    <a id="menu-icon" href="#">
+      <i class="iconify iconify-middle" data-icon="material-symbols:menu"></i>
+    </a>
+    <a id="menu-icon-tablet" href="#"><i class="iconify iconify-middle" data-icon="material-symbols:menu"></i></a>
+    <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display: none"
+      ><i class="iconify iconify-middle material-symbols:keyboard-arrow-up"></i
+    ></a>
+    <span id="menu" style="visibility: hidden">
+      <span id="nav">
+        <ul>
+          <li th:each="menuItem : ${menuFinder.getDefault().menuItems}">
+            <a th:href="${menuItem.status?.href}" th:text="${menuItem.status?.displayName}"></a>
+          </li>
+        </ul>
+      </span>
+      <br />
+    </span>
+
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" href="${prevPost.fullPath!}">
+            <i class="iconify iconify-large"
+                data-icon="mdi:chevron-left"
+                onmouseover="$('#i-prev').toggle();"
+                onmouseout="$('#i-prev').toggle();"
+            ></i>
+          </a>
+        </li>
+
+          <li>
+          <a class="icon" href="${nextPost.fullPath!}">
+            <i class="iconify iconify-large"
+              data-icon="ic:round-chevron-right"
+              onmouseover="$('#i-next').toggle();"
+              onmouseout="$('#i-next').toggle();"
+            ></i>
+          </a>
+          </li>
+
+      <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+          <i class="iconify iconify-large"
+            data-icon="material-symbols:keyboard-arrow-up"
+            onmouseover="$('#i-top').toggle();"
+            onmouseout="$('#i-top').toggle();"
+          ></i>
+        </a></li>
+      <li><a class="icon" href="#">
+          <i class="iconify iconify-middle"
+            data-icon="mdi:share-variant-outline"
+            onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
+            onclick="$('#share').toggle();return false;"
+          ></i>
+        </a></li>
+      </ul>
+
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+  <br>
+  <div id="share" style="display: none" th:with="permalink=${post?.status?.permalink}, title=${post?.spec?.title}">
+    <ul>
+      <li>
+        <a class="icon"
+            th:href="'http://www.facebook.com/sharer.php?u=' + ${permalink} + '&amp;title=' + ${permalink}">
+          <i class="iconify" data-icon="ic:baseline-facebook"></i></a></li>
+      <li>
+        <a class="icon"
+            th:href="'https://twitter.com/share?url=' + ${permalink} + '&amp;title=' + ${title}">
+          <i class="iconify" data-icon="mdi:twitter-circle"></i></a></li>
+      <li><a class="icon"
+            th:href="'http://www.linkedin.com/shareArticle?url=' + ${permalink} + '&amp;title=' + ${title}">
+          <i class="iconify" data-icon="mdi:linkedin"></i></a></li>
+      <li><a class="icon"
+            th:href="'https://pinterest.com/pin/create/bookmarklet/?url=' + ${permalink} + '&amp;title=' + ${title}">
+          <i class="iconify" data-icon="mdi:pinterest"></i></a></li>
+      <li><a class="icon"
+            th:href="'mailto:?subject=' + ${title} + '&amp;body=Check out this article: ' + ${permalink}">
+          <i class="iconify" data-icon="ph:envelope-simple-bold"></i></a></li>
+    </ul>
+  </div>
+  <div id="toc"></div>
+</span>
+  </div>
+</html>

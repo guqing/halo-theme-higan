@@ -1,21 +1,25 @@
-import {defineConfig} from "vite";
+import { defineConfig } from "vite";
+import { fileURLToPath } from "url";
 import path from "path";
-import watch from "rollup-plugin-watch";
+// vite.config.js
 import PurgeIcons from 'vite-plugin-purge-icons'
 
-
 export default defineConfig({
-    plugins: [watch({dir: "./", exclude: ["dist", "node_modules"]}), PurgeIcons({
-        content: [
-            './module/*.ftl',
-        ],
-    })],
-    build: {
-        lib: {
-            entry: path.resolve(__dirname, "src/main.ts"),
-            name: "main",
-            fileName: "main",
-            formats: ["umd"],
-        },
+  plugins: [
+    PurgeIcons({
+      content: [
+        './templates/*.html',
+      ],
+    })
+  ],
+  build: {
+    outDir: fileURLToPath(new URL("./templates/assets/dist", import.meta.url)),
+    emptyOutDir: true,
+    lib: {
+      entry: path.resolve(__dirname, "src/main.ts"),
+      name: "main",
+      fileName: "main",
+      formats: ["iife"],
     },
+  },
 });
