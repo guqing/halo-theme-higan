@@ -19,10 +19,10 @@
       <br />
     </span>
 
-    <span id="actions">
+    <span id="actions" th:with="postCursor=${postFinder.cursor(post.metadata?.name)}">
       <ul>
         <li>
-          <a class="icon" href="${prevPost.fullPath!}">
+          <a class="icon" th:if="${postCursor.hasPrevious()}" th:href="${postCursor.previous?.status?.permalink}">
             <i class="iconify iconify-large"
                 data-icon="mdi:chevron-left"
                 onmouseover="$('#i-prev').toggle();"
@@ -32,7 +32,7 @@
         </li>
 
           <li>
-          <a class="icon" href="${nextPost.fullPath!}">
+          <a class="icon" th:if="${postCursor.hasNext()}" th:href="${postCursor.next?.status?.permalink}">
             <i class="iconify iconify-large"
               data-icon="ic:round-chevron-right"
               onmouseover="$('#i-next').toggle();"
