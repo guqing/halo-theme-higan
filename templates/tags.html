@@ -1,13 +1,18 @@
-<#include "module/macro.ftl">
-<@layout title="${options.blog_title!}" keywords="${options.seo_keywords!}" description="${options.seo_description!}">
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})"
+>
+  <th:block th:fragment="content">
     <h1>标签列表</h1>
-    <ul>
-        <@tagTag method="list">
-            <#if tags?? && tags?size gt 0>
-                <#list tags as tag>
-                    <li><a href="${tag.fullPath!}">${tag.name}</a></li>
-                </#list>
-            </#if>
-        </@tagTag>
+    <ul th:if="${!#lists.isEmpty(tags)}">
+      <th:block th:each="tag : ${tags}">
+        <li>
+          <a th:href="${tag.status?.permalink}">
+            <th:block th:text="${tag.spec?.displayName} + '(' + ${tag.status?.postCount} +')'"></th:block>
+          </a>
+        </li>
+      </th:block>
     </ul>
-</@layout>
+  </th:block>
+</html>

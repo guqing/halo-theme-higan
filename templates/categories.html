@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})">
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})"
+>
   <th:block th:fragment="content">
     <h1>分类列表</h1>
     <ul th:if="${!#lists.isEmpty(categories)}">
