@@ -25,7 +25,7 @@
           <li th:each="menuItem : ${menuFinder.getDefault().menuItems}">
             <a
               th:href="${menuItem.status?.href}"
-              th:aria-label="'Menu named' + ${menuItem.status?.displayName}"
+              th:aria-label="'Menu named ' + ${menuItem.status?.displayName}"
               th:text="${menuItem.status?.displayName}"
             ></a>
           </li>

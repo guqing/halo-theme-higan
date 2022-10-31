@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" th:fragment="navbar">
   <div id="header-post">
-    <a id="menu-icon" href="#">
+    <a id="menu-icon" href="#" aria-label="Expand more menus">
       <i class="iconify iconify-middle" data-icon="material-symbols:menu"></i>
     </a>
     <a id="menu-icon-tablet" href="#"><i class="iconify iconify-middle" data-icon="material-symbols:menu"></i></a>
@@ -12,7 +12,7 @@
       <span id="nav">
         <ul>
           <li th:each="menuItem : ${menuFinder.getDefault().menuItems}">
-            <a th:href="${menuItem.status?.href}" th:text="${menuItem.status?.displayName}"></a>
+            <a th:href="${menuItem.status?.href}" th:aria-label="'Menu named ' + ${menuItem.status?.displayName}" th:text="${menuItem.status?.displayName}"></a>
           </li>
         </ul>
       </span>
@@ -22,7 +22,7 @@
     <span id="actions" th:with="postCursor=${postFinder.cursor(post.metadata?.name)}">
       <ul>
         <li>
-          <a class="icon" th:if="${postCursor.hasPrevious()}" th:href="${postCursor.previous?.status?.permalink}">
+          <a class="icon" th:if="${postCursor.hasPrevious()}" aria-label="Navigate to the previous post" th:href="${postCursor.previous?.status?.permalink}">
             <i class="iconify iconify-large"
                 data-icon="mdi:chevron-left"
                 onmouseover="$('#i-prev').toggle();"
@@ -32,7 +32,7 @@
         </li>
 
           <li>
-          <a class="icon" th:if="${postCursor.hasNext()}" th:href="${postCursor.next?.status?.permalink}">
+          <a class="icon" th:if="${postCursor.hasNext()}" aria-label="Navigate to the next post" th:href="${postCursor.next?.status?.permalink}">
             <i class="iconify iconify-large"
               data-icon="ic:round-chevron-right"
               onmouseover="$('#i-next').toggle();"
@@ -41,14 +41,14 @@
           </a>
           </li>
 
-      <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+      <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" aria-label="Back to top">
           <i class="iconify iconify-large"
             data-icon="material-symbols:keyboard-arrow-up"
             onmouseover="$('#i-top').toggle();"
             onmouseout="$('#i-top').toggle();"
           ></i>
         </a></li>
-      <li><a class="icon" href="#">
+      <li><a class="icon" href="#" aria-label="Share post to social media">
           <i class="iconify iconify-middle"
             data-icon="mdi:share-variant-outline"
             onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();"
@@ -68,19 +68,24 @@
     <ul>
       <li>
         <a class="icon"
+            aria-label="Share post to facebook"
             th:href="'http://www.facebook.com/sharer.php?u=' + ${permalink} + '&amp;title=' + ${permalink}">
           <i class="iconify" data-icon="ic:baseline-facebook"></i></a></li>
       <li>
         <a class="icon"
+            aria-label="Share post to twitter"
             th:href="'https://twitter.com/share?url=' + ${permalink} + '&amp;title=' + ${title}">
           <i class="iconify" data-icon="mdi:twitter-circle"></i></a></li>
       <li><a class="icon"
+            aria-label="Share post to linkedin"
             th:href="'http://www.linkedin.com/shareArticle?url=' + ${permalink} + '&amp;title=' + ${title}">
           <i class="iconify" data-icon="mdi:linkedin"></i></a></li>
       <li><a class="icon"
+            aria-label="Share post to pinterest"
             th:href="'https://pinterest.com/pin/create/bookmarklet/?url=' + ${permalink} + '&amp;title=' + ${title}">
           <i class="iconify" data-icon="mdi:pinterest"></i></a></li>
       <li><a class="icon"
+            aria-label="Share post with email"
             th:href="'mailto:?subject=' + ${title} + '&amp;body=Check out this article: ' + ${permalink}">
           <i class="iconify" data-icon="ph:envelope-simple-bold"></i></a></li>
     </ul>
