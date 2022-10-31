@@ -1,18 +1,16 @@
-$(document).ready(function () {
+$(function () {
   handlePreviewImage();
 
   $("#img-preview-overlay").on("click", function (event) {
-    $(this).addClass("hidden-preview-img-overlay")
-      .removeClass("show-preview-img-overlay")
+    $(this).addClass("hidden-preview-img-overlay").removeClass("show-preview-img-overlay");
   });
 
   /**
    * Shows the responsive navigation menu on mobile.
    */
-  $("#header > #nav > ul > .icon").click(function () {
+  $("#header > #nav > ul > .icon").on("click", function () {
     $("#header > #nav > ul").toggleClass("responsive");
   });
-
 
   /**
    * Controls the different versions of  the menu in blog post articles
@@ -34,7 +32,7 @@ $(document).ready(function () {
     /**
      * Display the menu if the menu icon is clicked.
      */
-    menuIcon.click(function () {
+    menuIcon.on("click", function () {
       if (menu.css("visibility") === "hidden") {
         menu.css("visibility", "visible");
         menuIcon.addClass("active");
@@ -108,15 +106,14 @@ $(document).ready(function () {
 
 function handlePreviewImage() {
   const contentImgDom = $("article img");
-  contentImgDom.attr("title", "点击预览").css("cursor", "pointer")
-
+  contentImgDom.attr("title", "点击预览").css("cursor", "pointer");
 
   contentImgDom.on("click", function (evt) {
-    const imgSrc = $(this).attr('src')
-    const imgAlt = $(this).attr("alt")
+    const imgSrc = $(this).attr("src");
+    const imgAlt = $(this).attr("alt");
 
-    const imgPreviewDom = $("#img-preview-overlay")
-    imgPreviewDom.addClass("show-preview-img-overlay")
-    imgPreviewDom.html("<img src='" + imgSrc + "' alt='"+imgAlt+"' />");
-  })
+    const imgPreviewDom = $("#img-preview-overlay");
+    imgPreviewDom.addClass("show-preview-img-overlay");
+    imgPreviewDom.html("<img src='" + imgSrc + "' alt='" + imgAlt + "' />");
+  });
 }

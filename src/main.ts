@@ -4,3 +4,4 @@ import "./assets/colors/dark.css"
 import "./assets/main.js"
 import "./styles/main.css";
 import '@purge-icons/generated'
+

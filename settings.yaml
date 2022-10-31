@@ -90,11 +90,20 @@ spec:
             - value: false
               label: 关闭
         - $formkit: radio
+          name: post_title_uppper
+          label: 文章标题大写
+          value: false
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭
+        - $formkit: radio
           name: hitokoto
           label: 博客描述开启一言
           value: false
           options:
-            - label: "启用"
+            - label: 开启
               value: true
-            - label: "禁用"
+            - label: 关闭
               value: false

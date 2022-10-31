@@ -73,7 +73,7 @@
           activeLinkClass: 'is-active-link toc-active-link'
         });
 
-        const postTitleUpperCase = ${settings.post_title_uppper?c}
+        const postTitleUpperCase = [[${theme.config?.styles?.post_title_uppper}]]
         if(postTitleUpperCase) {
           $(".post .posttitle").addClass("title-upper-case")
         }
