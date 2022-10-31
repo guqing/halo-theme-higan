@@ -51,9 +51,9 @@
         // copy-btn HTML
         $(".content figure pre").before('<span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!"><i class="far fa-clone"></i></span>');
         // code highlight
-        document.querySelectorAll('pre code').forEach(el => {
-          hljs.highlightElement(el)
-        })
+        // document.querySelectorAll('pre code').forEach(el => {
+        //   hljs.highlightElement(el)
+        // })
 
         var clip = new ClipboardJS('.btn-copy', {
           text: function (trigger) {
