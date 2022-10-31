@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})">
+<th:block th:fragment="content">
+    <div id="archive">
+      <th:block th:each="archive : ${archives}">
+        <h2 th:text="${archive.year}"></h2>
+            <ul class="post-list">
+              <th:block th:each="month : ${archive.months}">
+                <li class="post-item" th:each="post : ${month.posts}">
+                  <div class="meta">
+                      <time th:datetime="${post.metadata?.creationTimestamp}"
+                            itemprop="datePublished"
+                            th:text="${#temporals.format(post.metadata?.creationTimestamp, 'MMMM dd yyyy')}">creationTimestamp</time>
+                  </div>
+                  <span>
+                    <a class="post-title" th:href="${post.status?.permalink}" th:text="${post.spec?.title}"></a>
+                  </span>
+              </li>
+              </th:block>
+            </ul>
+            <div class="pagination">
+              <a th:href="${archives.prevUrl}" th:if="${archives.hasPrevious()}">
+                <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
+              </a>
+              <span class="page-number"
+                th:with="totalPage=${(archives.total + archives.size - 1) / archives.size}"
+                th:text="'Page ' + ${archives.page} + ' of ' + ${totalPage}">Page 1 of 1</span>
+              <a th:href="${archives.nextUrl}" th:if="${archives.hasNext()}">
+                <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i>
+              </a>
+            </div>
+      </th:block>
+    </div>
+</th:block>
+</html>

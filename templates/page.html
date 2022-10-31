@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})"
+>
+  <th:block th:fragment="content">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <h1 th:text="${singlePage.spec?.title}">title</h1>
+      <div class="content" itemprop="articleBody" th:utext="${singlePage.content?.content}">
+        singlePage formatted content
+      </div>
+      <div class="post-comment">
+        <halo:comment group="content.halo.run" kind="SinglePage" th:name="${singlePage.metadata?.name}" />
+      </div>
+    </article>
+  </th:block>
+</html>

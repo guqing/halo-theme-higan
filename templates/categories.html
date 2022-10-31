@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})"
+>
+  <th:block th:fragment="content">
+    <h1>分类列表</h1>
+    <ul th:if="${!#lists.isEmpty(categories)}">
+      <th:block th:each="category : ${categories}">
+        <li>
+          <a th:href="${category.status?.permalink}">
+            <th:block th:text="${category.spec?.displayName} + '(' + ${category.status?.postCount} +')'"></th:block>
+          </a>
+        </li>
+      </th:block>
+    </ul>
+  </th:block>
+</html>

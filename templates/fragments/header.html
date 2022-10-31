@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+  <th:block th:fragment="content">
+    <header id="header">
+      <a th:href="@{/}">
+        <div
+          id="logo"
+          th:with="styles=${theme.config?.styles}"
+          th:class="${styles?.avatar_circle == true ? 'circle-avatar' : ''}"
+          th:classappend="${styles?.avatar_grayout == true ? 'avatar-grayscale' : ''}"
+          th:style="'background-image: url(' + ${#strings.defaultString(styles?.icon, site?.logo)} + ')'"
+        ></div>
+        <div id="title">
+          <h1 th:text="${site?.title}"></h1>
+        </div>
+      </a>
+      <div id="nav">
+        <ul>
+          <li class="icon">
+            <a href="#" aria-label="Expand more menus">
+              <i class="iconify iconify-middle" data-icon="material-symbols:menu"></i>
+            </a>
+          </li>
+
+          <li th:each="menuItem : ${menuFinder.getDefault().menuItems}">
+            <a
+              th:href="${menuItem.status?.href}"
+              th:aria-label="'Menu named ' + ${menuItem.status?.displayName}"
+              th:text="${menuItem.status?.displayName}"
+            ></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+  </th:block>
+</html>

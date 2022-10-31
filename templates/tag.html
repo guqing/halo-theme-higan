@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})"
+>
+  <th:block th:fragment="content">
+    <div id="archive">
+      <h2 th:text="'标签：' + ${tag.spec?.displayName}">标签</h2>
+      <ul class="post-list">
+        <li class="post-item" th:each="post : ${posts}">
+          <div class="meta">
+            <time
+              th:datetime="${post.metadata?.creationTimestamp}"
+              th:text="${#temporals.format(post.metadata?.creationTimestamp, 'MMMM dd yyyy')}"
+              itemprop="datePublished"
+            ></time>
+          </div>
+          <span>
+            <a class="post-title" th:href="${post.status?.permalink}" th:text="${post.spec?.title}"></a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </th:block>
+</html>

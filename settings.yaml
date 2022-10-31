@@ -1,147 +1,109 @@
-sns:
-  label: 社交资料
-  items:
-    rss:
-      name: rss
-      label: RSS
-      type: radio
-      data-type: bool
-      default: true
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    twitter:
-      name: twitter
-      label: Twitter
-      type: text
-      placeholder: "只需填入 Twitter 用户名即可"
-    facebook:
-      name: facebook
-      label: Facebook
-      type: text
-      placeholder: "只需填入 Facebook 用户名即可"
-    instagram:
-      name: instagram
-      label: Instagram
-      type: text
-      placeholder: "只需填入 Instagram 用户名即可"
-    dribbble:
-      name: dribbble
-      label: Dribbble
-      type: text
-      placeholder: "只需填入 Dribbble 用户名即可"
-    weibo:
-      name: weibo
-      label: 微博
-      type: text
-      placeholder: "只需填入微博 Id 即可"
-    email:
-      name: email
-      label: Email
-      type: text
-      placeholder: "只需填入邮箱地址即可"
-    github:
-      name: github
-      label: Github
-      type: text
-      placeholder: "只需填入 Github 用户名即可"
-    qq:
-      name: qq
-      label: QQ
-      type: text
-      placeholder: "只需填入 QQ 号即可"
-    telegram:
-      name: telegram
-      label: Telegram
-      type: text
-      placeholder: "只需填入 Telegram Id 即可"
-style:
-  label: 样式设置
-  items:
-    theme_color:
-      name: theme_color
-      label: 配色方案
-      type: select
-      default: "dark"
-      data-type: string
-      options:
-        - value: dark
-          label: 暗黑
-        - value: light
-          label: 亮色
-        - value: white
-          label: 白色
-    code_style:
-      name: code_style
-      label: 前台代码样式
-      type: select
-      default: "dracula"
-      data-type: string
-      options:
-        - value: dracula
-          label: dracula
-        - value: github
-          label: github
-        - value: idea
-          label: idea
-        - value: isbl-editor-dark
-          label: isbl-editor-dark
-        - value: monokai-sublime
-          label: monokai-sublime
-        - value: qtcreator_dark
-          label: qtcreator_dark
-        - value: school-book
-          label: school-book
-        - value: xt256
-          label: xt256
-    icon:
-      name: icon
-      label: 右上角图标
-      type: attachment
-      default: "/avatar"
-    post_title_uppper:
-      name: post_title_uppper
-      label: 文章标题大写
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    avatar_circle:
-      name: avatar_circle
-      label: 圆形头像
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    avatar_grayout:
-      name: avatar_grayout
-      label: 开启灰度头像
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
-    hitokoto:
-      name: hitokoto
-      label: 博客描述开启一言
-      type: radio
-      data-type: bool
-      default: false
-      options:
-        - value: true
-          label: 开启
-        - value: false
-          label: 关闭
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: guqing-higan-setting
+spec:
+  forms:
+    - group: sns
+      label: 社交资料
+      formSchema:
+        - $formkit: radio
+          name: rss
+          label: RSS
+          value: true
+          attrs:
+            icon: rss
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭
+        - $formkit: text
+          name: twitter
+          label: Twitter
+          placeholder: "只需填入 Twitter 用户名即可"
+        - $formkit: text
+          name: facebook
+          label: Facebook
+          placeholder: "只需填入 Facebook 用户名即可"
+        - $formkit: text
+          name: instagram
+          label: Instagram
+          placeholder: "只需填入 Instagram 用户名即可"
+        - $formkit: text
+          name: dribbble
+          label: Dribbble
+          placeholder: "只需填入 Dribbble 用户名即可"
+        - $formkit: text
+          name: weibo
+          label: 微博
+          placeholder: "只需填入微博 Id 即可"
+        - $formkit: text
+          name: email
+          label: Email
+          placeholder: "只需填入邮箱地址即可"
+        - $formkit: text
+          name: github
+          label: Github
+          placeholder: "只需填入 Github 用户名即可"
+        - $formkit: text
+          name: qq
+          label: QQ
+          placeholder: "只需填入 QQ 号即可"
+        - $formkit: text
+          name: telegram
+          label: Telegram
+          placeholder: "只需填入 Telegram Id 即可"
+    - group: styles
+      label: 样式
+      formSchema:
+        - $formkit: select
+          name: color_schema
+          label: 配色方案
+          value: "dark"
+          options:
+            - label: "暗黑"
+              value: "dark"
+            - label: "亮色"
+              value: "light"
+            - label: "白色"
+              value: "white"
+        - $formkit: text
+          name: icon
+          label: 右上角图标
+        - $formkit: radio
+          name: avatar_circle
+          label: 圆形头像
+          value: false
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭
+        - $formkit: radio
+          name: avatar_grayout
+          label: 开启灰度头像
+          value: false
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭
+        - $formkit: radio
+          name: post_title_uppper
+          label: 文章标题大写
+          value: false
+          options:
+            - value: true
+              label: 开启
+            - value: false
+              label: 关闭
+        - $formkit: radio
+          name: hitokoto
+          label: 博客描述开启一言
+          value: false
+          options:
+            - label: 开启
+              value: true
+            - label: 关闭
+              value: false

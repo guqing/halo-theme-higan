@@ -1,25 +1,25 @@
-### IntelliJ IDEA ###
-.idea
-.idea/**
-*.iws
-*.iml
-*.ipr
-log/
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-### Mac
-.DS_Store
-*/.DS_Store
-
-### Maven
-target/
-logs/
-!.mvn/wrapper/maven-wrapper.jar
-
-### Gradle
-.gradle
-/build/
-/out/
-!gradle/wrapper/gradle-wrapper.jar
-bin/
+node_modules
 /node_modules/
-pnpm-lock.yaml
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
