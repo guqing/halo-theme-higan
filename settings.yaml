@@ -71,11 +71,10 @@ spec:
         - $formkit: text
           name: icon
           label: 右上角图标
-          default: "/avatar"
         - $formkit: radio
           name: avatar_circle
           label: 圆形头像
-          default: false
+          value: false
           options:
             - value: true
               label: 开启
@@ -84,7 +83,7 @@ spec:
         - $formkit: radio
           name: avatar_grayout
           label: 开启灰度头像
-          default: false
+          value: false
           options:
             - value: true
               label: 开启

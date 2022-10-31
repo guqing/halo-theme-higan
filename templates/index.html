@@ -10,12 +10,13 @@
     <p>
       Find me on
       <th:block th:with="sns=${theme?.config?.sns}">
-        <a class="icon" target="_blank" th:href="@{/rss.xml}" th:if="${theme?.config?.sns?.rss}">
+        <a class="icon" target="_blank" th:href="@{/rss.xml}" aria-label="Find me on rss" th:if="${theme?.config?.sns?.rss}">
           <i class="iconify iconify-middle" data-icon="heroicons-outline:rss"></i>
         </a>
         <a
           class="icon"
           target="_blank"
+          aria-label="Find me on twitter"
           th:href="@{'https://twitter.com/'+${sns?.twitter}}"
           th:if="${not #strings.isEmpty(sns?.twitter)}"
         >
@@ -24,6 +25,7 @@
         <a
           class="icon"
           target="_blank"
+          aria-label="Find me on facebook"
           th:href="'https://www.facebook.com/'+${sns?.facebook}"
           th:if="${not #strings.isEmpty(sns?.facebook)}"
         >
@@ -32,6 +34,7 @@
         <a
           class="icon"
           target="_blank"
+          aria-label="Find me on instagram"
           th:href="'https://www.instagram.com/'+${sns?.instagram}"
           th:if="${not #strings.isEmpty(sns?.instagram)}"
         >
@@ -48,6 +51,7 @@
         <a
           class="icon"
           target="_blank"
+          aria-label="Find me on weibo"
           th:href="'https://weibo.com/'+${sns?.weibo}"
           th:if="${not #strings.isEmpty(sns?.weibo)}"
         >
@@ -56,6 +60,7 @@
         <a
           class="icon"
           target="_blank"
+          aria-label="Find me on QQ"
           th:href="'tencent://message/?uin='+${sns?.qq} + '&Site=&Menu=yes'"
           th:if="${not #strings.isEmpty(sns?.qq)}"
         >
@@ -64,6 +69,7 @@
         <a
           class="icon"
           target="_blank"
+          aria-label="Find me on telegram"
           th:href="'https://t.me/'+${sns?.telegram}"
           th:if="${not #strings.isEmpty(sns?.telegram)}"
         >
@@ -75,6 +81,7 @@
         <a
           class="icon"
           target="_blank"
+          aria-label="Find me on github"
           th:href="'https://github.com/'+${sns?.github}"
           th:if="${not #strings.isEmpty(sns?.github)}"
         >
