@@ -68,7 +68,7 @@ spec:
               value: "light"
             - label: "白色"
               value: "white"
-        - $formkit: text
+        - $formkit: attachment
           name: icon
           label: 右上角图标
         - $formkit: radio
