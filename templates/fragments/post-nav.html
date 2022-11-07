@@ -11,7 +11,7 @@
     <span id="menu" style="visibility: hidden">
       <span id="nav">
         <ul>
-          <li th:each="menuItem : ${menuFinder.getDefault().menuItems}">
+          <li th:each="menuItem : ${menuFinder.getPrimary().menuItems}">
             <a th:href="${menuItem.status?.href}" th:aria-label="'Menu named ' + ${menuItem.status?.displayName}" th:text="${menuItem.status?.displayName}"></a>
           </li>
         </ul>

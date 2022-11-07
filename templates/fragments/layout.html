@@ -35,7 +35,7 @@
             </div>
             <div class="footer-right">
               <ul>
-                <li th:each="menuItem : ${menuFinder.getDefault()?.menuItems}">
+                <li th:each="menuItem : ${menuFinder.getPrimary()?.menuItems}">
                   <a th:href="${menuItem.status?.href}" th:text="${menuItem.status?.displayName}">menu-name</a>
                 </li>
               </ul>
