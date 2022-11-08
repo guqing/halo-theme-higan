@@ -9,7 +9,7 @@
       <th:block th:each="category : ${categories}">
         <li>
           <a th:href="${category.status?.permalink}">
-            <th:block th:text="${category.spec?.displayName} + '(' + ${category.status?.postCount} +')'"></th:block>
+            <th:block th:text="${category.spec?.displayName} + '(' + ${category.postCount} +')'"></th:block>
           </a>
         </li>
       </th:block>

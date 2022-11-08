@@ -9,7 +9,7 @@
       <th:block th:each="tag : ${tags}">
         <li>
           <a th:href="${tag.status?.permalink}">
-            <th:block th:text="${tag.spec?.displayName} + '(' + ${tag.status?.postCount} +')'"></th:block>
+            <th:block th:text="${tag.spec?.displayName} + '(' + ${tag.postCount} +')'"></th:block>
           </a>
         </li>
       </th:block>
