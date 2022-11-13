@@ -29,6 +29,9 @@
               th:text="${menuItem.status?.displayName}"
             ></a>
           </li>
+          <li th:if="${pluginFinder.available('PluginSearchWidget')}">
+            <a href="javascript:SearchWidget.open();" aria-label="Search in site">搜索</a>
+          </li>
         </ul>
       </div>
     </header>

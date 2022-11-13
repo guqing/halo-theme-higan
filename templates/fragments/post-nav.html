@@ -14,6 +14,9 @@
           <li th:each="menuItem : ${menuFinder.getPrimary().menuItems}">
             <a th:href="${menuItem.status?.href}" th:aria-label="'Menu named ' + ${menuItem.status?.displayName}" th:text="${menuItem.status?.displayName}"></a>
           </li>
+          <li th:if="${pluginFinder.available('PluginSearchWidget')}">
+            <a href="javascript:SearchWidget.open();" aria-label="Search in site">搜索</a>
+          </li>
         </ul>
       </span>
       <br />
