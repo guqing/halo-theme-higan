@@ -6,6 +6,8 @@
 
 原主题地址：[hexo-theme-cactus](https://github.com/probberechts/hexo-theme-cactus.git)
 
+全局搜索功能需要先安装插件: [plugin-search-widget](https://github.com/halo-sigs/plugin-search-widget)
+
 ## 预览截图
 
 ![主题预览图1](./screenshots/Theme20220325-221824@2x.png)

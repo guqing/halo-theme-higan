@@ -1,8 +1,8 @@
 {
-  "name": "@halo-dev/theme-vite-starter",
+  "name": "@guching/halo-theme-higan",
   "private": true,
-  "version": "0.0.0",
-  "description": "A development starter theme with Vite Ecosystem for Halo",
+  "version": "2.0.0-alpha.2",
+  "description": "一款简洁而不失优雅的 Halo 主题名 higan",
   "scripts": {
     "dev": "vite build --watch",
     "build": "tsc && vite build",
@@ -11,27 +11,30 @@
   },
   "keywords": [
     "halo",
-    "halo-theme"
+    "guqing",
+    "guching",
+    "halo-theme",
+    "halo-theme-higan"
   ],
-  "homepage": "https://github.com/halo-sigs/theme-vite-starter#readme",
+  "homepage": "https://github.com/guqing/halo-theme-higan#readme",
   "bugs": {
-    "url": "https://github.com/halo-sigs/theme-vite-starter/issues"
+    "url": "https://github.com/guqing/halo-theme-higan/issues"
   },
   "author": {
-    "name": "Halo OSS Organization",
-    "url": "https://github.com/halo-dev",
-    "email": "hi@halo.run"
+    "name": "guqing",
+    "url": "https://github.com/guqing",
+    "email": "i@guqing.email"
   },
   "maintainers": [
     {
-      "name": "Ryan Wang",
-      "url": "https://github.com/ruibaby",
-      "email": "i@ryanc.cc"
+      "name": "guqing",
+      "url": "https://github.com/guqing",
+      "email": "i@guqing.email"
     }
   ],
   "license": "GPL-3.0",
   "repository": {
-    "url": "https://github.com/halo-sigs/theme-vite-starter",
+    "url": "https://github.com/guqing/halo-theme-higan",
     "type": "git"
   },
   "devDependencies": {
