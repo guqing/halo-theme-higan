@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" th:replace="fragments/layout :: html(content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})">
+<html xmlns:th="https://www.thymeleaf.org" th:replace="fragments/layout :: html(title=‘归档’, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})">
 <th:block th:fragment="content">
     <div id="archive">
       <th:block th:each="archive : ${archives}">
