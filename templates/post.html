@@ -23,7 +23,7 @@
           </div>
 
           <div class="article-tag" th:if="${!#lists.isEmpty(post.tags)}">
-            <i class="fas fa-tag"></i>
+            <span class="iconify" data-icon="fa-solid:tag" data-inline="false"></span>
             <th:block th:each="tag : ${post.tags}">
               <a class="tag-link"
                 th:href="${tag.status?.permalink}"
