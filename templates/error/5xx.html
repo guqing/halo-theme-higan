@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="/fragments/layout :: html(title='Internal Server Error', content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})"
+>
+  <th:block th:fragment="content">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <div class="content" itemprop="articleBody">
+        <h1 th:text="${error.title}"></h1>
+        <p th:text="${error?.detail}"></p>
+      </div>
+    </article>
+  </th:block>
+</html>
