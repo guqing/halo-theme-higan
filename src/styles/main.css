@@ -601,9 +601,13 @@ body {
 .content {
   position: relative;
   display: flex;
+  min-height: 100%;
   flex-direction: column;
-  min-height: 100vh;
   overflow-wrap: break-word;
+}
+
+.mh-full {
+  min-height: 100vh;
 }
 
 .content p {
@@ -1392,6 +1396,10 @@ article header .postdate {
   display: inline;
 }
 
+article .content {
+  margin-bottom: 2rem;
+}
+
 article .content h2:before {
   position: absolute;
   top: -4px;
@@ -1662,7 +1670,7 @@ article .content .caption {
 
 .pagination {
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 100%;
   text-align: center;
 }

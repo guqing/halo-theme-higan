@@ -2,9 +2,13 @@
 <html xmlns:th="https://www.thymeleaf.org" th:replace="fragments/layout :: html(title='首页', content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})">
   <th:block th:fragment="content">
     <section id="about">
-      <th:block th:if="${theme.config?.styles?.hitokoto}"></th:block>
-      <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-      <p id="hitokoto"></p>
+      <th:block th:if="${theme.config?.styles?.hitokoto}">
+        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+        <p id="hitokoto"></p>
+      </th:block>
+      <th:block th:unless="${theme.config?.styles?.hitokoto}">
+        <p class="blog-description" th:text="${site?.seo?.description}"></p>
+      </th:block>
     </section>
 
     <p>

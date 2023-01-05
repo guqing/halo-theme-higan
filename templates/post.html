@@ -16,7 +16,7 @@
             <time
               th:datetime="${post.spec?.publishTime}"
               itemprop="datePublished"
-              th:text="${#temporals.format(post.spec?.publishTime, 'MMMM dd yyyy')}"
+              th:text="${#temporals.format(post.spec?.publishTime, 'yyyy-MM-dd')}"
             >
               post publish time
             </time>
@@ -33,8 +33,10 @@
             </th:block>
           </div>
           
-          <span class="iconify" data-icon="mdi:eye-outline" data-inline="false"></span>
-          <span th:text="${post.stats?.visit}"></span>
+          <span th:title="|浏览量 ${post.stats?.visit}|">
+            <span class="iconify" data-icon="mdi:eye-outline" data-inline="false"></span>
+            <span th:text="${post.stats?.visit}"></span>
+          </span>
         </div>
       </header>
 
