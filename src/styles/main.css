@@ -602,7 +602,7 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
   overflow-wrap: break-word;
 }
 
@@ -1551,7 +1551,9 @@ article .content .caption {
       content: "|";
   }
 }
-
+#archive {
+  flex: auto;
+}
 #archive .post-list {
   padding: 0;
 }
@@ -1589,7 +1591,7 @@ article .content .caption {
 #footer {
   margin-bottom: 10px;
   width: 100%;
-  /* color: #929191; */
+  color: #929191; 
   color: var(--color-footer-mobile-1);
   vertical-align: top;
   text-align: center;
