@@ -1161,7 +1161,7 @@ body {
   z-index: 5000000;
   width: 100%;
   border-top: 1px solid #666;
-  background: #212326;
+  background: var(--color-background-code);
   transition: opacity 0.2s;
 }
 
@@ -1182,7 +1182,7 @@ body {
 #footer-post #nav-footer {
   padding-right: 1rem;
   padding-left: 1rem;
-  background: #323539;
+  background: var(--color-footer-mobile-2);
   text-align: center;
 }
 
@@ -1238,7 +1238,7 @@ body {
 #footer-post #share-footer {
   padding-right: 1rem;
   padding-left: 1rem;
-  background: #323539;
+  background: var(--color-footer-mobile-2);
   text-align: center;
 }
 
@@ -1261,7 +1261,7 @@ body {
   clear: both;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background: #323539;
+  background: var(--color-footer-mobile-2);
   text-align: left;
 }
 
