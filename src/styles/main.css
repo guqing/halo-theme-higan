@@ -1514,6 +1514,10 @@ article .content .caption {
   font-size: 0.9em;
 }
 
+article a {
+  display: inline-block;
+}
+
 .posttitle {
   text-transform: none;
   font-size: 1.5em;

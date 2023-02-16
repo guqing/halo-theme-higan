@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="fragments/layout :: html(title='文章', content = ~{::content}, header = ~{}, navbar = ~{fragments/post-nav::navbar})"
+  th:replace="fragments/layout :: html(title=${post.spec.title}, content = ~{::content}, header = ~{}, navbar = ~{fragments/post-nav::navbar})"
 >
   <th:block th:fragment="content">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">

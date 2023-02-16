@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html
   xmlns:th="https://www.thymeleaf.org"
-  th:replace="fragments/layout :: html(title='分类', content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})"
+  th:replace="fragments/layout :: html(title=${category.spec.displayName}, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})"
 >
   <th:block th:fragment="content">
     <div id="archive">
