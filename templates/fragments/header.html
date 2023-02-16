@@ -15,24 +15,7 @@
         </div>
       </a>
       <div id="nav">
-        <ul>
-          <li class="icon">
-            <a href="#" aria-label="Expand more menus">
-              <i class="iconify iconify-middle" data-icon="material-symbols:menu"></i>
-            </a>
-          </li>
-
-          <li th:each="menuItem : ${menuFinder.getPrimary().menuItems}">
-            <a
-              th:href="${menuItem.status?.href}"
-              th:aria-label="'Menu named ' + ${menuItem.status?.displayName}"
-              th:text="${menuItem.status?.displayName}"
-            ></a>
-          </li>
-          <li th:if="${pluginFinder.available('PluginSearchWidget')}">
-            <a href="javascript:SearchWidget.open();" aria-label="Search in site">搜索</a>
-          </li>
-        </ul>
+        <th:block th:insert="~{fragments/common :: menu}"></th:block>
       </div>
     </header>
   </th:block>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:fragment="footerNav">
+<div id="footer-post-container">
+  <div id="footer-post">
+      <div id="nav-footer" style="display: none">
+        <th:block th:insert="~{fragments/common :: menu}"></th:block>
+      </div>
+
+      <div id="toc-footer" style="display: none"></div>
+      <div id="share-footer" style="display: none">
+        <th:block th:insert="~{fragments/common :: share}"></th:block>
+      </div>
+      <div id="actions-footer">
+          <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;">
+              <i class="fas fa-bars fa-lg" aria-hidden="true"></i>
+              菜单</a>
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;">
+              <i class="fas fa-list fa-lg" aria-hidden="true"></i>
+              目录</a>
+          <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;">
+              <i class="fas fa-share-alt fa-lg" aria-hidden="true"></i>
+              分享</a>
+          <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');">
+              <i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i>
+              返回顶部</a>
+      </div>
+  </div>
+</div>
+</html>
