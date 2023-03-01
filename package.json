@@ -52,6 +52,11 @@
   },
   "dependencies": {
     "@iconify/iconify": "^2.2.1",
-    "@purge-icons/generated": "^0.9.0"
+    "@jsdevtools/rehype-toc": "^3.0.2",
+    "@purge-icons/generated": "^0.9.0",
+    "rehype-parse": "^8.0.4",
+    "rehype-slug": "^5.1.0",
+    "rehype-stringify": "^9.0.3",
+    "unified": "^10.1.2"
   }
 }

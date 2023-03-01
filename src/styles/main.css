@@ -1074,6 +1074,7 @@ body {
 #header-post #toc .toc-level-2:before {
   color: var(--color-accent-1);
   content: "#";
+  padding-right: 5px;
 }
 
 #header-post #toc .toc-level-3 {
