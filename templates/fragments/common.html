@@ -1,5 +1,8 @@
-<th:block th:fragment="menu">
+<th:block th:fragment="menu(showIcon)">
   <ul>
+    <li class="icon" th:if="${showIcon}">
+      <a href="#"><i class="iconify iconify-huge" data-icon="material-symbols:menu"></i></a>
+    </li>
     <li th:each="menuItem : ${menuFinder.getPrimary().menuItems}">
       <a th:href="${menuItem.status?.href}" th:aria-label="'Menu named ' + ${menuItem.status?.displayName}" th:text="${menuItem.status?.displayName}"></a>
     </li>
