@@ -25,14 +25,12 @@
           <div class="article-tag" th:if="${!#lists.isEmpty(post.tags)}">
             <span class="iconify" data-icon="fa-solid:tag" data-inline="false"></span>
             <th:block th:each="tag : ${post.tags}">
-              <a class="tag-link"
-                th:href="${tag.status?.permalink}"
-                th:text="${tag.spec?.displayName}">
+              <a class="tag-link" th:href="${tag.status?.permalink}" th:text="${tag.spec?.displayName}">
                 post tag name
               </a>
             </th:block>
           </div>
-          
+
           <span th:title="|浏览量 ${post.stats?.visit}|">
             <span class="iconify" data-icon="mdi:eye-outline" data-inline="false"></span>
             <span th:text="${post.stats?.visit}"></span>
@@ -70,21 +68,14 @@
           e.clearSelection();
         })
 
-        tocbot.init({
-          tocSelector: '#toc',
+        const tocOptions = {
+          tocSelector: isMobile() ? '#toc-footer' : '#toc',
           contentSelector: '.post .content',
-          // Main class to add to links.
           linkClass: 'toc-link',
+          listItemClass: 'toc-item',
           activeLinkClass: 'is-active-link toc-active-link'
-        });
-
-        tocbot.init({
-          tocSelector: '#toc-footer',
-          contentSelector: '.post .content',
-          // Main class to add to links.
-          linkClass: 'toc-link',
-          activeLinkClass: 'is-active-link toc-active-link'
-        });
+        };
+        tocbot.init(tocOptions);
 
         const postTitleUpperCase = [[${theme.config?.styles?.post_title_uppper}]]
         if(postTitleUpperCase) {

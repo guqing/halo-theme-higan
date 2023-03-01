@@ -10,6 +10,11 @@ if (!!$.prototype.justifiedGallery) {
   $(".article-gallery").justifiedGallery(options);
 }
 
+window.isMobile = () => {
+  let flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  return flag;
+}
+
 $(function () {
   /**
    * Shows the responsive navigation menu on mobile.
