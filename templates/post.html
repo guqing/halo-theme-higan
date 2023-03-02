@@ -34,7 +34,7 @@
     </header>
 
     <div class="content" itemprop="articleBody" th:utext="${post.content?.content}">post formatted content</div>
-    <halo:comment group="content.halo.run" kind="Post" th:name="${post.metadata?.name}" />
+    <halo:comment group="content.halo.run" kind="Post" th:name="${post.metadata?.name}" colorScheme="commentColorScheme"/>
   </article>
   <div th:insert="~{fragments/footer-nav :: footerNav}"></div>
 

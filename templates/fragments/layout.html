@@ -9,6 +9,7 @@
     <!-- jquery -->
     <script th:src="@{/assets/lib/jquery/jquery.min.js}"></script>
     <script th:src="@{/assets/dist/main.iife.js}"></script>
+    <script>const commentColorScheme = "[[${theme.config?.styles?.color_schema}]]";</script>
   </head>
   <body th:class="'theme-'+${theme.config?.styles?.color_schema}">
     <div class="max-width mx-auto px3 ltr">
