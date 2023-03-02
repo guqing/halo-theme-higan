@@ -5,11 +5,13 @@
       <a th:href="@{/}">
         <div
           id="logo"
-          th:with="styles=${theme.config?.styles}"
+          th:with="styles=${theme.config?.styles},logo=${#objects.nullSafe(styles?.icon, site?.logo)},fallbackLogo=${#theme.assets('/images/logo.png')}"
           th:class="${styles?.avatar_circle == true ? 'circle-avatar' : ''}"
           th:classappend="${styles?.avatar_grayout == true ? 'avatar-grayscale' : ''}"
-          th:style="'background-image: url(' + ${#strings.defaultString(styles?.icon, site?.logo)} + ')'"
-        ></div>
+          th:style="|background-image: url('${#strings.defaultString(logo, fallbackLogo)}')|"
+        >
+      </div>
+        
         <div id="title">
           <h1 th:text="${site?.title}"></h1>
         </div>
