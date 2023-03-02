@@ -1,7 +1,7 @@
 {
   "name": "@guching/halo-theme-higan",
   "private": true,
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "一款简洁而不失优雅的 Halo 主题名 higan",
   "scripts": {
     "dev": "vite build --watch",
