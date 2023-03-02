@@ -4,7 +4,12 @@
       <a href="#"><i class="iconify iconify-huge" data-icon="material-symbols:menu"></i></a>
     </li>
     <li th:each="menuItem : ${menuFinder.getPrimary().menuItems}">
-      <a th:href="${menuItem.status?.href}" th:aria-label="'Menu named ' + ${menuItem.status?.displayName}" th:text="${menuItem.status?.displayName}"></a>
+      <a
+        th:href="${menuItem.status?.href}"
+        th:target="${menuItem.spec.target?.value}"
+        th:aria-label="'Menu named ' + ${menuItem.status?.displayName}"
+        th:text="${menuItem.status?.displayName}"
+      ></a>
     </li>
     <li th:if="${pluginFinder.available('PluginSearchWidget')}">
       <a href="javascript:SearchWidget.open();" aria-label="Search in site">搜索</a>
@@ -15,26 +20,49 @@
 <th:block th:fragment="share">
   <ul>
     <li>
-      <a class="icon"
-          aria-label="Share post to facebook"
-          th:href="'http://www.facebook.com/sharer.php?u=' + ${permalink} + '&amp;title=' + ${permalink}">
-        <i class="iconify" data-icon="ic:baseline-facebook"></i></a></li>
+      <a
+        class="icon"
+        aria-label="Share post to facebook"
+        th:href="'http://www.facebook.com/sharer.php?u=' + ${permalink} + '&amp;title=' + ${permalink}"
+      >
+        <i class="iconify" data-icon="ic:baseline-facebook"></i
+      ></a>
+    </li>
     <li>
-      <a class="icon"
-          aria-label="Share post to twitter"
-          th:href="'https://twitter.com/share?url=' + ${permalink} + '&amp;title=' + ${title}">
-        <i class="iconify" data-icon="mdi:twitter-circle"></i></a></li>
-    <li><a class="icon"
-          aria-label="Share post to linkedin"
-          th:href="'http://www.linkedin.com/shareArticle?url=' + ${permalink} + '&amp;title=' + ${title}">
-        <i class="iconify" data-icon="mdi:linkedin"></i></a></li>
-    <li><a class="icon"
-          aria-label="Share post to pinterest"
-          th:href="'https://pinterest.com/pin/create/bookmarklet/?url=' + ${permalink} + '&amp;title=' + ${title}">
-        <i class="iconify" data-icon="mdi:pinterest"></i></a></li>
-    <li><a class="icon"
-          aria-label="Share post with email"
-          th:href="'mailto:?subject=' + ${title} + '&amp;body=Check out this article: ' + ${permalink}">
-        <i class="iconify" data-icon="ph:envelope-simple-bold"></i></a></li>
+      <a
+        class="icon"
+        aria-label="Share post to twitter"
+        th:href="'https://twitter.com/share?url=' + ${permalink} + '&amp;title=' + ${title}"
+      >
+        <i class="iconify" data-icon="mdi:twitter-circle"></i
+      ></a>
+    </li>
+    <li>
+      <a
+        class="icon"
+        aria-label="Share post to linkedin"
+        th:href="'http://www.linkedin.com/shareArticle?url=' + ${permalink} + '&amp;title=' + ${title}"
+      >
+        <i class="iconify" data-icon="mdi:linkedin"></i
+      ></a>
+    </li>
+    <li>
+      <a
+        class="icon"
+        aria-label="Share post to pinterest"
+        th:href="'https://pinterest.com/pin/create/bookmarklet/?url=' + ${permalink} + '&amp;title=' + ${title}"
+      >
+        <i class="iconify" data-icon="mdi:pinterest"></i
+      ></a>
+    </li>
+    <li>
+      <a
+        class="icon"
+        aria-label="Share post with email"
+        th:href="'mailto:?subject=' + ${title} + '&amp;body=Check out this article: ' + ${permalink}"
+      >
+        <i class="iconify" data-icon="ph:envelope-simple-bold"></i
+      ></a>
+    </li>
   </ul>
 </th:block>

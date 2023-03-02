@@ -35,7 +35,14 @@
           <div class="footer-right">
             <ul>
               <li th:each="menuItem : ${menuFinder.getPrimary()?.menuItems}">
-                <a th:href="${menuItem.status?.href}" th:text="${menuItem.status?.displayName}">menu-name</a>
+                <a
+                  th:href="${menuItem.status?.href}"
+                  th:target="${menuItem.spec.target?.value}"
+                  th:aria-label="'Menu named ' + ${menuItem.status?.displayName}"
+                  th:text="${menuItem.status?.displayName}"
+                  >
+                  menu-name
+                  </a>
               </li>
             </ul>
           </div>
