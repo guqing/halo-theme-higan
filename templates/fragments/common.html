@@ -5,7 +5,7 @@
     </li>
     <li th:each="menuItem : ${menuFinder.getPrimary().menuItems}">
       <a
-        th:href="${menuItem.status?.href}"
+        th:href="@{${menuItem.status?.href}}"
         th:target="${menuItem.spec.target?.value}"
         th:aria-label="'Menu named ' + ${menuItem.status?.displayName}"
         th:text="${menuItem.status?.displayName}"

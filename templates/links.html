@@ -8,7 +8,7 @@
         <h3 th:if="${#lists.size(groups) > 1}" th:text="${group.spec.displayName}"></h3>
         <ul>
           <li th:each="link : ${group.links}">
-            <a class="fir-image-figure" rel="noopener" target="_blank" th:href="${link.spec.url}">
+            <a class="fir-image-figure" rel="noopener" target="_blank" th:href="@{${link.spec.url}}">
               <figure class="fir-imageover ">
                 <img loading="lazy" class="fir-author-image fir-clickcircle" th:src="${link.spec.logo}"
                   th:alt="${link.spec.displayName}">

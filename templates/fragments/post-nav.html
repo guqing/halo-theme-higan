@@ -17,7 +17,7 @@
       <span id="actions" th:with="postCursor=${postFinder.cursor(post.metadata?.name)}">
         <ul>
           <li>
-            <a class="icon" th:if="${postCursor.hasPrevious()}" aria-label="Navigate to the previous post" th:href="${postCursor.previous?.status?.permalink}">
+            <a class="icon" th:if="${postCursor.hasPrevious()}" aria-label="Navigate to the previous post" th:href="@{${postCursor.previous?.status?.permalink}}">
               <i class="iconify iconify-large"
                   data-icon="mdi:chevron-left"
                   onmouseover="$('#i-prev').toggle();"
@@ -27,7 +27,7 @@
           </li>
 
             <li>
-            <a class="icon" th:if="${postCursor.hasNext()}" aria-label="Navigate to the next post" th:href="${postCursor.next?.status?.permalink}">
+            <a class="icon" th:if="${postCursor.hasNext()}" aria-label="Navigate to the next post" th:href="@{${postCursor.next?.status?.permalink}}">
               <i class="iconify iconify-large"
                 data-icon="ic:round-chevron-right"
                 onmouseover="$('#i-next').toggle();"

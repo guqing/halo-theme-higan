@@ -16,7 +16,7 @@
             ></time>
           </div>
           <span>
-            <a class="post-title" th:href="${post.status?.permalink}" th:text="${post.spec?.title}"></a>
+            <a class="post-title" th:href="@{${post.status?.permalink}}" th:text="${post.spec?.title}"></a>
           </span>
         </li>
       </ul>

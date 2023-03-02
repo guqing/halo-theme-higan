@@ -20,7 +20,7 @@
         <div class="article-tag" th:if="${!#lists.isEmpty(post.tags)}">
           <span class="iconify" data-icon="fa-solid:tag" data-inline="false"></span>
           <th:block th:each="tag : ${post.tags}">
-            <a class="tag-link" th:href="${tag.status?.permalink}" th:text="${tag.spec?.displayName}">
+            <a class="tag-link" th:href="@{${tag.status?.permalink}}" th:text="${tag.spec?.displayName}">
               post tag name
             </a>
           </th:block>

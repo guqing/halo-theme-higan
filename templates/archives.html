@@ -13,20 +13,20 @@
                         th:text="${#temporals.format(post.spec?.publishTime, 'MMMM dd yyyy')}">publicTime</time>
               </div>
               <span>
-                <a class="post-title" th:href="${post.status?.permalink}" th:text="${post.spec?.title}"></a>
+                <a class="post-title" th:href="@{${post.status?.permalink}}" th:text="${post.spec?.title}"></a>
               </span>
           </li>
           </th:block>
         </ul>
       </th:block>
       <div class="pagination">
-        <a th:href="${archives.prevUrl}" th:if="${archives.hasPrevious()}">
+        <a th:href="@{${archives.prevUrl}}" th:if="${archives.hasPrevious()}">
           <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
         </a>
         <span class="page-number"
           th:with="totalPage=${archives.totalPages}"
           th:text="'Page ' + ${archives.page} + ' of ' + ${totalPage}">Page 1 of 1</span>
-        <a th:href="${archives.nextUrl}" th:if="${archives.hasNext()}">
+        <a th:href="@{${archives.nextUrl}}" th:if="${archives.hasNext()}">
           <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i>
         </a>
       </div>
