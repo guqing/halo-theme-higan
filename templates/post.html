@@ -38,7 +38,6 @@
   </article>
   <div th:insert="~{fragments/footer-nav :: footerNav}"></div>
 
-  <script th:src="@{/assets/lib/tocbot/tocbot.min.js}"></script>
   <!-- clipboard -->
   <script th:src="@{/assets/lib/clipboard/clipboard.min.js}"></script>
   <script type="text/javascript">
@@ -62,18 +61,11 @@
         e.trigger.setAttribute('aria-label', "Copied!");
         e.clearSelection();
       })
-
-      // const tocOptions = {
-      //   tocSelector: isMobile() ? '#toc-footer' : '#toc',
-      //   contentSelector: '.post .content',
-      //   linkClass: 'toc-link',
-      //   listItemClass: 'toc-item',
-      //   activeLinkClass: 'is-active-link toc-active-link'
-      // };
-      // tocbot.init(tocOptions);
     
+      // generate toc
       const contentDom = document.querySelector('article > .content')
-      main.generateTOC(contentDom.innerHTML, '#toc')
+      const tocSelector = isMobile() ? '#toc-footer' : '#toc'
+      main.generateTOC(contentDom.innerHTML, tocSelector)
 
       const postTitleUpperCase = [[${ theme.config?.styles?.post_title_uppper }]]
       if (postTitleUpperCase) {
