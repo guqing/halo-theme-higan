@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@iconify/json": "^2.1.127",
+    "@types/alpinejs": "^3.7.1",
     "@types/node": "16",
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.39.0",
@@ -54,6 +55,7 @@
     "@iconify/iconify": "^2.2.1",
     "@jsdevtools/rehype-toc": "^3.0.2",
     "@purge-icons/generated": "^0.9.0",
+    "alpinejs": "^3.12.0",
     "rehype-parse": "^8.0.4",
     "rehype-slug": "^5.1.0",
     "rehype-stringify": "^9.0.3",
