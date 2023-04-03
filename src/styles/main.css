@@ -1980,25 +1980,58 @@ article a {
 /*友链页面样式结束*/
 
 /*日志样式开始*/
-.journal .journal-comment {
-  display: none;
-}
-
-.journal .journal-comment:target {
+.moment .moment-comment:target {
   display: block;
 }
-
-.journal .post-list a {
+.moment .post-list li {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding-bottom: 15px;
+}
+.moment .post-list a {
   text-decoration: none;
   background: none;
 }
 
-.journal .post-list .operation {
+.moment .post-list .operation {
   color: var(--color-text);
 }
 
-/*日志样式结束*/
+.moment .avatar-user {
+  border-radius: 50% !important;
+}
 
+.moment .avatar {
+  background-color: var(--color-background);
+  box-shadow: 0 0 0 1px rgba(27,31,36,0.15);
+  display: inline-block;
+  flex-shrink: 0;
+  line-height: 1;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.moment .color-fg-muted {
+  color: var(--color-accent-3);
+}
+.moment .moment-header {
+padding-bottom: 5px;
+}
+.moment .moment-body {
+  padding: 0 8px;
+  /* box-shadow: 0 1px 6px rgba(140,149,159,0.15); */
+}
+/*日志样式结束*/
+.no-underline {
+  text-decoration: none !important;
+}
+.wb-break-all {
+  word-break: break-all !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
 .highlight {
   background: #474949;
   color: #d1d9e1;
