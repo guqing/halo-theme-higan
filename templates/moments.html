@@ -46,6 +46,11 @@
             </div>
             <div class="moment-body">
               <div th:utext="${moment.spec.content?.html}"></div>
+              <div class="medium" th:with="medium=${moment.spec.content?.medium}">
+                <th:block th:each="media : ${medium}">
+                  <img th:if="${#strings.equals(media.type, 'PHOTO')}" th:src="${media?.url}" alt="moment image" loading="lazy">
+                </th:block>
+              </div>
               <div th:attr="x-data=|{name: '${moment.metadata.name}'}|" class="operation">
                 <a
                   th:href="|javascript:handleLike('${moment.metadata.name}')|"
