@@ -1355,7 +1355,8 @@ body {
   }
 
   .post-list .post-item .meta {
-      text-align: left;
+      text-align: right;
+      min-width: 110px;
   }
 }
 
@@ -1600,7 +1601,8 @@ article a {
   }
 
   #archive .post-list .post-item .meta {
-      text-align: left;
+      text-align: right;
+      min-width: 110px;
   }
 }
 
