@@ -8,7 +8,32 @@
       <div class="content">
         <ul class="post-list" x-data="momentComment">
           <li th:each="moment : ${moments.items}">
-            <div class="moment-header">
+            <div class="" th:if="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}">
+              <div class="color-fg-muted">
+                <span style="margin-right: var(--base-size-8, 8px) !important">
+                  <a
+                    th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
+                    th:href="@{${authorPage}}"
+                    class="d-inline-block"
+                  >
+                    <img
+                      class="avatar avatar-user"
+                      th:with="defaultAvatar=${#theme.assets('/images/logo.png')}"
+                      th:src="${#strings.defaultString(moment.owner?.avatar, defaultAvatar)}"
+                      width="32"
+                      height="32"
+                      th:alt="|@${moment.owner?.name}|"
+                    />
+                  </a>
+                </span>
+                <span
+                  class="no-underline color-fg-muted"
+                  th:utext="${moment.metadata?.annotations?.get('guqing.github.io/customize-title')}"
+                >
+                </span>
+              </div>
+            </div>
+            <div class="moment-header" th:unless="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}">
               <div class="color-fg-muted">
                 <span style="margin-right: var(--base-size-8, 8px) !important">
                   <a
@@ -48,7 +73,12 @@
               <div th:utext="${moment.spec.content?.html}"></div>
               <div class="medium" th:with="medium=${moment.spec.content?.medium}">
                 <th:block th:each="media : ${medium}">
-                  <img th:if="${#strings.equals(media.type, 'PHOTO')}" th:src="${media?.url}" alt="moment image" loading="lazy">
+                  <img
+                    th:if="${#strings.equals(media.type, 'PHOTO')}"
+                    th:src="${media?.url}"
+                    alt="moment image"
+                    loading="lazy"
+                  />
                 </th:block>
               </div>
               <div th:attr="x-data=|{name: '${moment.metadata.name}'}|" class="operation">
