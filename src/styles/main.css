@@ -631,24 +631,14 @@ body {
 .content a {
   color: var(--color-text);
   text-decoration: none;
-  background-image: linear-gradient(
-          transparent,
-          transparent 5px,
-          var(--color-text) 5px,
-          var(--color-text)
-  );
+  background-image: linear-gradient(transparent, transparent 5px, var(--color-text) 5px, var(--color-text));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
 
 .content a:hover {
-  background-image: linear-gradient(
-          transparent,
-          transparent 4px,
-          #d480aa 4px,
-          #d480aa
-  );
+  background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa);
 }
 
 .content a.icon {
@@ -678,12 +668,7 @@ body {
 .content h4 a:hover,
 .content h5 a:hover,
 .content h6 a:hover {
-  background-image: linear-gradient(
-          transparent,
-          transparent 6px,
-          #d480aa 6px,
-          #d480aa
-  );
+  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -696,12 +681,7 @@ body {
 }
 
 .content h6 a:hover {
-  background-image: linear-gradient(
-          transparent,
-          transparent 6px,
-          #d480aa 6px,
-          #d480aa
-  );
+  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -709,17 +689,17 @@ body {
 
 @media (min-width: 540px) {
   .image-wrap {
-      flex-direction: row;
-      margin-bottom: 2rem;
+    flex-direction: row;
+    margin-bottom: 2rem;
   }
 
   .image-wrap .image-block {
-      flex: 1 0 35%;
-      margin-right: 2rem;
+    flex: 1 0 35%;
+    margin-right: 2rem;
   }
 
   .image-wrap p {
-      flex: 1 0 65%;
+    flex: 1 0 65%;
   }
 }
 
@@ -729,19 +709,19 @@ body {
 
 @media (max-width: 480px) {
   .px3 {
-      padding-right: 1rem;
-      padding-left: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
   }
 
   .my4 {
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
 @media (min-width: 480px) {
   p {
-      text-align: justify;
+    text-align: justify;
   }
 }
 
@@ -813,12 +793,7 @@ body {
 }
 
 #header #nav ul a:hover {
-  background-image: linear-gradient(
-          transparent,
-          transparent 5px,
-          var(--color-accent-1) 5px,
-          var(--color-accent-1)
-  );
+  background-image: linear-gradient(transparent, transparent 5px, var(--color-accent-1) 5px, var(--color-accent-1));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -852,43 +827,43 @@ body {
 
 @media screen and (max-width: 480px) {
   #header #title {
-      display: table;
-      margin-right: 5rem;
-      min-height: 50px;
+    display: table;
+    margin-right: 5rem;
+    min-height: 50px;
   }
 
   #header #title h1 {
-      display: table-cell;
-      vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
   }
 
   #header #nav ul a:hover {
-      background: none;
+    background: none;
   }
 
   #header #nav ul li {
-      display: none;
-      border-right: 0;
+    display: none;
+    border-right: 0;
   }
 
   #header #nav ul li.icon {
-      position: absolute;
-      top: 77px;
-      right: 1rem;
-      display: inline-block;
+    position: absolute;
+    top: 77px;
+    right: 1rem;
+    display: inline-block;
   }
   #header #nav ul li.icon.iconify {
     color: var(--color-accent-1);
   }
 
   #header #nav ul.responsive li {
-      display: block;
+    display: block;
   }
 
   #header #nav li:not(:first-child) {
-      padding-top: 1rem;
-      padding-left: 70px;
-      font-size: 1rem;
+    padding-top: 1rem;
+    padding-left: 70px;
+    font-size: 1rem;
   }
 }
 
@@ -994,12 +969,7 @@ body {
 }
 
 #header-post #nav ul a:hover {
-  background-image: linear-gradient(
-          transparent,
-          transparent 5px,
-          var(--color-accent-1) 5px,
-          var(--color-accent-1)
-  );
+  background-image: linear-gradient(transparent, transparent 5px, var(--color-accent-1) 5px, var(--color-accent-1));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1113,51 +1083,51 @@ body {
 
 @media screen and (max-width: 500px) {
   #header-post {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 900px) {
   #header-post #menu-icon {
-      display: none;
+    display: none;
   }
 
   #header-post #actions {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 1199px) {
   #header-post #toc {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (min-width: 900px) {
   #header-post #menu-icon-tablet {
-      display: none !important;
+    display: none !important;
   }
 
   #header-post #top-icon-tablet {
-      display: none !important;
+    display: none !important;
   }
 }
 
 @media screen and (min-width: 1199px) {
   #header-post #actions {
-      width: auto;
+    width: auto;
   }
 
   #header-post #actions ul {
-      display: inline-block;
-      float: right;
+    display: inline-block;
+    float: right;
   }
 
   #header-post #actions .info {
-      display: inline;
-      float: left;
-      margin-right: 2rem;
-      font-style: italic;
+    display: inline;
+    float: left;
+    margin-right: 2rem;
+    font-style: italic;
   }
 }
 
@@ -1200,12 +1170,7 @@ body {
 }
 
 #footer-post #nav-footer a:hover {
-  background-image: linear-gradient(
-          transparent,
-          transparent 5px,
-          var(--color-accent-1) 5px,
-          var(--color-accent-1)
-  );
+  background-image: linear-gradient(transparent, transparent 5px, var(--color-accent-1) 5px, var(--color-accent-1));
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1325,7 +1290,7 @@ body {
 
 @media screen and (min-width: 500px) {
   #footer-post-container {
-      display: none;
+    display: none;
   }
 }
 
@@ -1350,13 +1315,13 @@ body {
 
 @media (min-width: 480px) {
   .post-list .post-item {
-      display: flex;
-      margin-bottom: 5px;
+    display: flex;
+    margin-bottom: 5px;
   }
 
   .post-list .post-item .meta {
-      text-align: right;
-      min-width: 110px;
+    text-align: right;
+    min-width: 110px;
   }
 }
 
@@ -1450,7 +1415,7 @@ article .content blockquote {
   padding: 0.5em 10px;
   background: inherit;
   color: var(--color-quote);
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  quotes: "\201C""\201D""\2018""\2019";
   font-weight: bold;
 }
 
@@ -1474,22 +1439,12 @@ article .content blockquote footer {
 }
 
 article .content blockquote footer a {
-  background-image: linear-gradient(
-          transparent,
-          transparent 5px,
-          #666 5px,
-          #666
-  );
+  background-image: linear-gradient(transparent, transparent 5px, #666 5px, #666);
   color: #666;
 }
 
 article .content blockquote footer a:hover {
-  background-image: linear-gradient(
-          transparent,
-          transparent 4px,
-          #858585 4px,
-          #858585
-  );
+  background-image: linear-gradient(transparent, transparent 4px, #858585 4px, #858585);
   color: #858585;
 }
 
@@ -1534,12 +1489,7 @@ article a {
 }
 
 .article-tag .tag-link {
-  background-image: linear-gradient(
-          transparent,
-          transparent 10px,
-          #d480aa 10px,
-          #d480aa
-  );
+  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1550,12 +1500,7 @@ article a {
 }
 
 .article-category .category-link {
-  background-image: linear-gradient(
-          transparent,
-          transparent 10px,
-          #d480aa 10px,
-          #d480aa
-  );
+  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
@@ -1564,12 +1509,12 @@ article a {
 @media (min-width: 480px) {
   .article-tag,
   .article-category {
-      display: inline;
+    display: inline;
   }
 
   .article-tag:before,
   .article-category:before {
-      content: "|";
+    content: "|";
   }
 }
 #archive {
@@ -1595,14 +1540,14 @@ article a {
 
 @media (min-width: 480px) {
   #archive .post-list .post-item {
-      display: flex;
-      margin-bottom: 5px;
-      margin-left: 1rem;
+    display: flex;
+    margin-bottom: 5px;
+    margin-left: 1rem;
   }
 
   #archive .post-list .post-item .meta {
-      text-align: right;
-      min-width: 110px;
+    text-align: right;
+    min-width: 110px;
   }
 }
 
@@ -1613,7 +1558,7 @@ article a {
 #footer {
   margin-bottom: 10px;
   width: 100%;
-  color: #929191; 
+  color: #929191;
   color: var(--color-footer-mobile-1);
   vertical-align: top;
   text-align: center;
@@ -1664,21 +1609,21 @@ article a {
 
 @media (min-width: 39rem) {
   #footer {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      align-items: center;
-      align-content: center;
-      margin-bottom: 20px;
-      margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
   }
 
   #footer .footer-left {
-      align-self: flex-start;
+    align-self: flex-start;
   }
 
   #footer .footer-right {
-      align-self: flex-end;
+    align-self: flex-end;
   }
 }
 
@@ -1856,37 +1801,37 @@ article a {
 
 @-moz-keyframes tooltip-appear {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes tooltip-appear {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @-o-keyframes tooltip-appear {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
 @keyframes tooltip-appear {
   from {
-      opacity: 0;
+    opacity: 0;
   }
   to {
-      opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -1946,7 +1891,7 @@ article a {
   height: 60px;
   width: 60px;
   border-radius: 100px;
-  border: 1px solid #F0F1F1;
+  border: 1px solid #f0f1f1;
   cursor: pointer;
 }
 
@@ -1959,7 +1904,8 @@ article a {
   text-decoration: none;
 }
 
-#links .fir-image-figure .caption, .fir-image-figure figcaption {
+#links .fir-image-figure .caption,
+.fir-image-figure figcaption {
   padding-left: 15px;
 }
 
@@ -2001,6 +1947,11 @@ article a {
   list-style: initial !important;
 }
 
+.moment-body .momemt-content p {
+  text-align: left;
+  word-wrap:break-word;
+}
+
 .moment .post-list .operation {
   color: var(--color-text);
   padding-top: 8px;
@@ -2012,7 +1963,7 @@ article a {
 
 .moment .avatar {
   background-color: var(--color-background);
-  box-shadow: 0 0 0 1px rgba(27,31,36,0.15);
+  box-shadow: 0 0 0 1px rgba(27, 31, 36, 0.15);
   display: inline-block;
   flex-shrink: 0;
   line-height: 1;
@@ -2025,7 +1976,7 @@ article a {
 }
 
 .moment .moment-header {
-padding-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 .moment .medium {
@@ -2172,12 +2123,7 @@ code {
   color: #666;
   font-style: italic;
   font-size: 0.8em;
-  background-image: linear-gradient(
-          transparent,
-          transparent 10px,
-          #d480aa 10px,
-          #d480aa
-  );
+  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
