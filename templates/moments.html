@@ -8,9 +8,9 @@
       <div class="content">
         <ul class="post-list" x-data="momentComment">
           <li th:each="moment : ${moments.items}">
-            <div class="" th:if="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}">
+            <div class="moment-header" th:if="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}">
               <div class="color-fg-muted">
-                <span style="margin-right: var(--base-size-8, 8px) !important">
+                <span>
                   <a
                     th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
                     th:href="@{${authorPage}}"
@@ -35,7 +35,7 @@
             </div>
             <div class="moment-header" th:unless="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}">
               <div class="color-fg-muted">
-                <span style="margin-right: var(--base-size-8, 8px) !important">
+                <span>
                   <a
                     th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
                     th:href="@{${authorPage}}"
@@ -70,7 +70,7 @@
               </div>
             </div>
             <div class="moment-body">
-              <div th:utext="${moment.spec.content?.html}"></div>
+              <div class="momemt-content" th:utext="${moment.spec.content?.html}"></div>
               <div class="medium" th:with="medium=${moment.spec.content?.medium}">
                 <th:block th:each="media : ${medium}">
                   <img

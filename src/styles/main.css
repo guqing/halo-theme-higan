@@ -1983,16 +1983,22 @@ article a {
 .moment .moment-comment:target {
   display: block;
 }
+
 .moment .post-list li {
   list-style: none;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  flex: 1;
-  padding-bottom: 15px;
+  flex: 1; */
+  padding: 15px 0;
 }
+
 .moment .post-list a {
   text-decoration: none;
   background: none;
+}
+
+.moment-body .momemt-content li {
+  list-style: initial !important;
 }
 
 .moment .post-list .operation {
