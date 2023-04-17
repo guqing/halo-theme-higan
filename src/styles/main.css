@@ -1943,6 +1943,11 @@ article a {
   background: none;
 }
 
+.moment-content-box {
+  box-shadow: 1px 3px 15px rgba(140,149,159,0.15);
+  padding: 16px;
+}
+
 .moment-body .momemt-content li {
   list-style: initial !important;
 }
