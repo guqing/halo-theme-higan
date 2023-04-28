@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: html(title=${site.title}, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}">
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: html(title=${site.title}, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}"
+>
   <th:block th:fragment="content">
     <section id="about">
       <th:block th:if="${theme.config?.styles?.hitokoto}">
@@ -7,14 +10,24 @@
         <p id="hitokoto"></p>
       </th:block>
       <th:block th:unless="${theme.config?.styles?.hitokoto}">
-        <p class="blog-description" th:text="${site?.seo?.description}"></p>
+        <p
+          class="blog-description"
+          th:with="defaultResume=${#strings.defaultString(site?.seo?.description, '')}"
+          th:utext="${#strings.defaultString(theme.config?.styles?.resume, defaultResume)}"
+        ></p>
       </th:block>
     </section>
 
     <p>
       Find me on
       <th:block th:with="sns=${theme?.config?.sns}">
-        <a class="icon" target="_blank" th:href="@{/rss.xml}" aria-label="Find me on rss" th:if="${theme?.config?.sns?.rss}">
+        <a
+          class="icon"
+          target="_blank"
+          th:href="@{/rss.xml}"
+          aria-label="Find me on rss"
+          th:if="${theme?.config?.sns?.rss}"
+        >
           <i class="iconify iconify-middle" data-icon="heroicons-outline:rss"></i>
         </a>
         <a
@@ -94,7 +107,7 @@
       </th:block>
     </p>
 
-    <section id="writing" style="flex: auto;">
+    <section id="writing" style="flex: auto">
       <span class="h1"><a th:href="@{/archives}">Writing</a></span>
       <ul class="post-list">
         <th:block th:each="item : ${posts.items}">
@@ -117,9 +130,12 @@
         <a th:href="@{${posts.prevUrl}}" th:if="${posts.hasPrevious()}">
           <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
         </a>
-        <span class="page-number"
+        <span
+          class="page-number"
           th:with="totalPage=${posts.totalPages}"
-          th:text="'Page ' + ${posts.page} + ' of ' + ${totalPage}">Page 1 of 1</span>
+          th:text="'Page ' + ${posts.page} + ' of ' + ${totalPage}"
+          >Page 1 of 1</span
+        >
         <a th:href="@{${posts.nextUrl}}" th:if="${posts.hasNext()}">
           <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i>
         </a>

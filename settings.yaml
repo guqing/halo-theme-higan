@@ -107,3 +107,9 @@ spec:
               value: true
             - label: 关闭
               value: false
+        - $formkit: code
+          name: resume
+          if: '$hitokoto===false'
+          label: 个人简介
+          language: html
+          height: 100px
