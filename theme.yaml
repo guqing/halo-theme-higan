@@ -14,4 +14,4 @@ spec:
   settingName: guqing-higan-setting
   configMapName: guqing-higan-configmap
   version: 2.3.0
-  require: ">=2.1.0"
+  requires: ">=2.1.0"
