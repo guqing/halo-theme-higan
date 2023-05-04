@@ -2154,6 +2154,11 @@ code {
   transition: opacity 0.2s ease-in;
 }
 
+.highlight .btn-copy svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
 .highlight .btn-copy:hover {
   color: var(--color-accent-1);
 }
