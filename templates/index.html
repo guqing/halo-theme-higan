@@ -122,6 +122,12 @@
             </div>
             <span>
               <a th:href="@{${item.status?.permalink}}" th:text="${item.spec.title}">文章标题</a>
+              <i
+                class="iconify iconify-middle"
+                data-icon="typcn:pin-outline"
+                th:if="${item.spec.pinned}"
+                style="color: var(--color-link)"
+              ></i>
             </span>
           </li>
         </th:block>
