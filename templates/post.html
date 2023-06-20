@@ -1,81 +1,96 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{fragments/layout :: html(title=${post.spec.title}, content = ~{::content}, header = ~{}, navbar = ~{fragments/post-nav::navbar})}">
-<th:block th:fragment="content">
-  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-      <h1 class="posttitle" itemprop="name headline" th:text="${post.spec?.title}">post-title</h1>
-      <div class="meta">
-        <span class="author" itemprop="author" itemscope th:each="contributor : ${post?.contributors}">
-          <span itemprop="name" th:text="${contributor?.displayName}">contributor displayName</span>
-        </span>
-
-        <div class="postdate">
-          <time th:datetime="${post.spec?.publishTime}" itemprop="datePublished"
-            th:text="${#temporals.format(post.spec?.publishTime, 'yyyy-MM-dd')}">
-            post publish time
-          </time>
-        </div>
-
-        <div class="article-tag" th:if="${!#lists.isEmpty(post.tags)}">
-          <span class="iconify" data-icon="fa-solid:tag" data-inline="false"></span>
-          <th:block th:each="tag : ${post.tags}">
-            <a class="tag-link" th:href="@{${tag.status?.permalink}}" th:text="${tag.spec?.displayName}">
-              post tag name
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: html(title=${post.spec.title}, content = ~{::content}, header = ~{}, navbar = ~{fragments/post-nav::navbar})}"
+>
+  <th:block th:fragment="content">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+      <header>
+        <h1 class="posttitle" itemprop="name headline" th:text="${post.spec?.title}">post-title</h1>
+        <div class="meta">
+          <span class="author" itemprop="author" itemscope th:each="contributor : ${post?.contributors}">
+            <a
+              th:href="${contributor.permalink}"
+              itemprop="name"
+              th:text="${contributor?.displayName}"
+              style="background-image: none"
+              >
             </a>
-          </th:block>
+          </span>
+
+          <div class="postdate">
+            <time
+              th:datetime="${post.spec?.publishTime}"
+              itemprop="datePublished"
+              th:text="${#temporals.format(post.spec?.publishTime, 'yyyy-MM-dd')}"
+            >
+              post publish time
+            </time>
+          </div>
+
+          <div class="article-tag" th:if="${!#lists.isEmpty(post.tags)}">
+            <span class="iconify" data-icon="fa-solid:tag" data-inline="false"></span>
+            <th:block th:each="tag : ${post.tags}">
+              <a class="tag-link" th:href="@{${tag.status?.permalink}}" th:text="${tag.spec?.displayName}">
+                post tag name
+              </a>
+            </th:block>
+          </div>
+
+          <span th:title="|浏览量 ${post.stats?.visit}|">
+            <span class="iconify" data-icon="mdi:eye-outline" data-inline="false"></span>
+            <span th:text="${post.stats?.visit}"></span>
+          </span>
         </div>
+      </header>
 
-        <span th:title="|浏览量 ${post.stats?.visit}|">
-          <span class="iconify" data-icon="mdi:eye-outline" data-inline="false"></span>
-          <span th:text="${post.stats?.visit}"></span>
-        </span>
-      </div>
-    </header>
+      <div class="content" itemprop="articleBody" th:utext="${post.content?.content}">post formatted content</div>
+      <halo:comment
+        group="content.halo.run"
+        kind="Post"
+        th:name="${post.metadata?.name}"
+        colorScheme="commentColorScheme"
+      />
+    </article>
+    <div th:insert="~{fragments/footer-nav :: footerNav}"></div>
 
-    <div class="content" itemprop="articleBody" th:utext="${post.content?.content}">post formatted content</div>
-    <halo:comment group="content.halo.run" kind="Post" th:name="${post.metadata?.name}" colorScheme="commentColorScheme"/>
-  </article>
-  <div th:insert="~{fragments/footer-nav :: footerNav}"></div>
+    <!-- clipboard -->
+    <script th:src="@{/assets/lib/clipboard/clipboard.min.js}"></script>
+    <script type="text/javascript">
+      $(function () {
 
-  <!-- clipboard -->
-  <script th:src="@{/assets/lib/clipboard/clipboard.min.js}"></script>
-  <script type="text/javascript">
-    $(function () {
+        // mount it!
+        $(".content pre").wrap('<figure class="highlight"></figure>');
+        // copy-btn HTML
 
-      // mount it!
-      $(".content pre").wrap('<figure class="highlight"></figure>');
-      // copy-btn HTML
+        const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1Z"/></svg>`
+        $(".content figure pre").before(`<span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!">${copySvg}</span>`);
+        // code highlight
+        // document.querySelectorAll('pre code').forEach(el => {
+        //   hljs.highlightElement(el)
+        // })
 
-      const copySvg = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M19 21H8V7h11m0-2H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2m-3-4H4a2 2 0 0 0-2 2v14h2V3h12V1Z"/></svg>`
-      $(".content figure pre").before(`<span class="btn-copy tooltipped tooltipped-sw" aria-label="Copy to clipboard!">${copySvg}</span>`);
-      // code highlight
-      // document.querySelectorAll('pre code').forEach(el => {
-      //   hljs.highlightElement(el)
-      // })
+        var clip = new ClipboardJS('.btn-copy', {
+          text: function (trigger) {
+            return Array.from(trigger.nextElementSibling.querySelectorAll('code')).reduce((str, it) => str + it.innerText + '\n', '')
+          }
+        });
+        clip.on('success', function (e) {
+          e.trigger.setAttribute('aria-label', "Copied!");
+          e.clearSelection();
+        })
 
-      var clip = new ClipboardJS('.btn-copy', {
-        text: function (trigger) {
-          return Array.from(trigger.nextElementSibling.querySelectorAll('code')).reduce((str, it) => str + it.innerText + '\n', '')
+        // generate toc
+        const contentDom = document.querySelector('article > .content')
+        const tocSelector = isMobile() ? '#toc-footer' : '#toc'
+        main.generateTOC(contentDom.innerHTML, tocSelector)
+
+        const postTitleUpperCase = [[${ theme.config?.styles?.post_title_uppper }]]
+        if (postTitleUpperCase) {
+          $(".post .posttitle").addClass("title-upper-case")
         }
-      });
-      clip.on('success', function (e) {
-        e.trigger.setAttribute('aria-label', "Copied!");
-        e.clearSelection();
+
       })
-    
-      // generate toc
-      const contentDom = document.querySelector('article > .content')
-      const tocSelector = isMobile() ? '#toc-footer' : '#toc'
-      main.generateTOC(contentDom.innerHTML, tocSelector)
-
-      const postTitleUpperCase = [[${ theme.config?.styles?.post_title_uppper }]]
-      if (postTitleUpperCase) {
-        $(".post .posttitle").addClass("title-upper-case")
-      }
-
-    })
-  </script>
-</th:block>
-
+    </script>
+  </th:block>
 </html>
