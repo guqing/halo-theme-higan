@@ -2020,23 +2020,28 @@ article a {
   border: 0.1rem solid #eae9e7;
   margin: 0 auto;
 }
+
 .author .profile-nickname-container {
   margin: 0 auto;
   text-align: center;
+  font-size: 1rem;
 }
+
 .author .profile-nickname {
   padding: 0px;
   margin: 0;
   text-align: center;
-  font-weight: normal;
-  margin-top: 0.625rem;
+  font-weight: 600;
 }
+
 .author .profile-bio {
   padding: 0px;
   margin: 0px;
   text-align: center;
   font-weight: normal;
-  font-size: 12px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-accent-2);
 }
 
 .color-accent-1 {
