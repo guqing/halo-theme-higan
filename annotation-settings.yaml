@@ -1,0 +1,12 @@
+apiVersion: v1alpha1
+kind: AnnotationSetting
+metadata:
+  name: guqing-higan-user-annotation-setting
+spec:
+  targetRef:
+    group: ""
+    kind: User
+  formSchema:
+    - $formkit: attachment
+      name: 'higan.guqing.github.io/author-header-image'
+      label: 作者页头图
