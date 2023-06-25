@@ -594,7 +594,9 @@ body {
   color: var(--color-text);
   font-weight: 400;
   font-size: 14px;
-  font-family: "Menlo", "Meslo LG", monospace, "arial", "Georgia", sans-serif;
+  font-family: "Menlo", "Meslo LG", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
@@ -1736,7 +1738,6 @@ article a {
   color: var(--color-background);
   font-weight: 400;
   font-size: 11.200000000000001px;
-  font-family: monospace, "arial", "Georgia", "serif";
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -1873,7 +1874,6 @@ article a {
 /*友链页面样式开始*/
 #links li {
   list-style: none;
-  font-family: "Menlo", "Meslo LG", monospace, monospace, "arial", "Georgia", sans-serif;
   color: var(--color-text);
 }
 
@@ -2354,8 +2354,8 @@ pre {
   border: 1px dotted #666;
   border-radius: 4px;
   font-size: 13px;
-  font-family: "Menlo", "Meslo LG", monospace, monospace, "arial", "Georgia", sans-serif;
   line-height: 22px;
+  font-family: inherit;
   -webkit-border-radius: 4px;
 }
 
@@ -2369,6 +2369,7 @@ code {
   padding: 0 5px;
   border: 1px dotted #666;
   border-radius: 2px;
+  font-family: inherit;
   -webkit-border-radius: 2px;
 }
 
@@ -2377,7 +2378,6 @@ code {
   margin: 0;
   border-radius: 4px;
   background: #212326;
-  font-family: "Menlo", "Meslo LG", monospace, monospace, "arial", "Georgia", sans-serif;
   -webkit-border-radius: 4px;
 }
 
