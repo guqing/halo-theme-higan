@@ -48,6 +48,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
     "typescript": "^4.6.4",
+    "unplugin-fonts": "^1.0.3",
     "vite": "^3.1.8",
     "vite-plugin-purge-icons": "^0.9.1"
   },
