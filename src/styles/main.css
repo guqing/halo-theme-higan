@@ -560,7 +560,7 @@ body table {
 }
 
 body th {
-  padding: 0.5;
+  padding: 0.5rem;
   border-bottom: 1px dashed #666;
   color: var(--color-accent-2);
   font-weight: bold;
@@ -568,7 +568,7 @@ body th {
 }
 
 body td {
-  padding: 0 0.5;
+  padding: 0 0.5rem;
   border-bottom: none;
   font-size: var(--text-sm);
 }
