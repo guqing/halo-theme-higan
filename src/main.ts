@@ -1,3 +1,4 @@
+import 'unfonts.css'
 import "./assets/colors/white.css";
 import "./assets/colors/light.css";
 import "./assets/colors/dark.css";
