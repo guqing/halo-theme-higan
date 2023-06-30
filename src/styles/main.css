@@ -1,3 +1,5 @@
+@import "../assets/fonts/text-size.css";
+
 /*iconify样式开始*/
 .iconify {
   font-size: 1rem;
@@ -489,9 +491,7 @@ body h6 {
 body hr {
   border: 0.5px dashed var(--color-accent-3);
   opacity: 0.5;
-  margin: 0;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 1.25rem 0 1.25rem 0;
 }
 
 body strong {
@@ -507,20 +507,20 @@ body sup,
 body sub {
   position: relative;
   vertical-align: baseline;
-  font-size: 0.75em;
+  font-size: var(--text-xs);
   line-height: 0;
 }
 
 body sup {
-  top: -0.5em;
+  top: -0.5rem;
 }
 
 body sub {
-  bottom: -0.2em;
+  bottom: -0.2rem;
 }
 
 body small {
-  font-size: 0.85em;
+  font-size: var(--text-sm);
 }
 
 body acronym,
@@ -554,22 +554,23 @@ body table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 12px;
+  font-size: var(--text-xs);
   overflow: auto;
   display: block;
 }
 
 body th {
-  padding: 8px;
+  padding: 0.5rem;
   border-bottom: 1px dashed #666;
   color: var(--color-accent-2);
   font-weight: bold;
-  font-size: 13px;
+  font-size: var(--text-th);
 }
 
 body td {
-  padding: 0 8px;
+  padding: 0 0.5rem;
   border-bottom: none;
+  font-size: var(--text-sm);
 }
 
 *,
@@ -593,7 +594,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text);
   font-family: "Menlo", "Meslo LG", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
     "Noto Color Emoji";
@@ -633,14 +634,14 @@ body {
 .content a {
   color: var(--color-text);
   text-decoration: none;
-  background-image: linear-gradient(transparent, transparent 5px, var(--color-text) 5px, var(--color-text));
+  background-image: linear-gradient(transparent, transparent 0.3125rem, var(--color-text) 0.3125rem, var(--color-text));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
 .content a:hover {
-  background-image: linear-gradient(transparent, transparent 4px, #d480aa 4px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 0.25rem, var(--color-link) 0.25rem, var(--color-link));
 }
 
 .content a.icon {
@@ -648,7 +649,7 @@ body {
 }
 
 .content a.icon:hover {
-  color: #d480aa;
+  color: var(--color-link);
 }
 
 .content h1 a,
@@ -670,9 +671,9 @@ body {
 .content h4 a:hover,
 .content h5 a:hover,
 .content h6 a:hover {
-  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 0.375rem, var(--color-link) 0.375rem, var(--color-link));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
@@ -683,9 +684,9 @@ body {
 }
 
 .content h6 a:hover {
-  background-image: linear-gradient(transparent, transparent 6px, #d480aa 6px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 6px, var(--color-link) 6px, var(--color-link));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
@@ -755,11 +756,11 @@ body {
 #header #logo {
   display: inline-block;
   float: left;
-  margin-right: 20px;
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  background-size: 50px 50px;
+  margin-right: 1.25rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  border-radius: 0.3125rem;
+  background-size: 3.125rem 3.125rem;
   background-repeat: no-repeat;
 }
 
@@ -778,32 +779,32 @@ body {
   letter-spacing: 0.01em;
   font-style: normal;
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
 }
 
 #header #nav ul {
   margin: 8px 0 0 0;
   padding: 0;
   list-style-type: none;
-  line-height: 15px;
+  line-height: 0.9375rem;
 }
 
 #header #nav ul a {
-  margin-right: 15px;
-  font-size: 14px;
+  margin-right: 0.9375rem;
+  font-size: var(--text);
   color: var(--color-accent-1);
 }
 
 #header #nav ul a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, var(--color-accent-1) 5px, var(--color-accent-1));
+  background-image: linear-gradient(transparent, transparent 0.3125rem, var(--color-accent-1) 0.3125rem, var(--color-accent-1));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
 #header #nav ul li {
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
   border-right: 1px dotted;
   border-color: var(--color-accent-1);
   vertical-align: middle;
@@ -831,7 +832,7 @@ body {
   #header #title {
     display: table;
     margin-right: 5rem;
-    min-height: 50px;
+    min-height: 3.125rem;
   }
 
   #header #title h1 {
@@ -850,7 +851,7 @@ body {
 
   #header #nav ul li.icon {
     position: absolute;
-    top: 77px;
+    top: 4.8125rem;
     right: 1rem;
     display: inline-block;
   }
@@ -864,7 +865,7 @@ body {
 
   #header #nav li:not(:first-child) {
     padding-top: 1rem;
-    padding-left: 70px;
+    padding-left: 4.375rem;
     font-size: 1rem;
   }
 }
@@ -889,7 +890,7 @@ body {
 }
 
 #header-post a.icon:hover {
-  color: #d480aa;
+  color: var(--color-link);
 }
 
 #header-post ol {
@@ -905,7 +906,7 @@ body {
 
 #header-post ul li {
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
   vertical-align: middle;
 }
 
@@ -916,7 +917,7 @@ body {
 #header-post #menu-icon {
   float: right;
   margin-right: 2rem;
-  margin-left: 15px;
+  margin-left: 0.9375rem;
 }
 
 #header-post #menu-icon:hover {
@@ -926,7 +927,7 @@ body {
 #header-post #menu-icon-tablet {
   float: right;
   margin-right: 2rem;
-  margin-left: 15px;
+  margin-left: 0.9375rem;
 }
 
 #header-post #menu-icon-tablet:hover {
@@ -938,7 +939,7 @@ body {
   right: 2rem;
   bottom: 2rem;
   margin-right: 2rem;
-  margin-left: 15px;
+  margin-left: 0.9375rem;
 }
 
 #header-post #top-icon-tablet:hover {
@@ -958,22 +959,22 @@ body {
   color: var(--color-accent-1);
   letter-spacing: 0.01em;
   font-style: normal;
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
 }
 
 #header-post #nav ul {
-  line-height: 15px;
+  line-height: 0.9375rem;
 }
 
 #header-post #nav ul a {
-  margin-right: 15px;
+  margin-right: 0.9375rem;
   color: var(--color-accent-1);
 }
 
 #header-post #nav ul a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, var(--color-accent-1) 5px, var(--color-accent-1));
+  background-image: linear-gradient(transparent, transparent 0.3125rem, var(--color-accent-1) 0.3125rem, var(--color-accent-1));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
@@ -1028,34 +1029,43 @@ body {
   max-width: 20em;
   max-height: calc(95vh - 7rem);
   text-align: right;
+  font-size: var(--text);
+}
+
+#header-post #toc .toc-text {
+  word-wrap:break-word;
 }
 
 #header-post #toc a:hover {
-  color: #d480aa;
+  color: var(--color-link);
 }
 
 #header-post #toc .toc-level-1 > .toc-link {
   display: none;
 }
 
+#header-post #toc .toc-level-2 > .toc-link-h2 {
+  font-weight: 500;
+}
+
 #header-post #toc .toc-level-2 {
-  color: var(--color-text);
+  color: var(--toc-level-2);
   font-size: 0.8rem;
 }
 
 #header-post #toc .toc-level-2:before {
   color: var(--color-accent-1);
   content: "#";
-  padding-right: 5px;
+  padding-right: 0.3125rem;
 }
 
 #header-post #toc .toc-level-3 {
-  color: #666;
+  color: var(--toc-level-3);
   font-size: 0.7rem;
 }
 
 #header-post #toc .toc-level-4 {
-  color: #525252;
+  color: var(--toc-level-4);
   font-size: 0.4rem;
 }
 
@@ -1156,7 +1166,7 @@ body {
 }
 
 #footer-post a.icon:hover {
-  color: #d480aa;
+  color: var(--color-link);
 }
 
 #footer-post #nav-footer {
@@ -1172,9 +1182,9 @@ body {
 }
 
 #footer-post #nav-footer a:hover {
-  background-image: linear-gradient(transparent, transparent 5px, var(--color-accent-1) 5px, var(--color-accent-1));
+  background-image: linear-gradient(transparent, transparent 0.3125rem, var(--color-accent-1) 0.3125rem, var(--color-accent-1));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
@@ -1188,7 +1198,7 @@ body {
 
 #footer-post #nav-footer ul li {
   display: inline-table;
-  padding: 10px;
+  padding: 0.625rem;
   width: 20%;
   vertical-align: middle;
 }
@@ -1227,7 +1237,7 @@ body {
 
 #footer-post #share-footer ul li {
   display: inline-table;
-  padding: 10px;
+  padding: 0.625rem;
   width: 20%;
   vertical-align: middle;
 }
@@ -1242,16 +1252,16 @@ body {
 
 #footer-post #toc-footer ol {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 1.25rem;
   list-style-type: none;
 }
 
 #footer-post #toc-footer ol li {
-  line-height: 30px;
+  line-height: 1.875rem;
 }
 
 #footer-post #toc-footer a:hover {
-  color: #d480aa;
+  color: var(--color-link);
 }
 
 #footer-post #toc-footer .toc-level-1 > .toc-link {
@@ -1260,7 +1270,7 @@ body {
 
 #footer-post #toc-footer .toc-level-2 {
   color: var(--color-text);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
 }
 
 #footer-post #toc-footer .toc-level-2:before {
@@ -1271,7 +1281,7 @@ body {
 #footer-post #toc-footer .toc-level-3 {
   color: #666;
   font-size: 0.7rem;
-  line-height: 15px;
+  line-height: 0.9375rem;
 }
 
 #footer-post #toc-footer .toc-level-4 {
@@ -1308,22 +1318,22 @@ body {
 
 .post-list .post-item .meta {
   display: block;
-  margin-right: 16px;
-  min-width: 100px;
+  margin-right: 1rem;
+  min-width: 6.25rem;
   color: var(--color-time);
-  font-size: 14px;
+  font-size: var(--text);
   white-space: nowrap;
 }
 
 @media (min-width: 480px) {
   .post-list .post-item {
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
   }
 
   .post-list .post-item .meta {
     text-align: right;
-    min-width: 110px;
+    min-width: 6.875rem;
   }
 }
 
@@ -1333,7 +1343,7 @@ body {
 }
 
 .project-list .project-item {
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
 }
 
 .project-list .project-item p {
@@ -1359,7 +1369,7 @@ article header .meta {
 
 article header .meta * {
   color: var(--color-accent-3);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
 }
 
 article header .author {
@@ -1378,7 +1388,7 @@ article .content {
 
 article .content h2:before {
   position: absolute;
-  top: -4px;
+  top: -0.25rem;
   left: -1rem;
   color: var(--color-accent-1);
   content: "#";
@@ -1413,8 +1423,8 @@ article .content .video-container embed {
 }
 
 article .content blockquote {
-  margin: 1rem 10px;
-  padding: 0.5em 10px;
+  margin: 1rem 0.625rem;
+  padding: 0.5em 0.625rem;
   background: inherit;
   color: var(--color-quote);
   quotes: "\201C""\201D""\2018""\2019";
@@ -1436,18 +1446,18 @@ article .content blockquote:before {
 
 article .content blockquote footer {
   margin: line-height 0;
-  color: #666;
-  font-size: 11px;
+  color: var(--color-meta);
+  font-size: var(--text-xs);
 }
 
 article .content blockquote footer a {
-  background-image: linear-gradient(transparent, transparent 5px, #666 5px, #666);
-  color: #666;
+  background-image: linear-gradient(transparent, transparent 0.3125rem, var(--color-meta) 0.3125rem, var(--color-meta));
+  color: var(--color-meta);
 }
 
 article .content blockquote footer a:hover {
-  background-image: linear-gradient(transparent, transparent 4px, #858585 4px, #858585);
-  color: #858585;
+  background-image: linear-gradient(transparent, transparent 0.25rem, var(--color-meta-code) 0.25rem, var(--color-meta-code));
+  color: var(--color-meta-code);
 }
 
 article .content blockquote footer cite:before {
@@ -1475,7 +1485,7 @@ article .content .caption {
   position: relative;
   display: block;
   margin-top: 0.5em;
-  color: #666;
+  color: var(--color-meta);
   text-align: center;
   font-size: 0.9em;
 }
@@ -1491,9 +1501,9 @@ article a {
 }
 
 .article-tag .tag-link {
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 0.625rem, var(--color-link) 0.625rem, var(--color-link));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
@@ -1502,9 +1512,9 @@ article a {
 }
 
 .article-category .category-link {
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 0.625rem, var(--color-link) 0.625rem, var(--color-link));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
@@ -1534,22 +1544,22 @@ article a {
 
 #archive .post-list .post-item .meta {
   display: block;
-  margin-right: 16px;
-  min-width: 100px;
-  color: #666;
-  font-size: 14px;
+  margin-right: 1rem;
+  min-width: 6.25rem;
+  color: var(--color-meta);
+  font-size: var(--text);
 }
 
 @media (min-width: 480px) {
   #archive .post-list .post-item {
     display: flex;
-    margin-bottom: 5px;
+    margin-bottom: 0.3125rem;
     margin-left: 1rem;
   }
 
   #archive .post-list .post-item .meta {
     text-align: right;
-    min-width: 110px;
+    min-width: 6.875rem;
   }
 }
 
@@ -1558,13 +1568,12 @@ article a {
 }
 
 #footer {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   width: 100%;
-  color: #929191;
   color: var(--color-footer-mobile-1);
   vertical-align: top;
   text-align: center;
-  font-size: 12px;
+  font-size: var(--text-xs);
 }
 
 #footer ul {
@@ -1575,14 +1584,14 @@ article a {
 
 #footer li {
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 0.9375rem;
   border-right: 1px solid;
-  border-color: #666;
+  border-color: var(--color-footer-mobile-1);
   vertical-align: middle;
 }
 
 #footer li a {
-  margin-right: 15px;
+  margin-right: 0.9375rem;
 }
 
 #footer li:last-child {
@@ -1601,12 +1610,12 @@ article a {
 }
 
 #footer a:hover {
-  color: #858585;
+  color: var(--color-meta-code);
 }
 
 #footer .footer-left {
   vertical-align: middle;
-  line-height: 20px;
+  line-height: 1.25rem;
 }
 
 @media (min-width: 39rem) {
@@ -1616,8 +1625,8 @@ article a {
     justify-content: space-between;
     align-items: center;
     align-content: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
   }
 
   #footer .footer-left {
@@ -1638,12 +1647,12 @@ article a {
 
 .pagination .page-number {
   color: var(--color-text);
-  font-size: 0.8rem;
+  font-size: var(--text-sm);
 }
 
 .pagination a {
-  padding: 4px 6px;
-  border-radius: 5px;
+  padding: 0.25rem 0.375rem;
+  border-radius: 0.3125rem;
   background-image: none;
   color: var(--color-text);
   text-decoration: none;
@@ -1658,16 +1667,16 @@ article a {
 }
 
 .search-input {
-  padding: 4px 7px;
+  padding: 0.25rem 0.4375rem;
   width: 100%;
   outline: none;
   border: solid 1px var(--color-accent-3);
-  border-radius: 5px;
+  border-radius: 0.3125rem;
   background-color: var(--color-background);
   color: var(--color-text);
   font-size: 1.2rem;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
+  -webkit-border-radius: 0.3125rem;
+  -moz-border-radius: 0.3125rem;
 }
 
 .search-input:focus {
@@ -1700,8 +1709,8 @@ article a {
 }
 
 #search-result em.search-keyword {
-  border-bottom: 1px dashed #d480aa;
-  color: #d480aa;
+  border-bottom: 1px dashed var(--color-link);
+  color: var(--color-link);
   font-weight: bold;
 }
 
@@ -1712,7 +1721,7 @@ article a {
 }
 
 #tag-cloud .tag-cloud-title {
-  color: #666;
+  color: var(--color-meta);
 }
 
 #tag-cloud .tag-cloud-tags {
@@ -1722,7 +1731,7 @@ article a {
 
 #tag-cloud .tag-cloud-tags a {
   display: inline-block;
-  margin: 10px;
+  margin: 0.625rem;
 }
 
 .tooltipped {
@@ -1737,7 +1746,7 @@ article a {
   -webkit-font-smoothing: subpixel-antialiased;
   color: var(--color-background);
   font-weight: 400;
-  font-size: 11.200000000000001px;
+  font-size: var(--text-xs);
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
@@ -1745,7 +1754,7 @@ article a {
   white-space: pre;
   content: attr(aria-label);
   background: var(--color-text);
-  border-radius: 3px;
+  border-radius: 0.25rem;
   opacity: 0;
 }
 
@@ -1758,7 +1767,7 @@ article a {
   color: var(--color-text);
   pointer-events: none;
   content: "";
-  border: 6px solid transparent;
+  border: 0.375rem solid transparent;
   opacity: 0;
 }
 
@@ -1780,20 +1789,20 @@ article a {
 .tooltipped-sw::after {
   top: 100%;
   right: 50%;
-  margin-top: 6px;
+  margin-top: 0.375rem;
 }
 
 .tooltipped-s::before,
 .tooltipped-sw::before {
   top: auto;
   right: 50%;
-  bottom: -7px;
-  margin-right: -6px;
+  bottom: -0.4375rem;
+  margin-right: -0.375rem;
   border-bottom-color: var(--color-text);
 }
 
 .tooltipped-sw::after {
-  margin-right: -16px;
+  margin-right: -1rem;
 }
 
 .tooltipped-s::after {
@@ -1837,11 +1846,11 @@ article a {
 }
 
 #categories .category-list-title {
-  color: #666;
+  color: var(--color-meta);
 }
 
 #categories .category-list .category-list-item .category-list-count {
-  color: #666;
+  color: var(--color-meta);
 }
 
 #categories .category-list .category-list-item .category-list-count:before {
@@ -1858,7 +1867,7 @@ article a {
 }
 
 .photos .photo-image {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 .photo-list li:last-child {
@@ -1866,7 +1875,7 @@ article a {
 }
 
 .photos .pagination {
-  margin-bottom: 15px;
+  margin-bottom: 0.9375rem;
 }
 
 /*图库页面样式结束*/
@@ -1888,10 +1897,10 @@ article a {
 }
 
 #links .fir-clickcircle {
-  height: 60px;
-  width: 60px;
-  border-radius: 100px;
-  border: 1px solid #f0f1f1;
+  height: 3.75rem;
+  width: 3.75rem;
+  border-radius: 6.25rem;
+  border: 1px solid var(--color-footer-mobile-2);
   cursor: pointer;
 }
 
@@ -1899,14 +1908,14 @@ article a {
   margin: 0;
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
   position: relative;
   text-decoration: none;
 }
 
 #links .fir-image-figure .caption,
 .fir-image-figure figcaption {
-  padding-left: 15px;
+  padding-left: 0.9375rem;
 }
 
 #links .fir-image-figure .fig-author-figure-title {
@@ -1914,8 +1923,8 @@ article a {
 }
 
 #links .fir-image-figure .fig-author-figure-description {
-  margin-top: 2px;
-  color: #666;
+  margin-top: 0.125rem;
+  color: var(--color-meta);
 }
 
 #links .fir-imageover {
@@ -1935,7 +1944,7 @@ article a {
   /* display: flex;
   flex-direction: column;
   flex: 1; */
-  padding: 8px 0;
+  padding: 0.5rem 0;
 }
 
 .moment .post-list a {
@@ -1945,7 +1954,7 @@ article a {
 
 .moment-content-box {
   box-shadow: 1px 3px 15px rgba(140, 149, 159, 0.15);
-  padding: 16px;
+  padding: 1rem;
 }
 
 .moment-body .momemt-content li {
@@ -1959,7 +1968,7 @@ article a {
 
 .moment .post-list .operation {
   color: var(--color-text);
-  padding-top: 8px;
+  padding-top: 0.5rem;
 }
 
 .moment .avatar-user {
@@ -1981,12 +1990,12 @@ article a {
 }
 
 .moment .moment-header {
-  padding-bottom: 5px;
+  padding-bottom: 0.375rem;
 }
 
 .moment .medium {
   display: grid;
-  grid-gap: 8px;
+  grid-gap: 0.5rem;
   grid-template-columns: 1fr 1fr 1fr;
 }
 
@@ -2349,14 +2358,14 @@ article a {
 
 pre {
   overflow-x: auto;
-  padding: 10px 15px;
+  padding: 0.625rem 0.9375rem;
   padding-bottom: 0;
-  border: 1px dotted #666;
-  border-radius: 4px;
-  font-size: 13px;
-  line-height: 22px;
+  border: 1px dotted var(--color-meta);
+  border-radius: 0.25rem;
+  font-size: var(--text-sm);
+  line-height: 1.375rem;
   font-family: inherit;
-  -webkit-border-radius: 4px;
+  -webkit-border-radius: 0.25rem;
 }
 
 pre code {
@@ -2366,36 +2375,36 @@ pre code {
 }
 
 code {
-  padding: 0 5px;
-  border: 1px dotted #666;
-  border-radius: 2px;
+  padding: 0 0.3125rem;
+  border: 1px dotted var(--color-meta);
+  border-radius: 0.125rem;
   font-family: inherit;
-  -webkit-border-radius: 2px;
+  -webkit-border-radius: 0.125rem;
 }
 
 .highlight {
   overflow-x: auto;
   margin: 0;
-  border-radius: 4px;
-  background: #212326;
-  -webkit-border-radius: 4px;
+  border-radius: 0.25rem;
+  background: var(--color-highlight-background);
+  -webkit-border-radius: 0.25rem;
 }
 
 .highlight figcaption {
-  margin: -5px 0 5px;
-  color: #666;
+  margin: -0.3125rem 0 0.3125rem;
+  color: var(--color-meta);
   font-size: 0.9em;
   zoom: 1;
 }
 
 .highlight figcaption a {
   float: right;
-  color: #666;
+  color: var(--color-meta);
   font-style: italic;
   font-size: 0.8em;
-  background-image: linear-gradient(transparent, transparent 10px, #d480aa 10px, #d480aa);
+  background-image: linear-gradient(transparent, transparent 0.625rem, var(--color-link) 0.625rem, var(--color-link));
   background-position: bottom;
-  background-size: 100% 6px;
+  background-size: 100% 0.375rem;
   background-repeat: repeat-x;
 }
 
@@ -2414,7 +2423,7 @@ code {
 .highlight .btn-copy {
   font-size: 1.2rem;
   position: absolute;
-  right: 20px;
+  right: 1.25rem;
   opacity: 0;
   transition: opacity 0.2s ease-in;
 }
@@ -2445,5 +2454,5 @@ code {
 }
 
 .highlight .line {
-  height: 22px;
+  height: 1.375rem;
 }

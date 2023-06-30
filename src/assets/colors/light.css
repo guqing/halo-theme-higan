@@ -14,4 +14,8 @@
     --color-accent-2: #111111;
     --color-accent-1: #d44375;
     --color-quote: #ab2251;
+    --color-highlight-background: #212326;
+    --toc-level-2: #333;
+    --toc-level-3: #333;
+    --toc-level-4: #555;
 }

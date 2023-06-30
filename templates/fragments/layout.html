@@ -11,7 +11,7 @@
     <script th:src="@{/assets/dist/main.iife.js}"></script>
     <script>const commentColorScheme = "[[${theme.config?.styles?.color_schema}]]";</script>
   </head>
-  <body th:class="'theme-'+${theme.config?.styles?.color_schema}">
+  <body th:class="|theme-${theme.config?.styles?.color_schema} text-size-${theme.config?.styles?.text_size}|">
     <div class="max-width mx-auto px3 ltr">
       <th:block th:replace="${navbar}" />
 
