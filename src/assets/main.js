@@ -113,4 +113,7 @@ $(function () {
       });
     }
   }
+
+  // mount it!
+  $("article .content pre").wrap('<figure class="highlight"></figure>');
 });
