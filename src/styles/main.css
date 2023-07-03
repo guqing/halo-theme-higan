@@ -2008,21 +2008,27 @@ article a {
 /*日志样式结束*/
 
 /* 作者页面样式开始 */
-.author .profile-container {
+.author .head-cover {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
+
 .author .profile-wrap {
   margin: 0 auto;
   padding: 1.25rem 0;
+  color: var(--color-text);
+  backdrop-filter: blur(1px);
+  background: rgba(255, 255, 255, 0.2);
 }
+
 .author .profile-content {
   text-align: center;
   margin: 0 auto;
   overflow: hidden;
 }
-.author .profile-header-img {
+
+.author .profile-avatar {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
@@ -2088,6 +2094,11 @@ article a {
   bottom: 0;
 }
 
+.inset-x-0 {
+  left: 0rem;
+  right: 0rem;
+}
+
 .-inset-y-2 {
   top: -0.5rem;
   bottom: -0.5rem;
@@ -2142,6 +2153,14 @@ article a {
 
 .order-first {
   order: -9999;
+}
+
+.-z-20 {
+  z-index: -20;
+}
+
+.z-0 {
+  z-index: 0;
 }
 
 .z-10 {

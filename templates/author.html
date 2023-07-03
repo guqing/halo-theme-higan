@@ -6,16 +6,17 @@
   <th:block th:fragment="content">
     <article class="author" itemscope itemtype="http://schema.org/BlogPosting">
       <section class="about">
-        <div
-          class="profile-container"
-          th:style="|background-image: url(${#annotations.getOrDefault(author, 'higan.guqing.github.io/author-header-image', '')});|"
-        >
-          <div class="profile-wrap">
+        <div class="relative">
+          <div
+            class="absolute inset-x-0 inset-y-0 -z-20 head-cover"
+            th:style="|background-image: url(${#annotations.getOrDefault(author, 'higan.guqing.github.io/author-header-image', '')});|"
+          ></div>
+          <div class="profile-wrap z-20">
             <div class="profile-content">
               <img
                 th:with="defaultLogo=${#theme.assets('/images/logo.png')}"
                 th:src="${#strings.defaultString(author.spec.avatar, defaultLogo)}"
-                class="profile-header-img"
+                class="profile-avatar"
               />
               <div class="profile-nickname-container">
                 <p class="profile-nickname" th:text="${author.spec.displayName}"></p>
