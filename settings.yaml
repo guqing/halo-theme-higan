@@ -77,6 +77,8 @@ spec:
               value: "small"
             - label: "常规"
               value: "normal"
+            - label: "大字体"
+              value: "large"
         - $formkit: attachment
           name: icon
           label: 右上角图标

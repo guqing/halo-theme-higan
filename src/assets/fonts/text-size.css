@@ -3,6 +3,9 @@
   --text-sm: 0.8125rem;
   --text: 0.875rem;
   --text-th: 0.8125rem;
+  --text-toc-level-2: 0.813rem;
+  --text-toc-level-3: 0.75rem;
+  --text-toc-level-4: 0.688rem;
 }
 
 .text-size-normal {
@@ -10,4 +13,19 @@
   --text-sm: 0.9375rem;
   --text: 1rem;
   --text-th: 0.9375rem;
+
+  --text-toc-level-2: 0.9375rem;
+  --text-toc-level-3: 0.875rem;
+  --text-toc-level-4: 0.813rem;
+}
+
+.text-size-large {
+  --text-xs: 0.9375rem;
+  --text-sm: 1rem;
+  --text: 1.125rem;
+  --text-th: 1rem;
+
+  --text-toc-level-2: 1rem;
+  --text-toc-level-3: 0.9375rem;
+  --text-toc-level-4: 0.875rem;
 }

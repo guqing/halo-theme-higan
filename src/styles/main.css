@@ -1050,7 +1050,7 @@ body {
 
 #header-post #toc .toc-level-2 {
   color: var(--toc-level-2);
-  font-size: 0.8rem;
+  font-size: var(--text-toc-level-2);
 }
 
 #header-post #toc .toc-level-2:before {
@@ -1061,12 +1061,12 @@ body {
 
 #header-post #toc .toc-level-3 {
   color: var(--toc-level-3);
-  font-size: 0.75rem;
+  font-size: var(--text-toc-level-3);
 }
 
 #header-post #toc .toc-level-4 {
   color: var(--toc-level-4);
-  font-size: 0.7rem;
+  font-size: var(--text-toc-level-4);
 }
 
 #header-post #toc .toc-level-5 {
@@ -1319,7 +1319,6 @@ body {
 .post-list .post-item .meta {
   display: block;
   margin-right: 1rem;
-  min-width: 6.25rem;
   color: var(--color-time);
   font-size: var(--text);
   white-space: nowrap;
@@ -1577,6 +1576,7 @@ article a {
   margin: 0;
   padding: 0;
   list-style: none;
+  line-height: 1.25rem;
 }
 
 #footer li {
@@ -1619,6 +1619,7 @@ article a {
   #footer {
     display: flex;
     flex-flow: row wrap;
+    gap: 0.4rem 0.4rem;
     justify-content: space-between;
     align-items: center;
     align-content: center;
