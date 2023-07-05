@@ -116,7 +116,7 @@
               <time
                 th:datetime="${item.spec.publishTime}"
                 itemprop="datePublished"
-                th:text="${#temporals.format(item.spec.publishTime, 'MMMM dd yyyy')}"
+                th:text="${#temporals.format(item.spec.publishTime, 'yyyy-MM-dd')}"
               >
               </time>
             </div>

@@ -1061,12 +1061,12 @@ body {
 
 #header-post #toc .toc-level-3 {
   color: var(--toc-level-3);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
 }
 
 #header-post #toc .toc-level-4 {
   color: var(--toc-level-4);
-  font-size: 0.4rem;
+  font-size: 0.7rem;
 }
 
 #header-post #toc .toc-level-5 {
@@ -1333,7 +1333,6 @@ body {
 
   .post-list .post-item .meta {
     text-align: right;
-    min-width: 6.875rem;
   }
 }
 
@@ -1545,7 +1544,6 @@ article a {
 #archive .post-list .post-item .meta {
   display: block;
   margin-right: 1rem;
-  min-width: 6.25rem;
   color: var(--color-meta);
   font-size: var(--text);
 }
@@ -1559,7 +1557,6 @@ article a {
 
   #archive .post-list .post-item .meta {
     text-align: right;
-    min-width: 6.875rem;
   }
 }
 

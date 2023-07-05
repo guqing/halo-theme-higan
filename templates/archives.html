@@ -10,7 +10,7 @@
               <div class="meta">
                   <time th:datetime="${post.spec?.publishTime}"
                         itemprop="datePublished"
-                        th:text="${#temporals.format(post.spec?.publishTime, 'MMMM dd yyyy')}">publicTime</time>
+                        th:text="${#temporals.format(post.spec?.publishTime, 'yyyy-MM-dd')}">publicTime</time>
               </div>
               <span>
                 <a class="post-title" th:href="@{${post.status?.permalink}}" th:text="${post.spec?.title}"></a>
