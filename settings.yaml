@@ -81,7 +81,7 @@ spec:
               value: "large"
         - $formkit: attachment
           name: icon
-          label: 右上角图标
+          label: 首页头像
         - $formkit: radio
           name: avatar_circle
           label: 圆形头像
