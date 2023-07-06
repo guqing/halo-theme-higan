@@ -2019,6 +2019,20 @@ article a {
   height: 100%;
   object-fit: cover;
 }
+
+.moment .tag {
+  background-image: none !important;
+  background-color: var(--color-background-code) !important;
+  color: var(--color-accent-1) !important;
+  padding: 0px 6px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 6px var(--color-footer-mobile-2);
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+.moment .tag::before {
+  content: '#'
+}
 /*日志样式结束*/
 
 /* 作者页面样式开始 */
