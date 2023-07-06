@@ -1942,12 +1942,28 @@ article a {
   /* display: flex;
   flex-direction: column;
   flex: 1; */
-  padding: 0.5rem 0;
+}
+
+.moment .post-list .moment-item {
+  padding-bottom: 1.5rem;
 }
 
 .moment .post-list a {
   text-decoration: none;
   background: none;
+}
+
+.moment .momemt-content a {
+  color: var(--color-text);
+  text-decoration: none;
+  background-image: linear-gradient(transparent,transparent 0.3125rem,var(--color-text) 0.3125rem,var(--color-text));
+  background-position: bottom;
+  background-size: 100% 0.375rem;
+  background-repeat: repeat-x;
+}
+
+.moment .momemt-content a:hover {
+  background-image: linear-gradient(transparent,transparent 0.25rem,var(--color-link) 0.25rem,var(--color-link));
 }
 
 .moment-content-box {

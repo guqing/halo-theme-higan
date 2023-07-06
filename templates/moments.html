@@ -7,7 +7,7 @@
     <article class="moment" itemscope itemtype="http://schema.org/BlogPosting">
       <div class="content">
         <ul class="post-list" x-data="momentComment">
-          <li th:each="moment : ${moments.items}">
+          <li th:each="moment : ${moments.items}" class="moment-item">
             <div
               class="moment-header"
               th:if="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}"
@@ -113,7 +113,7 @@
             </div>
           </li>
         </ul>
-        <div class="pagination">
+        <div class="pagination" style="margin-top: 0;">
           <a th:href="@{${moments.prevUrl}}" th:if="${moments.hasPrevious()}">
             <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
           </a>
