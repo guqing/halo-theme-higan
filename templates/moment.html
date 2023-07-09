@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html
+  xmlns:th="https://www.thymeleaf.org"
+  th:replace="~{fragments/layout :: html(title = ${title}, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}"
+>
+  <th:block th:fragment="content">
+    <article class="moment" itemscope itemtype="http://schema.org/BlogPosting">
+      <div class="content post-list">
+        <div
+          class="moment-header"
+          style="margin-top: 1.25rem;"
+          th:if="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}"
+        >
+          <div class="color-fg-muted">
+            <span>
+              <a
+                th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
+                th:href="@{${authorPage}}"
+                class="d-inline-block"
+              >
+                <img
+                  class="avatar avatar-user"
+                  th:with="defaultAvatar=${#theme.assets('/images/logo.png')}"
+                  th:src="${#strings.defaultString(moment.owner?.avatar, defaultAvatar)}"
+                  width="32"
+                  height="32"
+                  th:alt="|@${moment.owner?.name}|"
+                />
+              </a>
+            </span>
+            <span
+              class="no-underline color-fg-muted"
+              th:utext="${moment.metadata?.annotations?.get('guqing.github.io/customize-title')}"
+            >
+            </span>
+          </div>
+        </div>
+        <div
+          class="moment-header"
+          th:unless="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}"
+        >
+          <div class="color-fg-muted">
+            <span>
+              <a
+                th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
+                th:href="@{${authorPage}}"
+                class="d-inline-block"
+              >
+                <img
+                  class="avatar avatar-user"
+                  th:with="defaultAvatar=${#theme.assets('/images/logo.png')}"
+                  th:src="${#strings.defaultString(moment.owner?.avatar, defaultAvatar)}"
+                  width="32"
+                  height="32"
+                  th:alt="|@${moment.owner?.name}|"
+                />
+              </a>
+            </span>
+            <a
+              class="no-underline wb-break-all d-inline-block"
+              th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
+              th:href="@{${authorPage}}"
+              th:text="${moment.owner?.displayName}"
+            ></a>
+            <span class="no-underline color-fg-muted">
+              <relative-time
+                tense="past"
+                th:datetime="${moment.spec.releaseTime}"
+                data-view-component="true"
+                th:title="${#temporals.format(moment.spec.releaseTime, 'yyyy-MM-dd')}"
+                th:text="${#temporals.format(moment.spec.releaseTime, 'MMMM dd yyyy')}"
+              >
+              </relative-time>
+            </span>
+          </div>
+        </div>
+        <div class="moment-body">
+          <div class="moment-content-box">
+            <div class="momemt-content" th:utext="${moment.spec.content?.html}"></div>
+            <div class="medium" th:with="medium=${moment.spec.content?.medium}">
+              <th:block th:each="media : ${medium}">
+                <img
+                  th:if="${#strings.equals(media.type, 'PHOTO')}"
+                  th:src="${media?.url}"
+                  alt="moment image"
+                  loading="lazy"
+                />
+              </th:block>
+            </div>
+          </div>
+          <div th:attr="x-data=|{name: '${moment.metadata.name}'}|" class="operation">
+            <a
+              th:href="|javascript:handleLike('${moment.metadata.name}')|"
+              th:data-moment-name="${moment.metadata.name}"
+            >
+              <span class="iconify" data-icon="mdi:cards-heart-outline"></span>
+              <span th:data-moment-name="${moment.metadata.name}" th:text="${moment.stats.upvote}"></span>
+            </a>
+            <a href="javascript: void(0);" style="margin-left: 5px;">
+              <span class="iconify" data-icon="mdi:comment-outline"></span>
+              <span th:text="${moment.stats.approvedComment}"></span>
+            </a>
+            <div class="moment-comment">
+              <halo:comment
+                group="moment.halo.run"
+                kind="Moment"
+                th:name="${moment.metadata?.name}"
+                colorScheme="commentColorScheme"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        const likes_localstorage_key = "higan.likes.moment.ids";
+        let likedMomentNames = JSON.parse(localStorage.getItem(likes_localstorage_key) || "[]");
+        likedMomentNames.forEach((momentName) => {
+          activeUpvote(momentName);
+        });
+        function liked(momentName) {
+          return likedMomentNames.includes(momentName);
+        }
+        function handleLike(momentName) {
+          if (liked(momentName)) {
+            return;
+          }
+          const xhr = new XMLHttpRequest();
+          xhr.open("POST", "/apis/api.halo.run/v1alpha1/trackers/upvote");
+          xhr.onload = () => {
+            likedMomentNames = [...likedMomentNames, momentName];
+            localStorage.setItem(likes_localstorage_key, JSON.stringify(likedMomentNames));
+            const likesNode = document.querySelector('span[data-moment-name="' + momentName + '"]');
+            const likes = parseInt(likesNode.innerText);
+            likesNode.innerText = likes + 1;
+            activeUpvote(momentName);
+          };
+          xhr.onerror = function () {
+            alert("网络请求失败，请稍后再试");
+          };
+          xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+          xhr.send(
+            JSON.stringify({
+              group: "moment.halo.run",
+              plural: "moments",
+              name: momentName,
+            })
+          );
+        }
+        function activeUpvote(momentName) {
+          var dom = document.querySelector(".moment .operation a[data-moment-name='" + momentName + "']");
+          if (dom) {
+            dom.style.color = "var(--color-link)";
+            dom.style.fontWeight = "500";
+          }
+        }
+      </script>
+    </article>
+  </th:block>
+</html>

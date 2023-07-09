@@ -1933,6 +1933,10 @@ article a {
 /*友链页面样式结束*/
 
 /*日志样式开始*/
+.moment .moment-comment {
+  margin-top: 1rem;
+}
+
 .moment .moment-comment:target {
   display: block;
 }
