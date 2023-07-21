@@ -1957,6 +1957,10 @@ article a {
   background: none;
 }
 
+.moment .moment-content {
+  word-break: break-word;
+}
+
 .moment .momemt-content a {
   color: var(--color-text);
   text-decoration: none;
