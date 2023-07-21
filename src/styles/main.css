@@ -1957,7 +1957,7 @@ article a {
   background: none;
 }
 
-.moment .moment-content {
+.moment .momemt-content {
   word-break: break-word;
 }
 
@@ -2055,7 +2055,6 @@ article a {
   padding: 1.25rem 0;
   color: var(--color-text);
   backdrop-filter: blur(1px);
-  background: rgba(255, 255, 255, 0.2);
 }
 
 .author .profile-content {
