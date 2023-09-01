@@ -7,7 +7,7 @@
     <article class="moment" itemscope itemtype="http://schema.org/BlogPosting">
       <div class="content">
         <ul class="post-list" x-data="momentComment">
-          <li th:each="moment : ${moments.items}" class="moment-item">
+          <li th:each="moment : ${moments.items}" class="moment-item" th:id="${moment.metadata.name}">
             <div
               class="moment-header"
               th:if="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}"
