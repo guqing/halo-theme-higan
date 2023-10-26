@@ -5,7 +5,7 @@ import slug from "rehype-slug";
 import toc, { HtmlElementNode } from "@jsdevtools/rehype-toc";
 import stringify from "rehype-stringify";
 
-export const generateTOC = async (inputHTML: string, targetDomSelector: string) => {
+export const generateTOC = (inputHTML: string, targetDomSelector: string) => {
   if(!inputHTML) {
     return;
   }
@@ -77,7 +77,7 @@ export const generateTOC = async (inputHTML: string, targetDomSelector: string) 
     .use(stringify);
 
   // Process the HTML, adding heading IDs and Table of Contents
-  const outputHTML = await processor.process(inputHTML);
+  const outputHTML = processor.processSync(inputHTML);
   const targetDom = document.querySelector(targetDomSelector);
   if (targetDom) {
     const doc = document.createRange().createContextualFragment(outputHTML.toString());
