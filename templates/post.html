@@ -14,7 +14,7 @@
               itemprop="name"
               th:text="${contributor?.displayName}"
               style="background-image: none"
-              >
+            >
             </a>
           </span>
 
@@ -90,6 +90,29 @@
           $(".post .posttitle").addClass("title-upper-case")
         }
 
+        // toc collapse control
+        window.addEventListener('scroll', () => {
+          headings = document.querySelectorAll('h2, h3, h4, h5, h6');
+          let currentActiveHeading;
+          headings.forEach(heading => {
+            const headingTop = heading.offsetTop;
+            if (pageYOffset >= headingTop - 50) {
+              currentActiveHeading = heading;
+            }
+          });
+          // remove all active class
+          const tocActiveClassName = 'toc-active';
+          document.querySelectorAll('.' + tocActiveClassName).forEach(el => {
+            el.classList.remove(tocActiveClassName);
+          });
+
+          if (currentActiveHeading) {
+            const tocLevel = document.querySelector(`.toc-link[href="#${currentActiveHeading.id}"]`);
+            if(tocLevel) {
+              tocLevel.classList.add(tocActiveClassName);
+            }
+          }
+        });
       })
     </script>
   </th:block>
