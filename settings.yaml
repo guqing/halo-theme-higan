@@ -100,6 +100,15 @@ spec:
               label: 开启
             - value: false
               label: 关闭
+        - $formkit: select
+          name: post_list_layout
+          label: 文章列表布局
+          value: "simple-post-list"
+          options:
+            - label: "简洁列表"
+              value: "simple-post-list"
+            - label: "多元列表"
+              value: "post-list-summary"
         - $formkit: radio
           name: post_title_uppper
           label: 文章标题大写

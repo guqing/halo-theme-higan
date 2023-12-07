@@ -6,7 +6,7 @@
   <th:block th:fragment="content">
     <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
       <h1 th:text="${singlePage.spec?.title}">title</h1>
-      <div class="content" itemprop="articleBody" th:utext="${singlePage.content?.content}">
+      <div class="content flex-auto" itemprop="articleBody" th:utext="${singlePage.content?.content}">
         singlePage formatted content
       </div>
       <div class="post-comment">
