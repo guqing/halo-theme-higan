@@ -4,18 +4,24 @@
 }
 
 *::-webkit-scrollbar {
+  /* 垂直滚动条的宽度 */
   width: 8px;
+  /* 水平滚动条的高度 */
+  height: 8px;
 }
 
+/* 修改滚动条滑块的样式 */
 *::-webkit-scrollbar-thumb {
   background: #c3c4c5;
   border-radius: 10px;
 }
 
+/* 当鼠标悬停时滑块的样式 */
 *::-webkit-scrollbar-thumb:hover {
   background: #86898C;
 }
 
+/* 修改滚动条轨道的样式 */
 *::-webkit-scrollbar-track {
   background-color: none;
   
