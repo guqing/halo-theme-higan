@@ -1,5 +1,5 @@
 @import "../assets/fonts/text-size.css";
-@import './scrollbar.css';
+@import "./scrollbar.css";
 
 /*iconify样式开始*/
 .iconify {
@@ -1031,7 +1031,8 @@ body {
   margin: 0;
 }
 /* toc collapsible */
-.toc-child:has(.toc-active),.toc-active + .toc-child {
+.toc-child:has(.toc-active),
+.toc-active + .toc-child {
   display: block;
 }
 
@@ -1600,6 +1601,14 @@ article a {
   vertical-align: top;
   text-align: center;
   font-size: var(--text-xs);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 #footer ul {
@@ -1643,27 +1652,6 @@ article a {
 #footer .footer-left {
   vertical-align: middle;
   line-height: 1.25rem;
-}
-
-@media (min-width: 39rem) {
-  #footer {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 0.4rem 0.4rem;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-    margin-bottom: 1.25rem;
-    margin-top: 1.25rem;
-  }
-
-  #footer .footer-left {
-    align-self: flex-start;
-  }
-
-  #footer .footer-right {
-    align-self: flex-end;
-  }
 }
 
 .pagination {
