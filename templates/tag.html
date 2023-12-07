@@ -4,9 +4,9 @@
   th:replace="~{fragments/layout :: html(title=${tag.spec.displayName}, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}"
 >
   <th:block th:fragment="content">
-    <div id="archive">
+    <div id="archive" class="content">
       <h2 th:text="'标签：' + ${tag.spec?.displayName}">标签</h2>
-      <ul class="post-list">
+      <ul class="post-list flex-auto">
         <li class="post-item" th:each="post : ${posts}">
           <div class="meta">
             <time
@@ -20,6 +20,7 @@
           </span>
         </li>
       </ul>
+      <th:block th:insert="~{fragments/posts :: pagination}"></th:block>
     </div>
   </th:block>
 </html>
