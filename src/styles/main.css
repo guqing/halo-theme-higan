@@ -437,6 +437,10 @@
   padding-left: 4rem;
 }
 
+.flex-auto {
+  flex: auto;
+}
+
 body h1,
 body .h1 {
   display: block;
@@ -1375,6 +1379,13 @@ body {
 
 .title-upper-case {
   text-transform: uppercase !important;
+}
+
+article {
+  min-height: 100%;
+  flex: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 article header .posttitle {

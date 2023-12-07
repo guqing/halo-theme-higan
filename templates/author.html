@@ -27,7 +27,7 @@
         </div>
       </section>
 
-      <section class="px-4 mt-16 sm:mt-20 mb-4">
+      <section class="px-4 mt-16 sm:mt-20 mb-4" style="flex: auto;">
         <div class="flex flex-col space-y-10">
           <th:block th:each="post : ${posts}">
             <div class="md:grid md:grid-cols-4 md:items-baseline">
@@ -62,22 +62,22 @@
             </div>
           </th:block>
         </div>
-
-        <div class="pagination">
-          <a th:href="@{${posts.prevUrl}}" th:if="${posts.hasPrevious()}">
-            <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
-          </a>
-          <span
-            class="page-number"
-            th:with="totalPage=${posts.totalPages}"
-            th:text="'Page ' + ${posts.page} + ' of ' + ${totalPage}"
-            >Page 1 of 1</span
-          >
-          <a th:href="@{${posts.nextUrl}}" th:if="${posts.hasNext()}">
-            <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i>
-          </a>
-        </div>
       </section>
+
+      <div class="pagination">
+        <a th:href="@{${posts.prevUrl}}" th:if="${posts.hasPrevious()}">
+          <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
+        </a>
+        <span
+          class="page-number"
+          th:with="totalPage=${posts.totalPages}"
+          th:text="'Page ' + ${posts.page} + ' of ' + ${totalPage}"
+          >Page 1 of 1</span
+        >
+        <a th:href="@{${posts.nextUrl}}" th:if="${posts.hasNext()}">
+          <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i>
+        </a>
+      </div>
     </article>
   </th:block>
 </html>
