@@ -2376,8 +2376,10 @@ article a {
   display: inline-block !important;
 }
 .highlight {
-  background: #474949;
-  color: #d1d9e1;
+  overflow-x: auto;
+  margin: 0;
+  background: var(--color-highlight-background);
+  color: var(--color-background-code);
 }
 
 .highlight .code .comment,
@@ -2455,34 +2457,15 @@ pre {
   overflow-x: auto;
   padding: 0.625rem 0.9375rem;
   padding-bottom: 0;
-  border: 1px dotted var(--color-meta);
-  border-radius: 0.25rem;
   font-size: var(--text-sm);
   line-height: 1.375rem;
   font-family: inherit;
-  -webkit-border-radius: 0.25rem;
 }
 
 pre code {
   display: block;
-  padding: 0;
+  padding: 1em;
   border: none;
-}
-
-code {
-  padding: 0 0.3125rem;
-  border: 1px dotted var(--color-meta);
-  border-radius: 0.125rem;
-  font-family: inherit;
-  -webkit-border-radius: 0.125rem;
-}
-
-.highlight {
-  overflow-x: auto;
-  margin: 0;
-  border-radius: 0.25rem;
-  background: var(--color-highlight-background);
-  -webkit-border-radius: 0.25rem;
 }
 
 .highlight figcaption {
