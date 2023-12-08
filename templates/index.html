@@ -107,10 +107,10 @@
       </th:block>
     </p>
 
-    <div th:if="${theme?.config.styles?.post_list_layout=='post-list-summary'}">
+    <th:block th:if="${theme?.config.styles?.post_list_layout=='post-list-summary'}">
       <h1 class="h1"><a th:href="@{/archives}">Writing</a></h1>
       <th:block th:insert="~{fragments/posts :: post-list-summary(${posts})}"></th:block>
-    </div>
+    </th:block>
     <th:block th:unless="${theme?.config.styles?.post_list_layout=='post-list-summary'}">
       <th:block th:insert="~{fragments/posts :: simple-post-list(${posts})}"></th:block>
     </th:block>

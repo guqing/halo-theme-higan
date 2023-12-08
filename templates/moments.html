@@ -5,114 +5,130 @@
 >
   <th:block th:fragment="content">
     <article class="moment" itemscope itemtype="http://schema.org/BlogPosting">
-      <div class="content">
-        <ul class="post-list" x-data="momentComment">
-          <li th:each="moment : ${moments.items}" class="moment-item" th:id="${moment.metadata.name}">
-            <div
-              class="moment-header"
-              th:if="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}"
-            >
-              <div class="color-fg-muted">
-                <span>
-                  <a
-                    th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
-                    th:href="@{${authorPage}}"
-                    class="d-inline-block"
+      <div class="content flex-auto">
+        <div class="post-list flex-auto">
+          <ul  x-data="momentComment">
+            <li th:each="moment : ${moments.items}" class="moment-item" th:id="${moment.metadata.name}">
+              <div
+                class="moment-header"
+                th:if="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}"
+              >
+                <div class="color-fg-muted">
+                  <span>
+                    <a
+                      th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
+                      th:href="@{${authorPage}}"
+                      class="d-inline-block"
+                    >
+                      <img
+                        class="avatar avatar-user"
+                        th:with="defaultAvatar=${#theme.assets('/images/logo.png')}"
+                        th:src="${#strings.defaultString(moment.owner?.avatar, defaultAvatar)}"
+                        width="32"
+                        height="32"
+                        th:alt="|@${moment.owner?.name}|"
+                      />
+                    </a>
+                  </span>
+                  <span
+                    class="no-underline color-fg-muted"
+                    th:utext="${moment.metadata?.annotations?.get('guqing.github.io/customize-title')}"
                   >
-                    <img
-                      class="avatar avatar-user"
-                      th:with="defaultAvatar=${#theme.assets('/images/logo.png')}"
-                      th:src="${#strings.defaultString(moment.owner?.avatar, defaultAvatar)}"
-                      width="32"
-                      height="32"
-                      th:alt="|@${moment.owner?.name}|"
-                    />
-                  </a>
-                </span>
-                <span
-                  class="no-underline color-fg-muted"
-                  th:utext="${moment.metadata?.annotations?.get('guqing.github.io/customize-title')}"
-                >
-                </span>
-              </div>
-            </div>
-            <div
-              class="moment-header"
-              th:unless="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}"
-            >
-              <div class="color-fg-muted">
-                <span>
-                  <a
-                    th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
-                    th:href="@{${authorPage}}"
-                    class="d-inline-block"
-                  >
-                    <img
-                      class="avatar avatar-user"
-                      th:with="defaultAvatar=${#theme.assets('/images/logo.png')}"
-                      th:src="${#strings.defaultString(moment.owner?.avatar, defaultAvatar)}"
-                      width="32"
-                      height="32"
-                      th:alt="|@${moment.owner?.name}|"
-                    />
-                  </a>
-                </span>
-                <a
-                  class="no-underline wb-break-all d-inline-block"
-                  th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
-                  th:href="@{${authorPage}}"
-                  th:text="${moment.owner?.displayName}"
-                ></a>
-                <span class="no-underline color-fg-muted">
-                  <relative-time
-                    tense="past"
-                    th:datetime="${moment.spec.releaseTime}"
-                    data-view-component="true"
-                    th:title="${#temporals.format(moment.spec.releaseTime, 'yyyy-MM-dd')}"
-                    th:text="${#temporals.format(moment.spec.releaseTime, 'MMMM dd yyyy')}"
-                  >
-                  </relative-time>
-                </span>
-              </div>
-            </div>
-            <div class="moment-body">
-              <div class="moment-content-box">
-                <div class="momemt-content" th:utext="${moment.spec.content?.html}"></div>
-                <div class="medium" th:with="medium=${moment.spec.content?.medium}">
-                  <th:block th:each="media : ${medium}">
-                    <img
-                      th:if="${#strings.equals(media.type, 'PHOTO')}"
-                      th:src="${media?.url}"
-                      alt="moment image"
-                      loading="lazy"
-                    />
-                  </th:block>
+                  </span>
                 </div>
               </div>
-              <div th:attr="x-data=|{name: '${moment.metadata.name}'}|" class="operation">
-                <a
-                  th:href="|javascript:handleLike('${moment.metadata.name}')|"
-                  th:data-moment-name="${moment.metadata.name}"
-                >
-                  <span class="iconify" data-icon="mdi:cards-heart-outline"></span>
-                  <span th:data-moment-name="${moment.metadata.name}" th:text="${moment.stats.upvote}"></span>
-                </a>
-                <a @click="setCurrent(name)" style="margin-left: 5px; cursor: pointer">
-                  <span class="iconify" data-icon="mdi:comment-outline"></span>
-                  <span th:text="${moment.stats.approvedComment}"></span>
-                </a>
-                <div class="moment-comment" x-show="current === name">
-                  <halo:comment
-                    group="moment.halo.run"
-                    kind="Moment"
-                    th:name="${moment.metadata?.name}"
-                    colorScheme="commentColorScheme"
-                  />
+              <div
+                class="moment-header"
+                th:unless="${moment.metadata?.labels?.get('guqing.github.io/type')=='github-user-public-event'}"
+              >
+                <div class="color-fg-muted">
+                  <span>
+                    <a
+                      th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
+                      th:href="@{${authorPage}}"
+                      class="d-inline-block"
+                    >
+                      <img
+                        class="avatar avatar-user"
+                        th:with="defaultAvatar=${#theme.assets('/images/logo.png')}"
+                        th:src="${#strings.defaultString(moment.owner?.avatar, defaultAvatar)}"
+                        width="32"
+                        height="32"
+                        th:alt="|@${moment.owner?.name}|"
+                      />
+                    </a>
+                  </span>
+                  <a
+                    class="no-underline wb-break-all d-inline-block"
+                    th:with="authorPage=${#strings.append('/authors/',moment.owner?.name)}"
+                    th:href="@{${authorPage}}"
+                    th:text="${moment.owner?.displayName}"
+                  ></a>
+                  <span class="no-underline color-fg-muted">
+                    <relative-time
+                      tense="past"
+                      th:datetime="${moment.spec.releaseTime}"
+                      data-view-component="true"
+                      th:title="${#temporals.format(moment.spec.releaseTime, 'yyyy-MM-dd')}"
+                      th:text="${#temporals.format(moment.spec.releaseTime, 'MMMM dd yyyy')}"
+                    >
+                    </relative-time>
+                  </span>
                 </div>
               </div>
-            </div>
-          </li>
-        </ul>
+              <div class="moment-body">
+                <div class="moment-content-box">
+                  <div class="momemt-content" th:utext="${moment.spec.content?.html}"></div>
+                  <div class="medium" th:with="medium=${moment.spec.content?.medium}">
+                    <th:block th:each="media : ${medium}">
+                      <img
+                        th:if="${#strings.equals(media.type, 'PHOTO')}"
+                        th:src="${media?.url}"
+                        alt="moment image"
+                        loading="lazy"
+                      />
+                    </th:block>
+                  </div>
+                </div>
+                <div th:attr="x-data=|{name: '${moment.metadata.name}'}|" class="operation">
+                  <a
+                    th:href="|javascript:handleLike('${moment.metadata.name}')|"
+                    th:data-moment-name="${moment.metadata.name}"
+                  >
+                  <span class="iconify">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24">
+                      <path
+                        fill="currentColor"
+                        d="m12.1 18.55l-.1.1l-.11-.1C7.14 14.24 4 11.39 4 8.5C4 6.5 5.5 5 7.5 5c1.54 0 3.04 1 3.57 2.36h1.86C13.46 6 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5c0 2.89-3.14 5.74-7.9 10.05M16.5 3c-1.74 0-3.41.81-4.5 2.08C10.91 3.81 9.24 3 7.5 3C4.42 3 2 5.41 2 8.5c0 3.77 3.4 6.86 8.55 11.53L12 21.35l1.45-1.32C18.6 15.36 22 12.27 22 8.5C22 5.41 19.58 3 16.5 3Z"
+                      />
+                    </svg>
+                  </span>
+                    <span th:data-moment-name="${moment.metadata.name}" th:text="${moment.stats.upvote}"></span>
+                  </a>
+                  <a @click="setCurrent(name)" style="margin-left: 5px; cursor: pointer">
+                    <span class="iconify">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24">
+                        <path
+                          fill="currentColor"
+                          d="M9 22a1 1 0 0 1-1-1v-3H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6.1l-3.7 3.71c-.2.19-.45.29-.7.29H9m1-6v3.08L13.08 16H20V4H4v12h6Z"
+                        />
+                      </svg>
+                    </span>
+                    <span th:text="${moment.stats.approvedComment}"></span>
+                  </a>
+                  <div class="moment-comment" x-show="current === name">
+                    <halo:comment
+                      group="moment.halo.run"
+                      kind="Moment"
+                      th:name="${moment.metadata?.name}"
+                      colorScheme="commentColorScheme"
+                    />
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
         <div class="pagination" style="margin-top: 0;">
           <a th:href="@{${moments.prevUrl}}" th:if="${moments.hasPrevious()}">
             <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
