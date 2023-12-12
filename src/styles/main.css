@@ -780,7 +780,7 @@ body {
 
 .circle-avatar {
   border-radius: 50% !important;
-  border: 1px solid var(--color-text);
+  box-shadow: 0 0 0 1px var(--color-avatar-border);
 }
 
 #header #nav {
