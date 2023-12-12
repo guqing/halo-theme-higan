@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{fragments/layout :: html(title='归档', content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}">
 <th:block th:fragment="content">
-    <div id="archive">
+    <div id="archive" class="flex-auto">
       <th:block th:each="archive : ${archives}">
         <h2 th:text="${archive.year}"></h2>
         <ul class="post-list">
@@ -19,17 +19,17 @@
           </th:block>
         </ul>
       </th:block>
-      <div class="pagination">
-        <a th:href="@{${archives.prevUrl}}" th:if="${archives.hasPrevious()}">
-          <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
-        </a>
-        <span class="page-number"
-          th:with="totalPage=${archives.totalPages}"
-          th:text="'Page ' + ${archives.page} + ' of ' + ${totalPage}">Page 1 of 1</span>
-        <a th:href="@{${archives.nextUrl}}" th:if="${archives.hasNext()}">
-          <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i>
-        </a>
-      </div>
+    </div>
+    <div class="pagination">
+      <a th:href="@{${archives.prevUrl}}" th:if="${archives.hasPrevious()}">
+        <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
+      </a>
+      <span class="page-number"
+        th:with="totalPage=${archives.totalPages}"
+        th:text="'Page ' + ${archives.page} + ' of ' + ${totalPage}">Page 1 of 1</span>
+      <a th:href="@{${archives.nextUrl}}" th:if="${archives.hasNext()}">
+        <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i>
+      </a>
     </div>
 </th:block>
 </html>
