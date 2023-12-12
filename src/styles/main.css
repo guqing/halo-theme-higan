@@ -1435,10 +1435,6 @@ article header .postdate {
   display: inline;
 }
 
-article .content {
-  margin-bottom: 2rem;
-}
-
 article .content h2:before {
   position: absolute;
   top: -0.25rem;
