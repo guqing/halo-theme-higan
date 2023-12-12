@@ -1342,7 +1342,7 @@ body {
 
 .group:hover .post-card-hover {
   opacity: 1;
-  background-color: var(--color-background-code);
+  background-color: var(--color-card-hover);
   transition-property: color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform;
   transform: translate(0,0) rotate(0) skewX(0) skewY(0) scaleX(0.95) scaleY(0.95);
   transition-duration: .15s;
