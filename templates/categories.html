@@ -5,7 +5,7 @@
 >
   <th:block th:fragment="content">
     <h1>分类列表</h1>
-    <ul th:if="${!#lists.isEmpty(categories)}">
+    <ul th:if="${!#lists.isEmpty(categories)}" class="flex-auto">
       <th:block th:each="category : ${categories}">
         <li>
           <a th:href="@{${category.status?.permalink}}">
