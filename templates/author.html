@@ -27,10 +27,9 @@
         </div>
       </section>
 
-      <div class="mt-16 sm:mt-20 px-4">
+      <div class="mt-16 sm:mt-20 flex-auto flex flex-col">
         <th:block th:insert="~{fragments/posts :: post-list-summary(${posts})}"></th:block>
       </div>
-      <th:block th:replace="~{fragments/posts :: pagination}"></th:block>
     </article>
   </th:block>
 </html>

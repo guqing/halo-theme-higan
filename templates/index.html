@@ -114,7 +114,5 @@
     <th:block th:unless="${theme?.config.styles?.post_list_layout=='post-list-summary'}">
       <th:block th:insert="~{fragments/posts :: simple-post-list(${posts})}"></th:block>
     </th:block>
-
-    <th:block th:insert="~{fragments/posts :: pagination}"></th:block>
   </th:block>
 </html>

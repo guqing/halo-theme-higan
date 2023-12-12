@@ -1,4 +1,4 @@
-<th:block  th:fragment="pagination">
+<th:block th:fragment="pagination" th:with="posts=${posts}">
   <div class="pagination">
     <a th:href="@{${posts.prevUrl}}" th:if="${posts.hasPrevious()}">
       <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
@@ -16,9 +16,9 @@
 </th:block>
 
 <th:block th:fragment="simple-post-list(posts)">
-  <section id="writing" class="flex-auto">
+  <section id="writing" class="flex-auto flex flex-col">
     <h2 class="h1"><a th:href="@{/archives}">Writing</a></h2>
-    <ul class="post-list">
+    <ul class="post-list flex-auto">
       <th:block th:each="item : ${posts.items}">
         <li class="post-item">
           <div class="meta">
@@ -41,17 +41,20 @@
         </li>
       </th:block>
     </ul>
+    <th:block th:insert="~{fragments/posts :: pagination}"></th:block>
   </section>
 </th:block>
 
 <th:block th:fragment="post-list-summary(posts)">
-  <section class="mb-4 flex-auto">
-    <div class="flex flex-col space-y-10">
+  <section class="flex-auto flex flex-col">
+    <div class="flex flex-col space-y-10 flex-auto">
       <th:block th:each="post : ${posts}">
         <div class="md:grid md:grid-cols-4 md:items-baseline">
-          <div class="md:col-span-3 group relative flex flex-col items-start ">
+          <div class="md:col-span-3 group relative flex flex-col items-start">
             <h2 class="static m-0 text-base font-semibold tracking-tight color-text">
-              <div class="absolute opacity-0 -inset-x-4 -inset-y-2 z-0 sm:-inset-x-6 sm:rounded-2xl post-card-hover"></div>
+              <div
+                class="absolute opacity-0 -inset-x-4 -inset-y-2 z-0 sm:-inset-x-6 sm:rounded-2xl post-card-hover"
+              ></div>
               <a th:href="@{${post.status?.permalink}}">
                 <span class="absolute -inset-x-4 -inset-y-2 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                 <span class="relative z-10" th:text="${post.spec.title}"></span>
@@ -80,5 +83,6 @@
         </div>
       </th:block>
     </div>
+    <th:block th:insert="~{fragments/posts :: pagination}"></th:block>
   </section>
 </th:block>
