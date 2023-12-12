@@ -1,6 +1,12 @@
 @import "../assets/fonts/text-size.css";
 @import "./scrollbar.css";
 
+:root {
+  --higan-font-family: Menlo, Meslo LG, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol,
+    "Noto Color Emoji";
+}
+
 /*iconify样式开始*/
 .iconify {
   font-size: 1rem;
@@ -604,9 +610,7 @@ body {
   color: var(--color-text);
   font-weight: 400;
   font-size: var(--text);
-  font-family: "Menlo", "Meslo LG", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: var(--higan-font-family);
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
@@ -2258,10 +2262,6 @@ article a {
   line-height: 1.5rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-}
-
 .m-0 {
   margin: 0;
 }
@@ -2461,13 +2461,14 @@ pre {
   padding-bottom: 0;
   font-size: var(--text-sm);
   line-height: 1.375rem;
-  font-family: inherit;
+  font-family: var(--higan-font-family);
 }
 
 pre code {
   display: block;
   padding: 1em;
   border: none;
+  font-family: var(--higan-font-family);
 }
 
 .highlight figcaption {
