@@ -13,5 +13,5 @@ spec:
   repo: https://github.com/guqing/halo-theme-higan
   settingName: guqing-higan-setting
   configMapName: guqing-higan-configmap
-  version: 2.7.0
+  version: 2.7.1
   requires: ">=2.1.0"
