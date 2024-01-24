@@ -5,7 +5,7 @@ if (!!$.prototype.justifiedGallery) {
   var options = {
     rowHeight: 140,
     margins: 4,
-    lastRow: "justify"
+    lastRow: "justify",
   };
   $(".article-gallery").justifiedGallery(options);
 }
@@ -13,7 +13,7 @@ if (!!$.prototype.justifiedGallery) {
 window.isMobile = () => {
   let flag = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
   return flag;
-}
+};
 
 $(function () {
   /**
@@ -116,5 +116,5 @@ $(function () {
 
   // mount it!
   $("article .content pre").wrap('<figure class="highlight"></figure>');
-  $("figure.highlight pre code").addClass('hljs');
+  $("figure.highlight pre code").addClass("hljs");
 });

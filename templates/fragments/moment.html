@@ -1,0 +1,59 @@
+<th:block th:fragment="momentVideoModal">
+  <div th:if="${#strings.equals(media.type,'VIDEO')}" x-data="{openVideoModal:false}" class="aspect-h-1 aspect-w-1">
+    <video preload="metadata" th:src="${media.url}" class="object-cover" style="margin: 0; height: 100%"></video>
+    <div
+      th:if="${#strings.equals(media.type,'VIDEO')}"
+      class="absolute flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-base-200 opacity-50 transition-all hover:opacity-70"
+      @click="openVideoModal = true"
+    >
+      <i class="iconify iconify-huge" data-icon="material-symbols:play-circle-outline"></i>
+    </div>
+
+    <template x-teleport="body">
+      <div>
+        <div
+          class="fixed inset-0 z-50 bg-[#0006] opacity-100 backdrop-blur-sm"
+          aria-hidden="true"
+          x-show="openVideoModal"
+          x-transition:enter="ease-in-out duration-300"
+          x-transition:enter-start="opacity-0"
+          x-transition:enter-end="opacity-100"
+          x-transition:leave="ease-in-out duration-300"
+          x-transition:leave-start="opacity-100"
+          x-transition:leave-end="opacity-0"
+        ></div>
+        <div
+          class="fixed inset-0 z-50 overflow-y-auto"
+          tabindex="-1"
+          x-show="openVideoModal"
+          x-transition:enter="ease-out duration-200"
+          x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+          x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+          x-transition:leave="ease-in duration-100"
+          x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+          x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        >
+          <div class="flex min-h-full flex-col items-center justify-center p-4 text-center sm:p-0">
+            <div
+              @click.outside="openVideoModal = false"
+              class="relative my-4 transform overflow-hidden rounded-sm bg-base-100 text-left shadow-xl transition-all sm:w-full sm:max-w-xl"
+            >
+              <video preload="metadata" th:src="${media.url}" class="w-full" controls></video>
+            </div>
+            <div>
+              <div
+                @click="openVideoModal = false"
+                class="group inline-flex items-center justify-center rounded-full bg-base-100 p-1.5"
+              >
+                <i
+                  class="iconify iconify-huge block text-base-content/60 group-hover:text-base-content"
+                  data-icon="material-symbols:cancel-rounded"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+</th:block>
