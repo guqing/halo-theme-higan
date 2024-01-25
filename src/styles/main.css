@@ -2218,6 +2218,13 @@ article a {
 .moment .tag::before {
   content: "#";
 }
+
+@media (width < 768px) {
+  .moment ul {
+    margin-block-start: 0;
+    padding-inline-start: 0;
+  }
+}
 /*日志样式结束*/
 
 /* 作者页面样式开始 */
