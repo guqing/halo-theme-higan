@@ -33,25 +33,27 @@
           x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
           x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
         >
-          <div class="flex min-h-full flex-col items-center justify-center p-4 text-center sm:p-0">
-            <div
-              @click.outside="openVideoModal = false"
-              class="relative my-4 transform overflow-hidden rounded-sm bg-base-100 text-left shadow-xl transition-all sm:w-full sm:max-w-xl"
-            >
-              <video preload="metadata" th:src="${media.url}" class="w-full" controls></video>
-            </div>
-            <div>
+          <template x-if="openVideoModal">
+            <div class="flex min-h-full flex-col items-center justify-center p-4 text-center sm:p-0">
               <div
-                @click="openVideoModal = false"
-                class="group inline-flex items-center justify-center rounded-full bg-base-100 p-1.5"
+                @click.outside="openVideoModal = false"
+                class="relative my-4 transform overflow-hidden rounded-sm bg-base-100 text-left shadow-xl transition-all sm:w-full sm:max-w-xl"
               >
-                <i
-                  class="iconify iconify-huge block text-base-content/60 group-hover:text-base-content"
-                  data-icon="material-symbols:cancel-rounded"
-                ></i>
+                <video preload="metadata" th:src="${media.url}" class="w-full" controls :x-ref="videoRefName"></video>
+              </div>
+              <div>
+                <div
+                  @click="openVideoModal = false;"
+                  class="group inline-flex items-center justify-center rounded-full bg-base-100 p-1.5"
+                >
+                  <i
+                    class="iconify iconify-huge block text-base-content/60 group-hover:text-base-content"
+                    data-icon="material-symbols:cancel-rounded"
+                  ></i>
+                </div>
               </div>
             </div>
-          </div>
+          </template>
         </div>
       </div>
     </template>
