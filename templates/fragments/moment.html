@@ -39,7 +39,7 @@
                 @click.outside="openVideoModal = false"
                 class="relative my-4 transform overflow-hidden rounded-sm bg-base-100 text-left shadow-xl transition-all sm:w-full sm:max-w-xl"
               >
-                <video preload="metadata" th:src="${media.url}" class="w-full" controls :x-ref="videoRefName"></video>
+                <video preload="metadata" th:src="${media.url}" class="w-full" controls></video>
               </div>
               <div>
                 <div

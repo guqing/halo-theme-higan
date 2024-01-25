@@ -584,6 +584,22 @@ video {
   display: inline-flex;
 }
 
+.backdrop-blur-sm {
+  --tw-backdrop-blur: blur(4px);
+  backdrop-filter: var(--tw-backdrop-blur);
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
+.bg-\[\#0006\] {
+  background-color: #0006;
+}
+.z-50 {
+  z-index: 50;
+}
+
 /* 样式开始 */
 body h1,
 body .h1 {
