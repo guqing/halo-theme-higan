@@ -2608,6 +2608,18 @@ article a {
   font-style: italic;
 }
 
+code {
+  padding: 0 0.3125rem;
+  border: 1px dotted var(--color-meta);
+  border-radius: 0.125rem;
+  font-family: var(--higan-font-family);
+}
+
+.highlight code {
+  border: none;
+  border-radius: unset;
+}
+
 pre {
   overflow-x: auto;
   padding: 0.625rem 0.9375rem;
