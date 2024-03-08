@@ -610,7 +610,7 @@ body .h1 {
   letter-spacing: 0.01em;
   font-weight: 700;
   font-style: normal;
-  font-size: 1.5em;
+  font-size: var(--text-h1);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
@@ -625,14 +625,14 @@ body .h2 {
   text-transform: none;
   letter-spacing: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: var(--text-h2);
 }
 
 body h3 {
   color: var(--color-accent-2);
   text-decoration: underline;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: var(--text-h3);
 }
 
 body h4,
@@ -642,7 +642,7 @@ body h6 {
   text-decoration: none;
   color: var(--color-accent-3);
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: var(--text-h4);
 }
 
 body h3,
@@ -1692,10 +1692,6 @@ article .content .caption {
   color: var(--color-meta);
   text-align: center;
   font-size: 0.9em;
-}
-
-article a {
-  display: inline-block;
 }
 
 .posttitle {
