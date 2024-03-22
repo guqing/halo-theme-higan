@@ -1,24 +1,20 @@
-<!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
-  <th:block th:fragment="content">
-    <header id="header">
-      <a th:href="@{/}">
-        <div
-          id="logo"
-          th:with="styles=${theme.config?.styles},logo=${#objects.nullSafe(styles?.icon, site?.logo)},fallbackLogo=${#theme.assets('/images/logo.png')}"
-          th:class="${styles?.avatar_circle == true ? 'circle-avatar' : ''}"
-          th:classappend="${styles?.avatar_grayout == true ? 'avatar-grayscale' : ''}"
-          th:style="|background-image: url('${#strings.defaultString(logo, fallbackLogo)}')|"
-        >
+<th:block xmlns:th="https://www.thymeleaf.org" th:fragment="content">
+  <header id="header">
+    <a th:href="@{/}">
+      <div
+        id="logo"
+        th:with="styles=${theme.config?.styles},logo=${#objects.nullSafe(styles?.icon, site?.logo)},fallbackLogo=${#theme.assets('/images/logo.png')}"
+        th:class="${styles?.avatar_circle == true ? 'circle-avatar' : ''}"
+        th:classappend="${styles?.avatar_grayout == true ? 'avatar-grayscale' : ''}"
+        th:style="|background-image: url('${#strings.defaultString(logo, fallbackLogo)}')|"
+      ></div>
+
+      <div id="title">
+        <h1 th:text="${site?.title}"></h1>
       </div>
-        
-        <div id="title">
-          <h1 th:text="${site?.title}"></h1>
-        </div>
-      </a>
-      <div id="nav">
-        <th:block th:insert="~{fragments/common :: menu(showIcon=true)}"></th:block>
-      </div>
-    </header>
-  </th:block>
-</html>
+    </a>
+    <div id="nav">
+      <th:block th:insert="~{fragments/common :: menu(showIcon=true)}"></th:block>
+    </div>
+  </header>
+</th:block>

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html
+<th:block
   xmlns:th="https://www.thymeleaf.org"
   th:replace="~{fragments/layout :: html(title=${tag.spec.displayName}, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}"
 >
@@ -23,4 +22,4 @@
       <th:block th:insert="~{fragments/posts :: pagination}"></th:block>
     </div>
   </th:block>
-</html>
+</th:block>

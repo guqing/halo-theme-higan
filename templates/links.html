@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org"
+<th:block xmlns:th="https://www.thymeleaf.org"
   th:replace="~{fragments/layout :: html(title = '友情链接', content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}">
 <th:block th:fragment="content">
   <article id="links" class="post" itemscope itemtype="http://schema.org/BlogPosting">
@@ -24,4 +23,4 @@
   </article>
 </th:block>
 
-</html>
+</th:block>

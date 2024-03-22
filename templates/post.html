@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html
+<th:block
   xmlns:th="https://www.thymeleaf.org"
   th:replace="~{fragments/layout :: html(title=${post.spec.title}, content = ~{::content}, header = ~{}, navbar = ~{fragments/post-nav::navbar})}"
 >
@@ -116,4 +116,4 @@
       })
     </script>
   </th:block>
-</html>
+</th:block>

@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html
+<th:block
   xmlns:th="https://www.thymeleaf.org"
   th:replace="~{fragments/layout :: html(title=${site.title}, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}"
 >
@@ -32,4 +31,4 @@
       </div>
     </article>
   </th:block>
-</html>
+</th:block>

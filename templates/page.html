@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html
+<th:block
   xmlns:th="https://www.thymeleaf.org"
   th:replace="~{fragments/layout :: html(title = ${singlePage.spec.title}, content = ~{::content}, header = ~{fragments/header::content}, navbar = ~{})}"
 >
@@ -34,4 +33,4 @@
     </script>
     </article>
   </th:block>
-</html>
+</th:block>
