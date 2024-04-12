@@ -2481,6 +2481,12 @@ article .content .caption {
   margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
 }
 
+@media (max-width: 768px) {
+  .md\:grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}
+
 @media (min-width: 768px) {
   .md:items-baseline {
     align-items: baseline;
