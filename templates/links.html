@@ -10,7 +10,7 @@
             <a class="fir-image-figure" rel="noopener" target="_blank" th:href="@{${link.spec.url}}">
               <figure class="fir-imageover ">
                 <img loading="lazy" class="fir-author-image fir-clickcircle" th:src="${link.spec.logo}"
-                  th:alt="${link.spec.displayName}">
+                  th:alt="${link.spec.displayName}" />
                 <figcaption>
                   <div class="fig-author-figure-title" th:text="${link.spec.displayName}"></div>
                   <div class="fig-author-figure-description" th:text="${link.spec.description}"></div>
@@ -19,6 +19,7 @@
             </a>
           </li>
         </ul>
+      </th:block>
     </div>
   </article>
 </th:block>
