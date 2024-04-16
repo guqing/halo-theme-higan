@@ -9,6 +9,8 @@ module.exports = {
     "prettier",
   ],
   env: {
+    browser: true,
     node: true,
+    jquery: true
   },
 };
