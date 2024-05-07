@@ -9,8 +9,8 @@
         <li class="post-item" th:each="post : ${posts}">
           <div class="meta">
             <time
-              th:datetime="${post.metadata?.creationTimestamp}"
-              th:text="${#temporals.format(post.metadata?.creationTimestamp, 'MMMM dd yyyy')}"
+              th:datetime="${post.spec?.publishTime}"
+              th:text="${#temporals.format(post.spec?.publishTime, 'MMMM dd yyyy')}"
               itemprop="datePublished"
             ></time>
           </div>
