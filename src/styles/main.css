@@ -201,6 +201,11 @@
   margin-bottom: 1rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
 .m3 {
   margin: 2rem;
 }
@@ -1700,6 +1705,16 @@ article .content .caption {
   color: var(--color-meta);
   text-align: center;
   font-size: 0.9em;
+}
+
+.divide {
+  height: 0;
+  color: inherit;
+  border-color: var(--color-divide);
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-top-width: 1px !important;
 }
 
 .posttitle {
