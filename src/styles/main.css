@@ -7,6 +7,22 @@
     "Noto Color Emoji";
 }
 
+.color-scheme-light,
+.light,
+[data-color-scheme="light"] comment-widget {
+  color-scheme: light;
+  --halo-comment-widget-component-form-input-bg-color: #e2e0de !important;
+  --halo-comment-widget-component-form-input-border-color: #908d8d !important;
+}
+
+.color-scheme-dark,
+.dark,
+[data-color-scheme="dark"] comment-widget {
+  color-scheme: dark;
+  --halo-comment-widget-component-form-input-bg-color: #1d1f21 !important;
+  --halo-comment-widget-component-form-input-border-color: #636363 !important;
+}
+
 /*iconify样式开始*/
 .iconify {
   font-size: 1rem;
