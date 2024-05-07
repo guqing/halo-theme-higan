@@ -1603,6 +1603,14 @@ article .content video {
   height: auto;
 }
 
+a img {
+  display: inherit !important;
+}
+
+a:has(img) {
+  background-image: none !important;
+}
+
 article .content .video-container {
   position: relative;
   overflow: hidden;
