@@ -1844,6 +1844,21 @@ article .content .caption {
   margin-top: 1.25rem;
 }
 
+#footer .info {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+#footer .copyright {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+#footer .copyright::before {
+  content: '\A';
+  white-space: pre;
+}
+
 #footer ul {
   margin: 0;
   padding: 0;
