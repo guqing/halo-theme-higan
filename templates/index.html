@@ -59,6 +59,7 @@
         <a
           class="icon"
           target="_blank"
+          aria-label="Find me on dribbble"
           th:href="'https://dribbble.com/'+${sns?.dribbble}"
           th:if="${not #strings.isEmpty(sns?.dribbble)}"
         >
@@ -91,7 +92,13 @@
         >
           <i class="iconify iconify-middle" data-icon="ic:baseline-telegram"></i>
         </a>
-        <a class="icon" target="_blank" th:href="'mailto:'+${sns?.email}" th:if="${not #strings.isEmpty(sns?.email)}">
+        <a
+          class="icon"
+          aria-label="Find me on email"
+          target="_blank"
+          th:href="'mailto:'+${sns?.email}"
+          th:if="${not #strings.isEmpty(sns?.email)}"
+        >
           <i class="iconify iconify-middle" data-icon="ph:envelope-simple-bold"></i>
         </a>
         <a

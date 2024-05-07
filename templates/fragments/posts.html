@@ -1,6 +1,6 @@
 <th:block th:fragment="pagination" th:with="posts=${posts}">
   <div class="pagination">
-    <a th:href="@{${posts.prevUrl}}" th:if="${posts.hasPrevious()}">
+    <a th:href="@{${posts.prevUrl}}" th:if="${posts.hasPrevious()}" aria-label="Go to previous page">
       <i class="iconify iconify-middle" data-icon="material-symbols:chevron-left"></i>
     </a>
     <span
@@ -9,7 +9,7 @@
       th:text="'Page ' + ${posts.page} + ' of ' + ${totalPage}"
       >Page 1 of 1</span
     >
-    <a th:href="@{${posts.nextUrl}}" th:if="${posts.hasNext()}">
+    <a th:href="@{${posts.nextUrl}}" th:if="${posts.hasNext()}" aria-label="Go to next page">
       <i class="iconify iconify-middle" data-icon="material-symbols:chevron-right"></i>
     </a>
   </div>
