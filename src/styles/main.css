@@ -472,6 +472,10 @@
   flex: auto;
 }
 
+.flex-1 {
+  flex: 1;
+}
+
 .aspect-w-1 > * {
   position: absolute;
   height: 100%;

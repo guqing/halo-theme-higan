@@ -4,26 +4,28 @@
 >
   <th:block th:fragment="content">
     <div id="archive" class="flex-auto content">
-      <th:block th:each="archive : ${archives}">
-        <h2 th:text="${archive.year}"></h2>
-        <ul class="post-list flex-auto">
-          <th:block th:each="month : ${archive.months}">
-            <li class="post-item" th:each="post : ${month.posts}">
-              <div class="meta">
-                <time
-                  th:datetime="${post.spec?.publishTime}"
-                  itemprop="datePublished"
-                  th:text="${#temporals.format(post.spec?.publishTime, 'yyyy-MM-dd')}"
-                  >publicTime</time
-                >
-              </div>
-              <span>
-                <a class="post-title" th:href="@{${post.status?.permalink}}" th:text="${post.spec?.title}"></a>
-              </span>
-            </li>
-          </th:block>
-        </ul>
-      </th:block>
+      <div class="flex-1">
+        <div th:each="archive : ${archives}">
+          <h2 th:text="${archive.year}"></h2>
+          <ul class="post-list flex-auto">
+            <th:block th:each="month : ${archive.months}">
+              <li class="post-item" th:each="post : ${month.posts}">
+                <div class="meta">
+                  <time
+                    th:datetime="${post.spec?.publishTime}"
+                    itemprop="datePublished"
+                    th:text="${#temporals.format(post.spec?.publishTime, 'yyyy-MM-dd')}"
+                    >publicTime</time
+                  >
+                </div>
+                <span>
+                  <a class="post-title" th:href="@{${post.status?.permalink}}" th:text="${post.spec?.title}"></a>
+                </span>
+              </li>
+            </th:block>
+          </ul>
+        </div>
+      </div>
       <th:block th:insert="~{fragments/posts :: pagination(posts=${archives})}"></th:block>
     </div>
   </th:block>
