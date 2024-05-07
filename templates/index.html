@@ -17,7 +17,7 @@
       </th:block>
     </section>
 
-    <p>
+    <p id="findMe">
       Find me on
       <th:block th:with="sns=${theme?.config?.sns}">
         <a
@@ -105,6 +105,14 @@
         </a>
       </th:block>
     </p>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const socialProfiles = document.querySelector("#findMe a") || [];
+        if (socialProfiles.length === 0) {
+          document.querySelector("#findMe").style.display = "none";
+        }
+      });
+    </script>
 
     <th:block th:if="${theme?.config.styles?.post_list_layout=='post-list-summary'}">
       <h1 class="h1"><a th:href="@{/archives}">Writing</a></h1>
