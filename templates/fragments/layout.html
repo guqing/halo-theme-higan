@@ -23,20 +23,22 @@
         <footer id="footer">
           <div class="footer-left">
             <halo:footer />
-            <span class="info">
-              Theme is
-              <a href="https://github.com/guqing/halo-theme-higan" target="_blank">higan</a>
-              Powered by <a href="https://halo.run" target="_blank">Halo</a>
-            </span>
-            <span class="copyright">
-              ©
-              <span
-                id="site_date"
-                th:with="now=${#temporals.createNow()}"
-                th:text="${#temporals.format(now, 'yyyy')}"
-              ></span>
-              <span th:text="${site?.title}"></span>
-            </span>
+            <div>
+              <span class="info">
+                Theme is
+                <a href="https://github.com/guqing/halo-theme-higan" target="_blank">higan</a>
+                Powered by <a href="https://halo.run" target="_blank">Halo</a>
+              </span>
+              <span class="copyright">
+                ©
+                <span
+                  id="site_date"
+                  th:with="now=${#temporals.createNow()}"
+                  th:text="${#temporals.format(now, 'yyyy')}"
+                ></span>
+                <span th:text="${site?.title}"></span>
+              </span>
+            </div>
           </div>
           <div class="footer-right">
             <ul>
