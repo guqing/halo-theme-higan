@@ -894,6 +894,29 @@ body {
   max-width: 48rem;
 }
 
+@media (max-width: 767px) {
+  .max-width {
+      max-width: 100%;
+  }
+}
+
+@media (min-width: 1199px) and (max-width: 1536px) {
+  .max-width {
+      max-width: 56rem;
+  }
+}
+@media (min-width: 1537px) and (max-width: 2000px) {
+  .max-width {
+    max-width: 64rem;
+  }
+}
+
+@media (min-width: 2001px) {
+  .max-width {
+    max-width: 60%;
+  }
+}
+
 @media (max-width: 480px) {
   .px3 {
     padding-right: 1rem;
