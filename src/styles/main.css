@@ -1312,7 +1312,7 @@ body {
   display: none;
 }
 
-#header-post .toc-active-link {
+#header-post .toc-active {
   color: var(--color-accent-1);
 }
 
