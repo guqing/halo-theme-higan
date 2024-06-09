@@ -998,6 +998,7 @@ body {
   padding: 0;
   list-style-type: none;
   line-height: 0.9375rem;
+  display: inline-table;
 }
 
 #header #nav ul a {
@@ -1180,6 +1181,7 @@ body {
 
 #header-post #nav ul {
   line-height: 0.9375rem;
+  display: inline-table;
 }
 
 #header-post #nav ul a {
@@ -1868,6 +1870,7 @@ article .content .caption {
   padding: 0;
   list-style: none;
   line-height: 1.25rem;
+  display: inline-table;
 }
 
 #footer li {
