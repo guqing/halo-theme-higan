@@ -13,10 +13,15 @@
           <div class="profile-wrap z-20">
             <div class="profile-content">
               <img
-                th:with="defaultLogo=${#theme.assets('/images/logo.png')}"
-                th:src="${#strings.defaultString(author.spec.avatar, defaultLogo)}"
-                class="profile-avatar"
-              />
+              th:with="defaultLogo=${#theme.assets('/images/logo.png')}, logoUri=${#strings.defaultString(author.spec.avatar, defaultLogo)}"
+              th:src="${logoUri}"
+              th:srcset="|${thumbnail.gen(logoUri, 's')} 400w|"
+              sizes="400px"
+              class="profile-avatar"
+              width="100%"
+              height="100%"
+              alt="author avatar"
+            />
               <div class="profile-nickname-container">
                 <p class="profile-nickname" th:text="${author.spec.displayName}"></p>
                 <p class="profile-bio" th:text="${author.spec.bio}"></p>
