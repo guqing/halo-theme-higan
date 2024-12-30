@@ -6,7 +6,7 @@
         th:with="styles=${theme.config?.styles},logo=${#objects.nullSafe(styles?.icon, site?.logo)},fallbackLogo=${#theme.assets('/images/logo.png')}"
         th:class="${styles?.avatar_circle == true ? 'circle-avatar' : ''}"
         th:classappend="${styles?.avatar_grayout == true ? 'avatar-grayscale' : ''}"
-        th:style="|background-image: url('/apis/api.storage.halo.run/v1alpha1/thumbnails/-/via-uri?size=s&uri=${#strings.defaultString(logo, fallbackLogo)}')|"
+        th:style="|background-image: url('${#strings.defaultString(logo, fallbackLogo)}')|"
       ></div>
 
       <div id="title">
