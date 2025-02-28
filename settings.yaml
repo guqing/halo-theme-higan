@@ -127,9 +127,13 @@ spec:
               value: true
             - label: 关闭
               value: false
+        - $formkit: checkbox
+          name: footer_menu
+          label: 启用底部菜单
+          value: true
         - $formkit: code
           name: resume
-          if: '$hitokoto===false'
+          if: "$hitokoto===false"
           label: 个人简介
           language: html
           height: 100px
