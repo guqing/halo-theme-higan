@@ -1,17 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" th:fragment="html (title, content, header, navbar)">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title th:text="${#strings.defaultString(title, site.title)}"></title>
-    <link rel="stylesheet" th:href="@{/assets/dist/style.css(v=${theme.spec.version})}" href="./assets/dist/style.css" />
+    <link
+      rel="stylesheet"
+      th:href="@{/assets/dist/style.css(v=${theme.spec.version})}"
+      href="./assets/dist/style.css"
+    />
     <!-- jquery -->
     <script th:src="@{/assets/lib/jquery/jquery.min.js(v=${theme.spec.version})}"></script>
     <script th:src="@{/assets/dist/main.iife.js(v=${theme.spec.version})}"></script>
-    <script>const commentColorScheme = "[[${theme.config?.styles?.color_schema}]]";</script>
+    <script>
+      const commentColorScheme = "[[${theme.config?.styles?.color_schema}]]";
+    </script>
   </head>
-  <body th:class="|theme-${theme.config?.styles?.color_schema} text-size-${theme.config?.styles?.text_size}|" th:attr="data-color-scheme=${theme.config?.styles?.color_schema}">
+  <body
+    th:class="|theme-${theme.config?.styles?.color_schema} text-size-${theme.config?.styles?.text_size}|"
+    th:attr="data-color-scheme=${theme.config?.styles?.color_schema}"
+  >
     <div class="max-width mx-auto px3 ltr">
       <th:block th:replace="${navbar}" />
 
@@ -40,7 +49,7 @@
               </span>
             </div>
           </div>
-          <div class="footer-right">
+          <div class="footer-right" th:if="${theme.config?.styles?.footer_menu}">
             <ul>
               <li th:each="menuItem : ${menuFinder.getPrimary()?.menuItems}">
                 <a
@@ -48,9 +57,9 @@
                   th:target="${menuItem.spec.target?.value}"
                   th:aria-label="'Menu named ' + ${menuItem.status?.displayName}"
                   th:text="${menuItem.status?.displayName}"
-                  >
+                >
                   menu-name
-                  </a>
+                </a>
               </li>
             </ul>
           </div>
