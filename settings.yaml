@@ -7,17 +7,12 @@ spec:
     - group: sns
       label: 社交资料
       formSchema:
-        - $formkit: radio
+        - $formkit: checkbox
           name: rss
           label: RSS
           value: true
           attrs:
             icon: rss
-          options:
-            - value: true
-              label: 开启
-            - value: false
-              label: 关闭
         - $formkit: text
           name: twitter
           label: Twitter
@@ -82,24 +77,14 @@ spec:
         - $formkit: attachment
           name: icon
           label: 首页头像
-        - $formkit: radio
+        - $formkit: checkbox
           name: avatar_circle
           label: 圆形头像
           value: false
-          options:
-            - value: true
-              label: 开启
-            - value: false
-              label: 关闭
-        - $formkit: radio
+        - $formkit: checkbox
           name: avatar_grayout
           label: 开启灰度头像
           value: false
-          options:
-            - value: true
-              label: 开启
-            - value: false
-              label: 关闭
         - $formkit: select
           name: post_list_layout
           label: 文章列表布局
@@ -109,24 +94,14 @@ spec:
               value: "simple-post-list"
             - label: "多元列表"
               value: "post-list-summary"
-        - $formkit: radio
+        - $formkit: checkbox
           name: post_title_uppper
           label: 文章标题大写
           value: false
-          options:
-            - value: true
-              label: 开启
-            - value: false
-              label: 关闭
-        - $formkit: radio
+        - $formkit: checkbox
           name: hitokoto
           label: 博客描述开启一言
           value: false
-          options:
-            - label: 开启
-              value: true
-            - label: 关闭
-              value: false
         - $formkit: checkbox
           name: footer_menu
           label: 启用底部菜单
