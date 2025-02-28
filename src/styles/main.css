@@ -900,13 +900,13 @@ body {
 
 @media (max-width: 767px) {
   .max-width {
-      max-width: 100%;
+    max-width: 100%;
   }
 }
 
 @media (min-width: 1199px) and (max-width: 1536px) {
   .max-width {
-      max-width: 56rem;
+    max-width: 56rem;
   }
 }
 @media (min-width: 1537px) and (max-width: 2000px) {
@@ -1856,11 +1856,6 @@ article .content .caption {
 #footer .copyright {
   display: inline-block;
   white-space: nowrap;
-}
-
-#footer .copyright::before {
-  content: '\A';
-  white-space: pre;
 }
 
 #footer ul {
