@@ -15,7 +15,7 @@ spec:
   repo: https://github.com/guqing/halo-theme-higan
   settingName: guqing-higan-setting
   configMapName: guqing-higan-configmap
-  version: 2.9.1
+  version: 2.10.0
   requires: ">=2.19.0"
   license:
     - name: "MIT"
